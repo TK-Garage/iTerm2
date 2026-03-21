@@ -1,0 +1,4 @@
+/* Japanese localization — PseudoTerminal.strings */
+
+/* PTYWindow (Window) : <title:Window> */
+"Window" = "ウィンドウ";

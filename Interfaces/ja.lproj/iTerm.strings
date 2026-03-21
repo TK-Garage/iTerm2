@@ -1,0 +1,232 @@
+/* Japanese localization — iTerm.strings */
+/* Context menus, toolbar items, alerts, and general UI strings */
+
+/* Context menu */
+"-> Browser" = "→ ブラウザ";
+"-> Mail" = "→ メール";
+"-> Google" = "→ Google";
+
+/* Toolbar Item: Bookmarks */
+"Bookmarks" = "ブックマーク";
+
+/* Close window */
+"All sessions will be closed" = "すべてのセッションが閉じられます";
+
+/* Cancel */
+"Cancel" = "キャンセル";
+
+/* Context menu */
+"Clear Buffer" = "バッファをクリア";
+
+/* Toolbar Item: Close Session */
+"Close" = "閉じる";
+
+/* Toolbar Item Tip: Close */
+"Close the current session" = "現在のセッションを閉じる";
+
+/* Close window */
+"Close Window?" = "ウィンドウを閉じますか？";
+"Quit iTerm?" = "iTerm を終了しますか？";
+
+/* Close Session */
+"This session will be closed." = "このセッションは閉じられます。";
+"All unsaved data will be lost" = "保存されていないデータはすべて失われます";
+
+/* Toolbar Item: Info */
+"Info" = "情報";
+
+/* Toolbar Item Tip: Info */
+"Window/Session Info" = "ウィンドウ/セッション情報";
+
+/* Context menu */
+"Info..." = "情報…";
+
+/* Context menu */
+"Copy" = "コピー";
+
+/* Context menu */
+"New Tab" = "新規タブ";
+
+/* Context menu */
+"New Window" = "新規ウィンドウ";
+
+/* Removal Alert */
+"Do you really want to remove this item?" = "この項目を本当に削除しますか？";
+
+/* Toolbar Item: New */
+"Default Session" = "デフォルトセッション";
+"New" = "新規";
+"Press Option for New Window" = "Option キーを押して新規ウィンドウ";
+"Open In New Window" = "新規ウィンドウで開く";
+"Open a new session" = "新規セッションを開く";
+"Execute" = "実行";
+"Execute Command or Launch URL" = "コマンドを実行または URL を開く";
+
+/* OK */
+"OK" = "OK";
+
+/* Toolbar Item Tip: Bookmarks */
+"Open the bookmarks" = "ブックマークを開く";
+
+/* Context menu */
+"Paste" = "ペースト";
+
+/* Context menu */
+"Save" = "保存";
+
+/* Context menu */
+"Select" = "選択";
+
+/* Context menu */
+"Move to new window" = "新規ウィンドウに移動";
+
+/* Anti-Idle: wrong input */
+"Please enter a valid code (0~255)" = "有効なコード（0〜255）を入力してください";
+
+/* wrong input */
+"Please enter a valid window size" = "有効なウィンドウサイズを入力してください";
+
+/* Remove */
+"Remove" = "削除";
+
+/* Context menu */
+"Select All" = "すべてを選択";
+"Print..." = "プリント…";
+"Print Selection..." = "選択範囲をプリント…";
+
+/* Removal Alert */
+"There is no undo for this operation." = "この操作は取り消せません。";
+
+/* wrong input */
+"Wrong Input" = "無効な入力";
+
+/* Upgrade */
+"Upgrade Warning: New language encodings available!" = "アップグレード警告: 新しい言語エンコーディングが利用可能です！";
+"Please reset all the encoding settings in your preference and bookmarks" = "設定とブックマークのエンコーディング設定をすべてリセットしてください";
+
+/* Author */
+"fabian" = "fabian";
+"Ujwal S. Setlur" = "Ujwal S. Setlur";
+
+/* About */
+"Report A Bug" = "バグを報告";
+
+/* Config */
+"Configuration saved as a new entry in Bookmarks" = "設定がブックマークに新しいエントリとして保存されました";
+"Configuration saved" = "設定が保存されました";
+
+/* OS Version */
+"Minimum_OS" = "iTerm の実行には OS X 10.2 以降が必要です。このアプリケーションは終了します。";
+
+/* Sorry */
+"Sorry" = "申し訳ありません";
+
+/* Quit */
+"Quit" = "終了";
+
+/* PreferencePanel */
+"Display" = "表示";
+"Shell" = "シェル";
+"Emulation" = "エミュレーション";
+"Color" = "カラー";
+
+/* Script */
+"Script" = "スクリプト";
+"Refresh" = "更新";
+
+/* Key Binding Profiles */
+"Global" = "グローバル";
+
+/* Display Profiles */
+"Default" = "デフォルト";
+
+/* Key Binding Actions */
+"next tab" = "次のタブ";
+"next window" = "次のウィンドウ";
+"previous tab" = "前のタブ";
+"previous window" = "前のウィンドウ";
+"scroll end" = "末尾へスクロール";
+"scroll home" = "先頭へスクロール";
+"scroll line down" = "1行下へスクロール";
+"scroll line up" = "1行上へスクロール";
+"scroll page down" = "1ページ下へスクロール";
+"scroll page up" = "1ページ上へスクロール";
+"send ^[" = "^[ を送信";
+"send hex code" = "16進コードを送信";
+"send" = "送信";
+"ignore" = "無視";
+"unknown action ID" = "不明なアクション ID";
+
+/* Key Names */
+"cursor down" = "カーソル下";
+"cursor left" = "カーソル左";
+"cursor right" = "カーソル右";
+"cursor up" = "カーソル上";
+"del" = "del";
+"delete" = "delete";
+"end" = "end";
+"help" = "help";
+"home" = "home";
+"numlock" = "numlock";
+"page down" = "page down";
+"page up" = "page up";
+"unknown key" = "不明なキー";
+
+/* Save Confirmation */
+"%@'s display profile %@ and terminal profile %@ have been updated" = "%@ の表示プロファイル %@ とターミナルプロファイル %@ が更新されました";
+"All bookmarks associated with this profile are affected" = "このプロファイルに関連するすべてのブックマークが影響を受けます";
+
+/* Profiles */
+"Delete Profile" = "プロファイルを削除";
+"Are you sure that you want to delete %@? There is no way to undo this action." = "%@ を本当に削除しますか？この操作は取り消せません。";
+"Delete" = "削除";
+"Untitled" = "名称未設定";
+"%@ copy" = "%@ のコピー";
+
+/* Bookmarks */
+"Delete Bookmark" = "ブックマークを削除";
+
+/* Warning */
+"Warning!" = "警告！";
+
+/* Keyboard Input */
+"Keyboard input will be sent to all sessions in this terminal." = "キーボード入力はこのターミナルのすべてのセッションに送信されます。";
+
+/* Growl Alerts */
+"Alert" = "通知";
+"Session %@ #%d: %@" = "セッション %@ #%d: %@";
+"Bell" = "ベル";
+"Session %@ #%d just rang a bell!" = "セッション %@ #%d でベルが鳴りました！";
+"Broken Pipe" = "パイプ切断";
+"Session %@ #%d just terminated." = "セッション %@ #%d が終了しました。";
+"Idle" = "アイドル";
+"Session %@ #%d becomes idle." = "セッション %@ #%d がアイドルになりました。";
+"New Output" = "新しい出力";
+"New Output was received in %@ #%d." = "%@ #%d で新しい出力がありました。";
+
+/* Info */
+"Update %@" = "%@ を更新";
+
+/* Tab Tooltips */
+"Name: %@\nCommand: %@\nTerminal Profile: %@\nDisplay Profile: %@\nKeyboard Profile: %@" = "名前: %@\nコマンド: %@\nターミナルプロファイル: %@\n表示プロファイル: %@\nキーボードプロファイル: %@";
+
+/* Profiles */
+"Keyboard Profiles" = "キーボードプロファイル";
+"Display Profiles" = "表示プロファイル";
+"Terminal Profiles" = "ターミナルプロファイル";
+"eg. [OC for ESC [OC." = "例: ESC [OC の場合 [OC";
+"eg. 7F for backward delete." = "例: Backward Delete の場合 7F";
+"use \n for new-line, etc" = "改行には \\n を使用";
+
+/* Error */
+"Out of memory" = "メモリ不足";
+"New session cannot be created. Try smaller buffer sizes." = "新しいセッションを作成できません。バッファサイズを小さくしてください。";
+
+/* Security Warnings */
+"Bad User Shell" = "無効なユーザーシェル";
+"The shell for this account is not a valid shell as defined in /etc/shells. Contact your system administrator." = "このアカウントのシェルは /etc/shells で定義された有効なシェルと一致しません。システム管理者に連絡してください。";
+
+/* Fork Error */
+"Unable to Fork!" = "フォークに失敗しました！";
+"iTerm cannot launch the program for this session." = "iTerm はこのセッションのプログラムを起動できません。";
+"Close Session" = "セッションを閉じる";

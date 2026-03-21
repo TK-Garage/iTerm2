@@ -33,14 +33,20 @@ import Cocoa
         }
     }
 
+    private static let tables = ["MainMenu", "iTerm"]
+
     private static func localized(_ key: String) -> String {
         guard !key.isEmpty else { return key }
-        let translated = Bundle.main.localizedString(
-            forKey: key,
-            value: nil,
-            table: "MainMenu"
-        )
-        // If there is no translation the API returns the key itself.
-        return translated
+        for table in tables {
+            let translated = Bundle.main.localizedString(
+                forKey: key,
+                value: key,
+                table: table
+            )
+            if translated != key {
+                return translated
+            }
+        }
+        return key
     }
 }

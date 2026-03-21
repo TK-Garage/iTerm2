@@ -2398,6 +2398,9 @@
 		A67D0D331A2EE12A003A8B35 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D111A2EE12A003A8B35 /* AboutWindow.xib */; };
 		A67D0D341A2EE12A003A8B35 /* AboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D111A2EE12A003A8B35 /* AboutWindow.xib */; };
 		A67D0D351A2EE12A003A8B35 /* AddressBook.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D121A2EE12A003A8B35 /* AddressBook.strings */; };
+		07531B0FAEB847119025E598 /* AddressBook.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DAF219751A74E5BA21D54E2 /* AddressBook.strings */; };
+		AD83C42A02CD4608AB4064E4 /* AddressBook.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DAF219751A74E5BA21D54E2 /* AddressBook.strings */; };
+		A4099F6963544C49A57B1E2F /* AddressBook.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7DAF219751A74E5BA21D54E2 /* AddressBook.strings */; };
 		A67D0D361A2EE12A003A8B35 /* AddressBook.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D121A2EE12A003A8B35 /* AddressBook.strings */; };
 		A67D0D371A2EE12A003A8B35 /* AddressBook.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D121A2EE12A003A8B35 /* AddressBook.strings */; };
 		A67D0D381A2EE12A003A8B35 /* AdvancedWorkingDirectoryWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D131A2EE12A003A8B35 /* AdvancedWorkingDirectoryWindow.xib */; };
@@ -2416,6 +2419,9 @@
 		A67D0D481A2EE12A003A8B35 /* CommandHistoryPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D181A2EE12A003A8B35 /* CommandHistoryPopup.xib */; };
 		A67D0D491A2EE12A003A8B35 /* CommandHistoryPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D181A2EE12A003A8B35 /* CommandHistoryPopup.xib */; };
 		A67D0D4A1A2EE12A003A8B35 /* configPanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D191A2EE12A003A8B35 /* configPanel.strings */; };
+		73903990E9E245EFA090369B /* configPanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11F0EBDE3C984729AE3A8868 /* configPanel.strings */; };
+		A22F81CFCFAF49BC8B8C53AF /* configPanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11F0EBDE3C984729AE3A8868 /* configPanel.strings */; };
+		345E972F03494B75AD49A287 /* configPanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11F0EBDE3C984729AE3A8868 /* configPanel.strings */; };
 		A67D0D4B1A2EE12A003A8B35 /* configPanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D191A2EE12A003A8B35 /* configPanel.strings */; };
 		A67D0D4C1A2EE12A003A8B35 /* configPanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D191A2EE12A003A8B35 /* configPanel.strings */; };
 		A67D0D4D1A2EE12A003A8B35 /* DirectoriesPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D1A1A2EE12A003A8B35 /* DirectoriesPopup.xib */; };
@@ -2428,6 +2434,9 @@
 		A67D0D571A2EE12A003A8B35 /* InstantReplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D1D1A2EE12A003A8B35 /* InstantReplay.xib */; };
 		A67D0D581A2EE12A003A8B35 /* InstantReplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D1D1A2EE12A003A8B35 /* InstantReplay.xib */; };
 		A67D0D591A2EE12A003A8B35 /* iTerm.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D1E1A2EE12A003A8B35 /* iTerm.strings */; };
+		5F62B26A47804163A7579FFC /* iTerm.strings in Resources */ = {isa = PBXBuildFile; fileRef = F66BBA2A0FC54370BF26C41C /* iTerm.strings */; };
+		F5B2BF32B02E46B68CA380EE /* iTerm.strings in Resources */ = {isa = PBXBuildFile; fileRef = F66BBA2A0FC54370BF26C41C /* iTerm.strings */; };
+		623F534EF95C4196B049C295 /* iTerm.strings in Resources */ = {isa = PBXBuildFile; fileRef = F66BBA2A0FC54370BF26C41C /* iTerm.strings */; };
 		A67D0D5A1A2EE12A003A8B35 /* iTerm.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D1E1A2EE12A003A8B35 /* iTerm.strings */; };
 		A67D0D5B1A2EE12A003A8B35 /* iTerm.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D1E1A2EE12A003A8B35 /* iTerm.strings */; };
 		A67D0D5C1A2EE12A003A8B35 /* iTermEditKeyActionWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D1F1A2EE12A003A8B35 /* iTermEditKeyActionWindowController.xib */; };
@@ -2464,12 +2473,18 @@
 		A67D0D7B1A2EE12A003A8B35 /* PasteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D291A2EE12A003A8B35 /* PasteView.xib */; };
 		A67D0D7C1A2EE12A003A8B35 /* PasteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D291A2EE12A003A8B35 /* PasteView.xib */; };
 		A67D0D7D1A2EE12A003A8B35 /* PreferencePanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D2A1A2EE12A003A8B35 /* PreferencePanel.strings */; };
+		192C78A94EDB4ED4B30742F7 /* PreferencePanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39646238D77348AEB19F3862 /* PreferencePanel.strings */; };
+		1FEBB4CC85934104A1933DB0 /* PreferencePanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39646238D77348AEB19F3862 /* PreferencePanel.strings */; };
+		D13C9EFD9EF94584A59EEE3B /* PreferencePanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39646238D77348AEB19F3862 /* PreferencePanel.strings */; };
 		A67D0D7E1A2EE12A003A8B35 /* PreferencePanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D2A1A2EE12A003A8B35 /* PreferencePanel.strings */; };
 		A67D0D7F1A2EE12A003A8B35 /* PreferencePanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D2A1A2EE12A003A8B35 /* PreferencePanel.strings */; };
 		A67D0D801A2EE12A003A8B35 /* PreferencePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D2B1A2EE12A003A8B35 /* PreferencePanel.xib */; };
 		A67D0D811A2EE12A003A8B35 /* PreferencePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D2B1A2EE12A003A8B35 /* PreferencePanel.xib */; };
 		A67D0D821A2EE12A003A8B35 /* PreferencePanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D2B1A2EE12A003A8B35 /* PreferencePanel.xib */; };
 		A67D0D861A2EE12A003A8B35 /* PseudoTerminal.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D2D1A2EE12A003A8B35 /* PseudoTerminal.strings */; };
+		EEEFF0440B0F470580D18C3F /* PseudoTerminal.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1E67B0C66264E3E915E9EEF /* PseudoTerminal.strings */; };
+		31E223037B334B00A69AAA93 /* PseudoTerminal.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1E67B0C66264E3E915E9EEF /* PseudoTerminal.strings */; };
+		A65AB5751A8E48B9815CEBB0 /* PseudoTerminal.strings in Resources */ = {isa = PBXBuildFile; fileRef = C1E67B0C66264E3E915E9EEF /* PseudoTerminal.strings */; };
 		A67D0D871A2EE12A003A8B35 /* PseudoTerminal.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D2D1A2EE12A003A8B35 /* PseudoTerminal.strings */; };
 		A67D0D881A2EE12A003A8B35 /* PseudoTerminal.strings in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D2D1A2EE12A003A8B35 /* PseudoTerminal.strings */; };
 		A67D0D891A2EE12A003A8B35 /* PseudoTerminal.xib in Resources */ = {isa = PBXBuildFile; fileRef = A67D0D2E1A2EE12A003A8B35 /* PseudoTerminal.xib */; };
@@ -7446,16 +7461,19 @@
 		A67C44E6211E24F6004EDB1C /* PSMMinimalTabStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSMMinimalTabStyle.m; sourceTree = "<group>"; };
 		A67D0D111A2EE12A003A8B35 /* AboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AboutWindow.xib; path = Interfaces/AboutWindow.xib; sourceTree = "<group>"; };
 		A67D0D121A2EE12A003A8B35 /* AddressBook.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = AddressBook.strings; path = Interfaces/AddressBook.strings; sourceTree = "<group>"; };
+		7DAF219751A74E5BA21D54E2 /* AddressBook.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = AddressBook.strings; path = Interfaces/ja.lproj/AddressBook.strings; sourceTree = "<group>"; };
 		A67D0D131A2EE12A003A8B35 /* AdvancedWorkingDirectoryWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AdvancedWorkingDirectoryWindow.xib; path = Interfaces/AdvancedWorkingDirectoryWindow.xib; sourceTree = "<group>"; };
 		A67D0D141A2EE12A003A8B35 /* Autocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Autocomplete.xib; path = Interfaces/Autocomplete.xib; sourceTree = "<group>"; };
 		A67D0D161A2EE12A003A8B35 /* ProfilesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfilesWindow.xib; path = Interfaces/ProfilesWindow.xib; sourceTree = "<group>"; };
 		A67D0D171A2EE12A003A8B35 /* BulkCopyProfilePreferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BulkCopyProfilePreferences.xib; path = Interfaces/BulkCopyProfilePreferences.xib; sourceTree = "<group>"; };
 		A67D0D181A2EE12A003A8B35 /* CommandHistoryPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommandHistoryPopup.xib; path = Interfaces/CommandHistoryPopup.xib; sourceTree = "<group>"; };
 		A67D0D191A2EE12A003A8B35 /* configPanel.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = configPanel.strings; path = Interfaces/configPanel.strings; sourceTree = "<group>"; };
+		11F0EBDE3C984729AE3A8868 /* configPanel.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = configPanel.strings; path = Interfaces/ja.lproj/configPanel.strings; sourceTree = "<group>"; };
 		A67D0D1A1A2EE12A003A8B35 /* DirectoriesPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DirectoriesPopup.xib; path = Interfaces/DirectoriesPopup.xib; sourceTree = "<group>"; };
 		A67D0D1B1A2EE12A003A8B35 /* FindView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FindView.xib; path = ../Interfaces/FindView.xib; sourceTree = "<group>"; };
 		A67D0D1D1A2EE12A003A8B35 /* InstantReplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = InstantReplay.xib; path = Interfaces/InstantReplay.xib; sourceTree = "<group>"; };
 		A67D0D1E1A2EE12A003A8B35 /* iTerm.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = iTerm.strings; path = Interfaces/iTerm.strings; sourceTree = "<group>"; };
+		F66BBA2A0FC54370BF26C41C /* iTerm.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = iTerm.strings; path = Interfaces/ja.lproj/iTerm.strings; sourceTree = "<group>"; };
 		A67D0D1F1A2EE12A003A8B35 /* iTermEditKeyActionWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = iTermEditKeyActionWindowController.xib; path = Interfaces/iTermEditKeyActionWindowController.xib; sourceTree = "<group>"; };
 		A67D0D201A2EE12A003A8B35 /* iTermKeyMapping.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = iTermKeyMapping.xib; path = Interfaces/iTermKeyMapping.xib; sourceTree = "<group>"; };
 		A67D0D211A2EE12A003A8B35 /* iTermOpenQuicklyWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = iTermOpenQuicklyWindowController.xib; path = Interfaces/iTermOpenQuicklyWindowController.xib; sourceTree = "<group>"; };
@@ -7468,8 +7486,10 @@
 		A67D0D281A2EE12A003A8B35 /* PasteboardHistory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PasteboardHistory.xib; path = Interfaces/PasteboardHistory.xib; sourceTree = "<group>"; };
 		A67D0D291A2EE12A003A8B35 /* PasteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PasteView.xib; path = Interfaces/PasteView.xib; sourceTree = "<group>"; };
 		A67D0D2A1A2EE12A003A8B35 /* PreferencePanel.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = PreferencePanel.strings; path = Interfaces/PreferencePanel.strings; sourceTree = "<group>"; };
+		39646238D77348AEB19F3862 /* PreferencePanel.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = PreferencePanel.strings; path = Interfaces/ja.lproj/PreferencePanel.strings; sourceTree = "<group>"; };
 		A67D0D2B1A2EE12A003A8B35 /* PreferencePanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PreferencePanel.xib; path = Interfaces/PreferencePanel.xib; sourceTree = "<group>"; };
 		A67D0D2D1A2EE12A003A8B35 /* PseudoTerminal.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = PseudoTerminal.strings; path = Interfaces/PseudoTerminal.strings; sourceTree = "<group>"; };
+		C1E67B0C66264E3E915E9EEF /* PseudoTerminal.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = PseudoTerminal.strings; path = Interfaces/ja.lproj/PseudoTerminal.strings; sourceTree = "<group>"; };
 		A67D0D2E1A2EE12A003A8B35 /* PseudoTerminal.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PseudoTerminal.xib; path = Interfaces/PseudoTerminal.xib; sourceTree = "<group>"; };
 		A67D0D2F1A2EE12A003A8B35 /* SplitPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SplitPanel.xib; path = Interfaces/SplitPanel.xib; sourceTree = "<group>"; };
 		A67D0D301A2EE12A003A8B35 /* TmuxDashboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TmuxDashboard.xib; path = Interfaces/TmuxDashboard.xib; sourceTree = "<group>"; };
@@ -9827,14 +9847,17 @@
 				A6614C76210AE5FD0001EAA3 /* MiniPasteView.xib */,
 				A67D0D111A2EE12A003A8B35 /* AboutWindow.xib */,
 				A67D0D121A2EE12A003A8B35 /* AddressBook.strings */,
+				7DAF219751A74E5BA21D54E2 /* AddressBook.strings */,
 				A67D0D131A2EE12A003A8B35 /* AdvancedWorkingDirectoryWindow.xib */,
 				A67D0D141A2EE12A003A8B35 /* Autocomplete.xib */,
 				A67D0D171A2EE12A003A8B35 /* BulkCopyProfilePreferences.xib */,
 				A67D0D181A2EE12A003A8B35 /* CommandHistoryPopup.xib */,
 				A67D0D191A2EE12A003A8B35 /* configPanel.strings */,
+				11F0EBDE3C984729AE3A8868 /* configPanel.strings */,
 				A67D0D1A1A2EE12A003A8B35 /* DirectoriesPopup.xib */,
 				A67D0D1D1A2EE12A003A8B35 /* InstantReplay.xib */,
 				A67D0D1E1A2EE12A003A8B35 /* iTerm.strings */,
+				F66BBA2A0FC54370BF26C41C /* iTerm.strings */,
 				A67D0D1F1A2EE12A003A8B35 /* iTermEditKeyActionWindowController.xib */,
 				A67D0D201A2EE12A003A8B35 /* iTermKeyMapping.xib */,
 				A67D0D211A2EE12A003A8B35 /* iTermOpenQuicklyWindowController.xib */,
@@ -9850,9 +9873,11 @@
 				A67D0D281A2EE12A003A8B35 /* PasteboardHistory.xib */,
 				A67D0D291A2EE12A003A8B35 /* PasteView.xib */,
 				A67D0D2A1A2EE12A003A8B35 /* PreferencePanel.strings */,
+				39646238D77348AEB19F3862 /* PreferencePanel.strings */,
 				A67D0D2B1A2EE12A003A8B35 /* PreferencePanel.xib */,
 				A67D0D161A2EE12A003A8B35 /* ProfilesWindow.xib */,
 				A67D0D2D1A2EE12A003A8B35 /* PseudoTerminal.strings */,
+				C1E67B0C66264E3E915E9EEF /* PseudoTerminal.strings */,
 				A67D0D2E1A2EE12A003A8B35 /* PseudoTerminal.xib */,
 				A67D0D2F1A2EE12A003A8B35 /* SplitPanel.xib */,
 				A67D0D301A2EE12A003A8B35 /* TmuxDashboard.xib */,
@@ -16609,6 +16634,7 @@
 				A629F58723AF2DF200C2F16B /* utilities.tgz in Resources */,
 				A6F31A32295BC41700C1A51E /* uniE0C8_PowerlineExtraSymbols.pdf in Resources */,
 				A67D0D4C1A2EE12A003A8B35 /* configPanel.strings in Resources */,
+				345E972F03494B75AD49A287 /* configPanel.strings in Resources */,
 				A63011B520E7EE6B008114B7 /* iTermStatusBarKnobNumericViewController.xib in Resources */,
 				A6A3CE142E38313C00710B09 /* log-errors.js in Resources */,
 				A6A3CE152E38313C00710B09 /* console-log.js in Resources */,
@@ -16622,6 +16648,7 @@
 				A629F5B823B081DD00C2F16B /* MouseReportingCursorOverlay@1x.png in Resources */,
 				A67D0D911A2EE12A003A8B35 /* TmuxDashboard.xib in Resources */,
 				A67D0D371A2EE12A003A8B35 /* AddressBook.strings in Resources */,
+				A4099F6963544C49A57B1E2F /* AddressBook.strings in Resources */,
 				A66C818A294E751800452A11 /* AITerm.xib in Resources */,
 				53B93DE321F25E79001EC59C /* iterm2_git_wrapper.sh in Resources */,
 				A6DB145A2D6CE22400266394 /* CommandIcon.png in Resources */,
@@ -16704,6 +16731,7 @@
 				A66A882D24DFCCC30043728B /* graphic_postgres.png in Resources */,
 				A6E7AE91214394DD00DE9F3B /* graphic_composer.png in Resources */,
 				A67D0D5B1A2EE12A003A8B35 /* iTerm.strings in Resources */,
+				623F534EF95C4196B049C295 /* iTerm.strings in Resources */,
 				A6DC98A628A82608009D21C0 /* Window.png in Resources */,
 				A6FE7AA02E0E6BA000BEBCE4 /* autofill-write.js in Resources */,
 				A6C4352321D1C64800346910 /* iterm2Invoke.js in Resources */,
@@ -16793,6 +16821,7 @@
 				1DA76A0D1B30892900CB272A /* iTermTipWindowController.xib in Resources */,
 				A67F6169214395990093940A /* graphic_nano.png in Resources */,
 				A67D0D881A2EE12A003A8B35 /* PseudoTerminal.strings in Resources */,
+				EEEFF0440B0F470580D18C3F /* PseudoTerminal.strings in Resources */,
 				A67F61F72143976F0093940A /* graphic_colors.json in Resources */,
 				1D6ED9B819AEA20D005A7799 /* wrap_to_bottom.png in Resources */,
 				A62CD06727E9124F00215E92 /* askpass.sh in Resources */,
@@ -16863,6 +16892,7 @@
 				A6CC2C7C2E4541A400F8D620 /* find-nav.js in Resources */,
 				A6C978F624A0194500971AA7 /* WindowCornerFull@2x.png in Resources */,
 				A67D0D7F1A2EE12A003A8B35 /* PreferencePanel.strings in Resources */,
+				D13C9EFD9EF94584A59EEE3B /* PreferencePanel.strings in Resources */,
 				A665C1FF2440461500F623F0 /* WindowCorner.png in Resources */,
 				1D6ED9C319AEA20D005A7799 /* Maximized@2x.png in Resources */,
 				A6F18B3A2AE2F39C006C08EE /* uniE0B5_right-half-circle-thin.pdf in Resources */,
@@ -17318,6 +17348,7 @@
 				A67F61AB214395B70093940A /* graphic_rails@2x.png in Resources */,
 				A6D694432E44801C005E9AFE /* find-security.js in Resources */,
 				A67D0D871A2EE12A003A8B35 /* PseudoTerminal.strings in Resources */,
+				31E223037B334B00A69AAA93 /* PseudoTerminal.strings in Resources */,
 				A69B457C1967B04300F5444D /* BrokenPipeDivider.png in Resources */,
 				5308BF9622828A28004BECAC /* StatusBarIconCharging.png in Resources */,
 				5308BF5C227C02DE004BECAC /* InternetAccessPolicy.plist in Resources */,
@@ -17353,6 +17384,7 @@
 				A67F61A5214395B70093940A /* graphic_python@2x.png in Resources */,
 				A6AC04CA21F0FDBD00CD2774 /* StatusBarComposerExpand.png in Resources */,
 				A67D0D361A2EE12A003A8B35 /* AddressBook.strings in Resources */,
+				AD83C42A02CD4608AB4064E4 /* AddressBook.strings in Resources */,
 				A67D0D661A2EE12A003A8B35 /* iTermPasswordManager.xib in Resources */,
 				A6A3EDCE2E0D045B00D711DA /* extend-selection-to-point.js in Resources */,
 				A6AC04C721F0FDBD00CD2774 /* StatusBarComposerExpand@2x.png in Resources */,
@@ -17515,6 +17547,7 @@
 				A62DBBA020F47CFA008B63D1 /* GoForward@2x.png in Resources */,
 				A67D0D3C1A2EE12A003A8B35 /* Autocomplete.xib in Resources */,
 				A67D0D4B1A2EE12A003A8B35 /* configPanel.strings in Resources */,
+				A22F81CFCFAF49BC8B8C53AF /* configPanel.strings in Resources */,
 				A6F7A738213CB143004DE961 /* StatusBarIconGitBranch@2x.png in Resources */,
 				A6F7A70B213CB143004DE961 /* StatusBarIconNetwork.png in Resources */,
 				1DC2AF5219521CFF005769D5 /* QuestionMarkSign.png in Resources */,
@@ -17585,6 +17618,7 @@
 				A6C4352221D1C64800346910 /* iterm2Invoke.js in Resources */,
 				A6CBB80F2E0A023A00B2CCCB /* password-demo.html in Resources */,
 				A67D0D5A1A2EE12A003A8B35 /* iTerm.strings in Resources */,
+				F5B2BF32B02E46B68CA380EE /* iTerm.strings in Resources */,
 				A6976AEF2F47EFD3002875A1 /* SerpApi.png in Resources */,
 				A66A1FAF1A3A230A00F4A3A7 /* iTermWindowShortcutAccessoryView.xib in Resources */,
 				A6982A3D2F69BA5500156A99 /* iterm2_shell_integration.xonsh in Resources */,
@@ -17609,6 +17643,7 @@
 				1D99C8E81BD59C37001EE1FC /* SearchCursor@2x.png in Resources */,
 				A6F18B4B2AE2F39C006C08EE /* uniE0B6_left-half-circle-thick.pdf in Resources */,
 				A67D0D7E1A2EE12A003A8B35 /* PreferencePanel.strings in Resources */,
+				1FEBB4CC85934104A1933DB0 /* PreferencePanel.strings in Resources */,
 				A6E7AE84214394DD00DE9F3B /* graphic_code@2x.png in Resources */,
 				A65429A520BE7ECD00CE71B1 /* ScriptIcon.png in Resources */,
 				A6F7A73E213CB143004DE961 /* StatusBarIconJobs@2x.png in Resources */,
@@ -17735,6 +17770,7 @@
 				A67F61CA214395C60093940A /* graphic_shell.png in Resources */,
 				A6F18B352AE2F39C006C08EE /* uniE0C1_flame-thin.pdf in Resources */,
 				A67D0D4A1A2EE12A003A8B35 /* configPanel.strings in Resources */,
+				73903990E9E245EFA090369B /* configPanel.strings in Resources */,
 				A6CB24A32C68149100005824 /* it2tip in Resources */,
 				A6CBB7B92E08B64100B2CCCB /* geolocation-bridge.js in Resources */,
 				A66F52D32106F6F100571168 /* gitdown@2x.png in Resources */,
@@ -17749,6 +17785,7 @@
 				A68E33381DE746F5003F1D8E /* Previous Mark Touch Bar Icon@2x.png in Resources */,
 				A69FF3BB2E139DBA00AFF7A8 /* extract-text-fragment.js in Resources */,
 				A67D0D351A2EE12A003A8B35 /* AddressBook.strings in Resources */,
+				07531B0FAEB847119025E598 /* AddressBook.strings in Resources */,
 				A6EFF2311D2049A300806EEF /* Erase.png in Resources */,
 				A6EA848327223B02009D14AB /* graphic_emacs.png in Resources */,
 				A665C1FA2440461500F623F0 /* WindowCorner@2x.png in Resources */,
@@ -17816,6 +17853,7 @@
 				A6FEA28B1CF4DD2900376F28 /* iTermHotkeyPreferencesWindowController.xib in Resources */,
 				1DB40A411B1FDC75005B83C7 /* NoColor@2x.png in Resources */,
 				A67D0D591A2EE12A003A8B35 /* iTerm.strings in Resources */,
+				5F62B26A47804163A7579FFC /* iTerm.strings in Resources */,
 				53FF9824209283D2008688D7 /* template_pyenv_daemon.py in Resources */,
 				A6F1B3B1268FD0F300546767 /* StatusBarIconTriggers.png in Resources */,
 				A67F6150214395870093940A /* graphic_less.png in Resources */,
@@ -17924,6 +17962,7 @@
 				A69A15731D7FD78200A9E7EF /* TipCalendar.png in Resources */,
 				1DA02CFB1327612600D7E7DB /* bell.png in Resources */,
 				A67D0D861A2EE12A003A8B35 /* PseudoTerminal.strings in Resources */,
+				A65AB5751A8E48B9815CEBB0 /* PseudoTerminal.strings in Resources */,
 				A6CBB8252E0A21F800B2CCCB /* extract-resources.js in Resources */,
 				A6CBB8262E0A21F800B2CCCB /* rewrite-resources.js in Resources */,
 				A67F61F52143976F0093940A /* graphic_colors.json in Resources */,
@@ -18025,6 +18064,7 @@
 				A6D90D5A2E2EF2B900BA9F4F /* convert-to-markdown.js in Resources */,
 				A6BEE47726E0A624009C0C2C /* FilterIndicator@2x.png in Resources */,
 				A67D0D7D1A2EE12A003A8B35 /* PreferencePanel.strings in Resources */,
+				192C78A94EDB4ED4B30742F7 /* PreferencePanel.strings in Resources */,
 				A6BF8D1A21EB188E003CF805 /* iTermDependencyEditorWindowController.xib in Resources */,
 				A68E333C1DE78D08003F1D8E /* Man Page Touch Bar Icon@2x.png in Resources */,
 				A6FE7A9F2E0E6BA000BEBCE4 /* autofill-write.js in Resources */,
