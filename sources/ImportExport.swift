@@ -16,7 +16,7 @@ class ImportExport: NSObject {
         let savePanel = NSSavePanel()
         savePanel.allowedContentTypes = ["itermexport"].compactMap { UTType(filenameExtension: $0) }
         savePanel.nameFieldStringValue = "iTerm2 State.itermexport"
-        savePanel.title = "Export iTerm2 Settings and Data"
+        savePanel.title = NSLocalizedString("Export iTerm2 Settings and Data", tableName: "iTerm", bundle: .main, comment: "")
 
         let response = savePanel.runModal()
         guard response == NSApplication.ModalResponse.OK else {

@@ -146,7 +146,7 @@ class iTermBrowserContextMenuHelper: NSObject {
         if let searchEngineName = delegate?.contextMenuSearchEngineName(),
            let i = menu.items.firstIndex(where: { $0.identifier == NSUserInterfaceItemIdentifier(rawValue: "WKMenuItemIdentifierSearchWeb") }) {
             menu.removeItem(at: i)
-            let item = NSMenuItem(title: "Search with \(searchEngineName)",
+            let item = NSMenuItem(title: String(format: NSLocalizedString("Search with %@", tableName: "iTerm", bundle: .main, comment: ""), searchEngineName),
                                   action: #selector(search(_:)),
                                   keyEquivalent: "")
             item.target = self
@@ -157,35 +157,35 @@ class iTermBrowserContextMenuHelper: NSObject {
 
 
         // Add Named Mark menu item
-        let addMarkItem = NSMenuItem(title: "Add Named Mark…", action: #selector(addNamedMarkMenuClicked), keyEquivalent: "")
+        let addMarkItem = NSMenuItem(title: NSLocalizedString("Add Named Mark…", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(addNamedMarkMenuClicked), keyEquivalent: "")
         addMarkItem.target = self
         menu.addItem(addMarkItem)
 
         menu.addItem(NSMenuItem.separator())
 
         // Add Save Page As menu item
-        let savePageItem = NSMenuItem(title: "Save Page As…", action: #selector(savePageAsMenuClicked), keyEquivalent: "")
+        let savePageItem = NSMenuItem(title: NSLocalizedString("Save Page As…", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(savePageAsMenuClicked), keyEquivalent: "")
         savePageItem.target = self
         menu.addItem(savePageItem)
 
         // Add Print Page menu item
-        let printPageItem = NSMenuItem(title: "Print…", action: #selector(printMenuClicked), keyEquivalent: "")
+        let printPageItem = NSMenuItem(title: NSLocalizedString("Print…", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(printMenuClicked), keyEquivalent: "")
         printPageItem.target = self
         menu.addItem(printPageItem)
 
         // Add Copy Page Title menu item
-        let copyTitleItem = NSMenuItem(title: "Copy Page Title", action: #selector(copyPageTitleMenuClicked), keyEquivalent: "")
+        let copyTitleItem = NSMenuItem(title: NSLocalizedString("Copy Page Title", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(copyPageTitleMenuClicked), keyEquivalent: "")
         copyTitleItem.target = self
         menu.addItem(copyTitleItem)
 
         menu.addItem(NSMenuItem.separator())
 
         // Add View Source menu item
-        let viewSourceItem = NSMenuItem(title: "View Source", action: #selector(viewSourceMenuClicked), keyEquivalent: "")
+        let viewSourceItem = NSMenuItem(title: NSLocalizedString("View Source", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(viewSourceMenuClicked), keyEquivalent: "")
         viewSourceItem.target = self
         menu.addItem(viewSourceItem)
 
-        let removeElement = NSMenuItem(title: "Remove Element", action: #selector(removeElementMenuClicked), keyEquivalent: "")
+        let removeElement = NSMenuItem(title: NSLocalizedString("Remove Element", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(removeElementMenuClicked), keyEquivalent: "")
         removeElement.target = self
         menu.addItem(removeElement)
 

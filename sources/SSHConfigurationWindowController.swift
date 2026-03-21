@@ -214,7 +214,7 @@ class SSHConfigurationWindowController: NSWindowController {
             panelDelegate = SSHBinaryPanelDelegate()
             openPanel.delegate = panelDelegate
 
-            openPanel.title = "Select SSH Binary"
+            openPanel.title = NSLocalizedString("Select SSH Binary", tableName: "iTerm", bundle: .main, comment: "")
             openPanel.canChooseFiles = true
             openPanel.canChooseDirectories = false
             openPanel.allowsMultipleSelection = false

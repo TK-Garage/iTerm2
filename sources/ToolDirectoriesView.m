@@ -81,7 +81,7 @@ static const CGFloat kHelpMargin = 5;
         if (@available(macOS 10.16, *)) {
             clear_.bezelStyle = NSBezelStyleRegularSquare;
             clear_.bordered = NO;
-            clear_.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolTrash) accessibilityDescription:@"Clear"];
+            clear_.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolTrash) accessibilityDescription:ITLocalizedMenuString(@"Clear")];
             clear_.imagePosition = NSImageOnly;
             clear_.frame = NSMakeRect(0, 0, 22, 22);
         } else {
@@ -108,7 +108,7 @@ static const CGFloat kHelpMargin = 5;
         _tableView.menu = [[NSMenu alloc] init];
         _tableView.menu.delegate = self;
         NSMenuItem *item;
-        item = [[NSMenuItem alloc] initWithTitle:@"Toggle Star"
+        item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Toggle Star")
                                           action:@selector(toggleStar:)
                                    keyEquivalent:@""];
         [_tableView.menu addItem:item];

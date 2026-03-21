@@ -8,6 +8,8 @@
 
 #import "iTermImageWell.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 @interface iTermImageWell () {
     NSVisualEffectView *_effectView;
     NSTextField       *_overlayLabel;
@@ -74,10 +76,10 @@
 
 - (void)updateOverlayText {
     if (self.image == nil) {
-        _overlayLabel.stringValue = @"No Image Selected\u2009—\u2009Click to set";
+        _overlayLabel.stringValue = ITLocalizedMenuString(@"No Image Selected\u2009—\u2009Click to set");
     }
     else {
-        _overlayLabel.stringValue = @"Click to change";
+        _overlayLabel.stringValue = ITLocalizedMenuString(@"Click to change");
     }
     [self setNeedsLayout:YES];
 }

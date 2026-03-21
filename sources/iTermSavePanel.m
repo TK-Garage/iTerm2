@@ -18,6 +18,8 @@
 #import "iTermWarning.h"
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 static NSString *const kInitialDirectoryKey = @"Initial Directory";
 static NSString *const iTermSavePanelLoggingStyleUserDefaultsKey = @"NoSyncLoggingStyle";
 
@@ -108,22 +110,22 @@ static NSString *const iTermSavePanelLoggingStyleUserDefaultsKey = @"NoSyncLoggi
         button = [[NSPopUpButton alloc] init];
         NSMenuItem *item;
         {
-            item = [[NSMenuItem alloc] initWithTitle:@"Raw data" action:nil keyEquivalent:@""];
+            item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Raw data") action:nil keyEquivalent:@""];
             item.tag = iTermLoggingStyleRaw;
             [button.menu addItem:item];
         }
         {
-            item = [[NSMenuItem alloc] initWithTitle:@"Plain text" action:nil keyEquivalent:@""];
+            item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Plain text") action:nil keyEquivalent:@""];
             item.tag = iTermLoggingStylePlainText;
             [button.menu addItem:item];
         }
         {
-            item = [[NSMenuItem alloc] initWithTitle:@"HTML" action:nil keyEquivalent:@""];
+            item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"HTML") action:nil keyEquivalent:@""];
             item.tag = iTermLoggingStyleHTML;
             [button.menu addItem:item];
         }
         {
-            item = [[NSMenuItem alloc] initWithTitle:@"ASCIInema" action:nil keyEquivalent:@""];
+            item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"ASCIInema") action:nil keyEquivalent:@""];
             item.tag = iTermLoggingStyleAsciicast;
             [button.menu addItem:item];
         }

@@ -7,6 +7,8 @@
 //
 
 #import "ToolCapturedOutputView.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "SFSymbolEnum/SFSymbolEnum.h"
 
 #import "iTerm2SharedARC-Swift.h"
@@ -83,7 +85,7 @@ static NSString *const iTermCapturedOutputToolTableViewCellIdentifier = @"ToolCa
         if (@available(macOS 10.16, *)) {
             _clearButton.bezelStyle = NSBezelStyleRegularSquare;
             _clearButton.bordered = NO;
-            _clearButton.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolTrash) accessibilityDescription:@"Clear"];
+            _clearButton.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolTrash) accessibilityDescription:ITLocalizedMenuString(@"Clear")];
             _clearButton.imagePosition = NSImageOnly;
             _clearButton.frame = NSMakeRect(0, 0, 22, 22);
         } else {
@@ -120,7 +122,7 @@ static NSString *const iTermCapturedOutputToolTableViewCellIdentifier = @"ToolCa
         tableView_.menu.delegate = self;
         tableView_.intercellSpacing = NSMakeSize(0, 2);
         NSMenuItem *item;
-        item = [[NSMenuItem alloc] initWithTitle:@"Toggle Checkmark"
+        item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Toggle Checkmark")
                                           action:@selector(toggleCheckmark:)
                                    keyEquivalent:@""];
         [tableView_.menu addItem:item];

@@ -10,6 +10,8 @@
 
 #import "DebugLogging.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 static const float kAlphaValue = 0.9;
 
 typedef NS_ENUM(NSUInteger, iTermInstantReplayState) {
@@ -235,26 +237,26 @@ typedef NS_ENUM(NSUInteger, iTermInstantReplayState) {
     _state = destinationState;
     switch (_state) {
         case iTermInstantReplayStateNormal:
-            _firstButton.title = @"Export…";
+            _firstButton.title = ITLocalizedMenuString(@"Export…");
             _eventsView.startFraction = 0;
             _eventsView.endFraction = 0;
             [_eventsView setNeedsDisplay:YES];
             _secondButton.hidden = YES;
             break;
         case iTermInstantReplayStateSetStart:
-            _firstButton.title = @"Set Start";
+            _firstButton.title = ITLocalizedMenuString(@"Set Start");
             _slider.floatValue = 0;
             [_delegate instantReplaySeekTo:0];
             [self updateInstantReplayView];
-            _secondButton.title = @"Cancel";
+            _secondButton.title = ITLocalizedMenuString(@"Cancel");
             _secondButton.hidden = NO;
             break;
         case iTermInstantReplayStateSetEnd:
-            _firstButton.title = @"Set End";
+            _firstButton.title = ITLocalizedMenuString(@"Set End");
             _slider.floatValue = 1;
             [_delegate instantReplaySeekTo:1];
             [self updateInstantReplayView];
-            _secondButton.title = @"Cancel";
+            _secondButton.title = ITLocalizedMenuString(@"Cancel");
             _secondButton.hidden = NO;
     }
 }
@@ -317,7 +319,7 @@ typedef NS_ENUM(NSUInteger, iTermInstantReplayState) {
     } else {
         // Live view
         [_slider setFloatValue:1.0];
-        [_currentTimeLabel setStringValue:@"Live View"];
+        [_currentTimeLabel setStringValue:ITLocalizedMenuString(@"Live View")];
         [_currentTimeLabel sizeToFit];
     }
     [_earliestTimeLabel setStringValue:[self stringForTimestamp:firstTimestamp]];

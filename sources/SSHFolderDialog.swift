@@ -44,7 +44,7 @@ class SSHFolderDialog: NSObject {
         // Initialize text field
         self.textField = SSHFolderDialogTextField(frame: NSRect(x: 0, y: 0, width: 300, height: 24))
         textField.stringValue = currentPath ?? ""
-        textField.placeholderString = "Enter path (e.g., /usr/local/bin)"
+        textField.placeholderString = NSLocalizedString("Enter path (e.g., /usr/local/bin)", tableName: "iTerm", bundle: .main, comment: "")
 
         super.init()
 

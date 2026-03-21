@@ -23,6 +23,8 @@
 #import "NSView+iTerm.h"
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 static NSString *const iTermSnippetsEditingPasteboardType = @"com.googlecode.iterm2.iTermSnippetsEditingPasteboardType";
 
 @interface iTermSnippetsEditingView: NSView
@@ -53,19 +55,19 @@ static NSString *const iTermSnippetsEditingPasteboardType = @"com.googlecode.ite
     [super awakeFromNib];
     NSMenu *menu = [[NSMenu alloc] init];
     menu.delegate = self;
-    [menu addItem:[[NSMenuItem alloc] initWithTitle:@"Duplicate"
+    [menu addItem:[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Duplicate")
                                              action:@selector(duplicateSnippets:)
                                       keyEquivalent:@""]];
-    [menu addItem:[[NSMenuItem alloc] initWithTitle:@"Delete"
+    [menu addItem:[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Delete")
                                              action:@selector(deleteSnippets:)
                                       keyEquivalent:@""]];
-    [menu addItem:[[NSMenuItem alloc] initWithTitle:@"Add Above"
+    [menu addItem:[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Add Above")
                                              action:@selector(addSnippetAbove:)
                                       keyEquivalent:@""]];
-    [menu addItem:[[NSMenuItem alloc] initWithTitle:@"Add Below"
+    [menu addItem:[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Add Below")
                                              action:@selector(addSnippetBelow:)
                                       keyEquivalent:@""]];
-    [menu addItem:[[NSMenuItem alloc] initWithTitle:@"Edit"
+    [menu addItem:[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Edit")
                                              action:@selector(editClickedSnippet:)
                                       keyEquivalent:@""]];
     _tableView.menu = menu;

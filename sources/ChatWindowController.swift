@@ -237,7 +237,7 @@ final class ChatWindowController: NSWindowController, DictionaryCodable {
            let model = model.chat(id: chatID) {
             window.title = model.title
         } else {
-            window.title = "AI Chat"
+            window.title = NSLocalizedString("AI Chat", tableName: "iTerm", bundle: .main, comment: "")
         }
 
         // Hide the native title
@@ -567,7 +567,7 @@ extension ChatWindowController: ChatViewControllerDelegate {
             return
         }
         let warning = iTermWarning()
-        warning.title = "Are you sure you want to delete this chat? This action cannot be undone."
+        warning.title = NSLocalizedString("Are you sure you want to delete this chat? This action cannot be undone.", tableName: "iTerm", bundle: .main, comment: "")
         warning.heading = "Delete Chat?"
 
         let action = iTermWarningAction(label: "Delete") { [weak self] _ in

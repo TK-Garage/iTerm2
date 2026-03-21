@@ -801,3 +801,218 @@
 "Use Minimal POSIX Locale" = "最小限の POSIX ロケールを使用";
 "Save selection to arrangement %@" = "選択を配置 %@ に保存";
 "Save selection to profile %@" = "選択をプロファイル %@ に保存";
+
+/* ============================================================ */
+/* Phase 7: Tool panels, menus, buttons, placeholders           */
+/* ============================================================ */
+
+/* Tool panel titles (iTermToolbeltView.m) */
+"Actions" = "アクション";
+"Captured Output" = "キャプチャ出力";
+"Command History" = "コマンド履歴";
+"Recent Directories" = "最近のディレクトリ";
+"Jobs" = "ジョブ";
+"Notes" = "メモ";
+"Paste History" = "ペースト履歴";
+"Profiles" = "プロファイル";
+"Snippets" = "スニペット";
+"Named Marks" = "名前付きマーク";
+"Codecierge" = "Codecierge";
+"No Tools enabled. Select them from the menu above." = "有効なツールがありません。上のメニューから選択してください。";
+
+/* FileTransferManager.m — menu items */
+"Stop" = "停止";
+"Show in Finder" = "Finder で表示";
+"Remove from List" = "リストから削除";
+"Open" = "開く";
+"Get Info" = "情報を見る";
+
+/* iTermKeyMappingViewController.m */
+"Import…" = "インポート…";
+"Export…" = "エクスポート…";
+
+/* Tool accessibility and menu items */
+"Delete All" = "すべて削除";
+"Clear" = "クリア";
+"Open in Advanced Paste" = "詳細ペーストで開く";
+"Toggle Star" = "スターを切替";
+"Toggle Checkmark" = "チェックマークを切替";
+"Open Profile" = "プロファイルを開く";
+
+/* PreferencePanel.m */
+"General" = "一般";
+"Appearance" = "外観";
+"Keys" = "キー";
+"Arrangements" = "配置";
+"Pointer" = "ポインタ";
+"Advanced" = "詳細";
+"Shortcuts" = "ショートカット";
+"Edit Session" = "セッションを編集";
+"Settings" = "設定";
+"Search Options" = "検索オプション";
+"Show indicators for non-default values" = "デフォルト以外の値のインジケーターを表示";
+
+/* iTermSnippetsEditingViewController.m */
+"Duplicate" = "複製";
+"Add Above" = "上に追加";
+"Add Below" = "下に追加";
+"Edit" = "編集";
+
+/* iTermController.m */
+"Open All" = "すべてを開く";
+"Open All in New Window" = "すべてを新規ウィンドウで開く";
+
+/* iTermStatusBarSetupViewController.m */
+"Reset to System Font" = "システムフォントにリセット";
+"System Font" = "システムフォント";
+
+/* iTermImageWell.m */
+"No Image Selected —Click to set" = "画像が未選択 — クリックして設定";
+"Click to change" = "クリックして変更";
+
+/* iTermInstantReplayWindowController.m */
+"Set Start" = "開始を設定";
+"Set End" = "終了を設定";
+"Live View" = "ライブビュー";
+
+/* PasteViewController.m */
+"Sending…" = "送信中…";
+
+/* iTermSavePanel.m */
+"Raw data" = "生データ";
+"Plain text" = "プレーンテキスト";
+"HTML" = "HTML";
+"ASCIInema" = "ASCIInema";
+
+/* iTermNonTextPasteHelper.swift */
+"How would you like to paste %@?" = "%@ をどのようにペーストしますか？";
+"The clipboard contains %@ image data (%@). How would you like to paste it?" = "クリップボードに %@ 画像データ（%@）が含まれています。どのようにペーストしますか？";
+"OK to paste %@ bytes of base64-encoded data?" = "%@ バイトの Base64 エンコードデータをペーストしてもよいですか？";
+"Large Paste" = "大量ペースト";
+
+/* ChatWindowController.swift */
+"AI Chat" = "AI チャット";
+"Are you sure you want to delete this chat? This action cannot be undone." = "このチャットを削除してもよいですか？この操作は取り消せません。";
+
+/* Conductor.swift */
+"Download %@ or view in browser?" = "%@ をダウンロードしますか、それともブラウザで表示しますか？";
+"Download" = "ダウンロード";
+"View" = "表示";
+
+/* iTermBrowserGateway.swift */
+"iTerm2 can display web pages! But first you must download the Browser Plugin." = "iTerm2 は Web ページを表示できます！まずブラウザプラグインをダウンロードしてください。";
+"Use System Browser" = "システムブラウザを使用";
+
+/* ImportExport.swift */
+"Export iTerm2 Settings and Data" = "iTerm2 の設定とデータをエクスポート";
+
+/* CommandURLHandler.swift */
+"Username" = "ユーザー名";
+"Directory" = "ディレクトリ";
+"Run in New Window" = "新規ウィンドウで実行";
+"Run in New Tab" = "新規タブで実行";
+"Run in Current Session" = "現在のセッションで実行";
+"Run Command from URL" = "URL からコマンドを実行";
+
+/* iTermBookmarkTagEditorWindowController.swift */
+"Edit Bookmark" = "ブックマークを編集";
+"Enter tags..." = "タグを入力…";
+"Delete Bookmark" = "ブックマークを削除";
+"Save" = "保存";
+
+/* ChatInputView.swift */
+"\u21a9 to submit" = "\u21a9 で送信";
+
+/* CommandInfoViewController.swift */
+"Still Running" = "実行中";
+"Unknown" = "不明";
+"Started at %@" = "%@ に開始";
+
+/* iTermUploadIndicator.swift */
+"Uploading \u201c%@\u201d\u2026" = "\u201c%@\u201dをアップロード中\u2026";
+
+/* SSHFilePanel.swift */
+"Enter filename" = "ファイル名を入力";
+"Search" = "検索";
+"New Folder" = "新規フォルダ";
+"Use System Panel\u2026" = "システムパネルを使用\u2026";
+"Go to Folder\u2026" = "フォルダに移動\u2026";
+"Go to Home" = "ホームに移動";
+"Go Up" = "上へ移動";
+"Back" = "戻る";
+"Forward" = "進む";
+"Show Hidden Files" = "隠しファイルを表示";
+"untitled folder" = "名称未設定フォルダ";
+"Create" = "作成";
+
+/* SSHFolderDialog.swift */
+"Enter path (e.g., /usr/local/bin)" = "パスを入力（例: /usr/local/bin）";
+
+/* SSHConfigurationWindowController.swift */
+"Select SSH Binary" = "SSH バイナリを選択";
+
+/* ToolCodecierge.swift */
+"Get Started" = "始める";
+"Reveal Setting" = "設定を表示";
+"Generative AI has been disabled by the system administrator." = "生成 AI はシステム管理者によって無効にされています。";
+"You must enable AI features to use Codecierge." = "Codecierge を使用するには AI 機能を有効にする必要があります。";
+"What are you trying to do? I\u2019ll suggest commands and explain their output." = "何をしようとしていますか？コマンドを提案し、出力を説明します。";
+"I want to\u2026" = "やりたいこと\u2026";
+"Run commands automatically" = "コマンドを自動的に実行";
+"Start" = "開始";
+"Goal: " = "目標: ";
+"End Task" = "タスクを終了";
+"Response" = "応答";
+
+/* Browser context menu */
+"Search with %@" = "%@ で検索";
+"Add Named Mark\u2026" = "名前付きマークを追加\u2026";
+"Save Page As\u2026" = "ページを別名で保存\u2026";
+"Copy Page Title" = "ページタイトルをコピー";
+"View Source" = "ソースを表示";
+"Remove Element" = "要素を削除";
+
+/* Browser toolbar */
+"Ask AI\u2026" = "AI に質問\u2026";
+"Manage Bookmarks" = "ブックマークを管理";
+"History" = "履歴";
+"Unmute Current Page" = "現在のページのミュートを解除";
+
+/* VideoPlaybackWindowController.swift */
+"Instant Replay" = "インスタントリプレイ";
+
+/* Screenshots */
+"Make Screenshot" = "スクリーンショットを作成";
+"Redact Selection" = "選択範囲を墨消し";
+"Highlight Selection" = "選択範囲をハイライト";
+
+/* iTermModernSavePanel.swift / iTermOpenPanel.swift */
+"Open SSH Panel..." = "SSH パネルを開く…";
+
+/* CompletionsWindow.swift */
+
+/* ExpressionBindableView.swift */
+"Edit Expression Binding" = "式バインドを編集";
+"Bind to Expression" = "式にバインド";
+"Remove Expression Binding" = "式バインドを削除";
+
+/* MessageCellView.swift */
+"Fork" = "フォーク";
+
+/* SelectSessionButton.swift */
+"Select this Session" = "このセッションを選択";
+
+/* FileAttachmentSubpartView.swift */
+
+/* iTermStatusBarTriggersComponent.swift */
+"Add Trigger\u2026" = "トリガーを追加\u2026";
+"Edit Triggers\u2026" = "トリガーを編集\u2026";
+
+/* AdapterPasswordDataSource.swift */
+"Select a database file for %@" = "%@ のデータベースファイルを選択";
+"Locate the CLI for %@ named %@" = "%2$@ という名前の %1$@ の CLI の場所を指定";
+
+/* iTermBrowserPluginFinder.swift */
+"Select %@" = "%@ を選択";
+"Choose" = "選択";
+"Select %@." = "%@ を選択してください。";

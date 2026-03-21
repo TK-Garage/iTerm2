@@ -334,7 +334,7 @@ class iTermBrowserToolbar: NSView {
 
                 menu.addItem(NSMenuItem.separator())
 
-                let askAIItem = NSMenuItem(title: "Ask AI…", action: #selector(askAIMenuItemSelected), keyEquivalent: "")
+                let askAIItem = NSMenuItem(title: NSLocalizedString("Ask AI…", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(askAIMenuItemSelected), keyEquivalent: "")
                 askAIItem.target = self
                 askAIItem.image = NSImage(systemSymbolName: SFSymbol.sparkles.rawValue, accessibilityDescription: nil)
                 menu.addItem(askAIItem)
@@ -342,7 +342,7 @@ class iTermBrowserToolbar: NSView {
             }
 
             if devNullIndicator.isHidden {
-                let bookmarkTitle = isBookmarked ? "Remove Bookmark" : "Add Bookmark"
+                let bookmarkTitle = isBookmarked ? NSLocalizedString("Remove Bookmark", tableName: "iTerm", bundle: .main, comment: "") : NSLocalizedString("Add Bookmark", tableName: "iTerm", bundle: .main, comment: "")
                 let bookmarkIcon = isBookmarked ? SFSymbol.bookmarkFill.rawValue : SFSymbol.bookmark.rawValue
                 let bookmarkItem = NSMenuItem(title: bookmarkTitle, action: #selector(bookmarkMenuItemSelected), keyEquivalent: "")
                 bookmarkItem.target = self
@@ -353,13 +353,13 @@ class iTermBrowserToolbar: NSView {
                 menu.addItem(NSMenuItem.separator())
 
                 // Manage Bookmarks menu item
-                let manageBookmarksItem = NSMenuItem(title: "Manage Bookmarks", action: #selector(manageBookmarksMenuItemSelected), keyEquivalent: "")
+                let manageBookmarksItem = NSMenuItem(title: NSLocalizedString("Manage Bookmarks", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(manageBookmarksMenuItemSelected), keyEquivalent: "")
                 manageBookmarksItem.target = self
                 manageBookmarksItem.image = NSImage(systemSymbolName: SFSymbol.book.rawValue, accessibilityDescription: nil)
                 menu.addItem(manageBookmarksItem)
 
                 // History menu item
-                let historyItem = NSMenuItem(title: "History", action: #selector(historyMenuItemSelected), keyEquivalent: "")
+                let historyItem = NSMenuItem(title: NSLocalizedString("History", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(historyMenuItemSelected), keyEquivalent: "")
                 historyItem.target = self
                 historyItem.image = NSImage(systemSymbolName: SFSymbol.clock.rawValue, accessibilityDescription: nil)
                 menu.addItem(historyItem)
@@ -395,7 +395,7 @@ class iTermBrowserToolbar: NSView {
             }
 
             if delegate?.browserToolbarIsCurrentPageMuted() == true {
-                let item = NSMenuItem(title: "Unmute Current Page",
+                let item = NSMenuItem(title: NSLocalizedString("Unmute Current Page", tableName: "iTerm", bundle: .main, comment: ""),
                                       action: #selector(unmute(_:)),
                                       keyEquivalent: "")
                 item.image = NSImage(systemSymbolName: SFSymbol.speakerSlash.rawValue, accessibilityDescription: nil)
@@ -406,7 +406,7 @@ class iTermBrowserToolbar: NSView {
             }
 
             // Settings menu item
-            let settingsItem = NSMenuItem(title: "Settings", action: #selector(settingsMenuItemSelected), keyEquivalent: "")
+            let settingsItem = NSMenuItem(title: NSLocalizedString("Settings", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(settingsMenuItemSelected), keyEquivalent: "")
             settingsItem.target = self
             settingsItem.image = NSImage(systemSymbolName: SFSymbol.gearshape.rawValue, accessibilityDescription: nil)
             menu.addItem(settingsItem)

@@ -112,6 +112,8 @@
 #import "iTermWarning.h"
 #include <stdlib.h>
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NSString *const kRefreshTerminalNotification = @"kRefreshTerminalNotification";
 NSString *const kUpdateLabelsNotification = @"kUpdateLabelsNotification";
 NSString *const kPreferencePanelDidUpdateProfileFields = @"kPreferencePanelDidUpdateProfileFields";
@@ -586,14 +588,14 @@ static iTermPreferencesSearchEngine *gSearchEngine;
         self.window.toolbarStyle = NSWindowToolbarStylePreference;
     }
 
-    _globalToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolGearshape) accessibilityDescription:@"General"];
-    _appearanceToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolEye) accessibilityDescription:@"Appearance"];
-    _keyboardToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolKeyboard) accessibilityDescription:@"Keys"];
-    _arrangementsToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolMacwindowOnRectangle) accessibilityDescription:@"Arrangements"];
-    _profilesToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolPerson) accessibilityDescription:@"Profiles"];
-    _mouseToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolCursorarrowMotionlines) accessibilityDescription:@"Pointer"];
-    _advancedToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolGearshape2) accessibilityDescription:@"Advanced"];
-    _shortcutsToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolBoltCircle) accessibilityDescription:@"Shortcuts"];
+    _globalToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolGearshape) accessibilityDescription:ITLocalizedMenuString(@"General")];
+    _appearanceToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolEye) accessibilityDescription:ITLocalizedMenuString(@"Appearance")];
+    _keyboardToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolKeyboard) accessibilityDescription:ITLocalizedMenuString(@"Keys")];
+    _arrangementsToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolMacwindowOnRectangle) accessibilityDescription:ITLocalizedMenuString(@"Arrangements")];
+    _profilesToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolPerson) accessibilityDescription:ITLocalizedMenuString(@"Profiles")];
+    _mouseToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolCursorarrowMotionlines) accessibilityDescription:ITLocalizedMenuString(@"Pointer")];
+    _advancedToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolGearshape2) accessibilityDescription:ITLocalizedMenuString(@"Advanced")];
+    _shortcutsToolbarItem.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolBoltCircle) accessibilityDescription:ITLocalizedMenuString(@"Shortcuts")];
 
     _globalTabViewItem.view = _generalPreferencesViewController.view;
     _appearanceTabViewItem.view = _appearancePreferencesViewController.view;
@@ -612,11 +614,11 @@ static iTermPreferencesSearchEngine *gSearchEngine;
 
     if (_editCurrentSessionMode) {
         [self layoutSubviewsForEditCurrentSessionMode];
-        self.window.title = @"Edit Session";
+        self.window.title = ITLocalizedMenuString(@"Edit Session");
     } else {
         [_toolbar setVisible:YES];
         [self resizeWindowForTabViewItem:_globalTabViewItem animated:NO];
-        self.window.title = @"Settings";
+        self.window.title = ITLocalizedMenuString(@"Settings");
     }
 
     iTermPrefsPanel *panel = (iTermPrefsPanel *)self.window;
@@ -1000,8 +1002,8 @@ andEditComponentWithIdentifier:(NSString *)identifier
             _bigSurSearchFieldToolbarItem.searchField.focusRingType = NSFocusRingTypeNone;
         }
 
-        NSMenu *menu = [[NSMenu alloc] initWithTitle:@"Search Options"];
-        NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:@"Show indicators for non-default values"
+        NSMenu *menu = [[NSMenu alloc] initWithTitle:ITLocalizedMenuString(@"Search Options")];
+        NSMenuItem *menuItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Show indicators for non-default values")
                                                           action:@selector(toggleIndicateNonDefaultValues:)
                                                    keyEquivalent:@""];
         menuItem.target = self;
