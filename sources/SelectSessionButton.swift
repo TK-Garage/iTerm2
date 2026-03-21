@@ -1,6 +1,6 @@
 @objc(iTermSelectSessionButton)
 class SelectSessionButton: NSView {
-    private let button = NSButton(title: "Select this Session", target: nil, action: nil)
+    private let button = NSButton(title: NSLocalizedString("Select this Session", tableName: "iTerm", bundle: .main, comment: ""), target: nil, action: nil)
     private let effectView = NSVisualEffectView()
 
     // New title label (using NSTextField configured for display only)
