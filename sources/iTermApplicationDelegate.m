@@ -1348,6 +1348,8 @@ void TurnOnDebugLoggingAutomatically(void) {
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [iTermMenuLocalizer localizeMainMenu];
+
     if (@available(macOS 12, *)) {
         // ok
     } else {

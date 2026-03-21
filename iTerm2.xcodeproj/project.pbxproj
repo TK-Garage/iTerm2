@@ -5046,6 +5046,10 @@
 		A6F7D5192E05F3A30065D09C /* write-password.js in Resources */ = {isa = PBXBuildFile; fileRef = A6F7D5132E05F1F40065D09C /* write-password.js */; };
 		A6F7D51A2E05F3A30065D09C /* write-password.js in Resources */ = {isa = PBXBuildFile; fileRef = A6F7D5132E05F1F40065D09C /* write-password.js */; };
 		A6F7D51C2E0613970065D09C /* MainMenuMangler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F7D51B2E0613920065D09C /* MainMenuMangler.swift */; };
+		171DB965EFAC416086A203E5 /* iTermMenuLocalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD7D1F3985549C0B1DBCB11 /* iTermMenuLocalizer.swift */; };
+		016A8D9EDF06428B8127FB40 /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6482913A336D4E3F8D2D3B2A /* MainMenu.strings */; };
+		DF706B7DEF6D4E2286EFAF3B /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6482913A336D4E3F8D2D3B2A /* MainMenu.strings */; };
+		ACD6BEE69DEE412EB7FB8D3D /* MainMenu.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6482913A336D4E3F8D2D3B2A /* MainMenu.strings */; };
 		A6F7F8072763F47B005E433E /* VT100ScreenState.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F7F8052763F47B005E433E /* VT100ScreenState.m */; };
 		A6F981CC1C13783C00EE0B80 /* iTermCPS.h in Headers */ = {isa = PBXBuildFile; fileRef = A6F981CB1C13783C00EE0B80 /* iTermCPS.h */; };
 		A6F9821F2CA775E200229070 /* RoundedRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D085F9D16F137D900B7FCE9 /* RoundedRectView.m */; };
@@ -9086,6 +9090,8 @@
 		A6F7D5132E05F1F40065D09C /* write-password.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "write-password.js"; sourceTree = "<group>"; };
 		A6F7D5142E05F38F0065D09C /* probe-password.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "probe-password.js"; sourceTree = "<group>"; };
 		A6F7D51B2E0613920065D09C /* MainMenuMangler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuMangler.swift; sourceTree = "<group>"; };
+		BFD7D1F3985549C0B1DBCB11 /* iTermMenuLocalizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTermMenuLocalizer.swift; sourceTree = "<group>"; };
+		6482913A336D4E3F8D2D3B2A /* MainMenu.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = MainMenu.strings; path = Interfaces/ja.lproj/MainMenu.strings; sourceTree = "<group>"; };
 		A6F7F8042763F47B005E433E /* VT100ScreenState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VT100ScreenState.h; sourceTree = "<group>"; };
 		A6F7F8052763F47B005E433E /* VT100ScreenState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VT100ScreenState.m; sourceTree = "<group>"; };
 		A6F981CB1C13783C00EE0B80 /* iTermCPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTermCPS.h; sourceTree = "<group>"; };
@@ -9838,6 +9844,7 @@
 				1DA76A051B30892900CB272A /* iTermTipWindowController.xib */,
 				A66A1FAD1A3A230A00F4A3A7 /* iTermWindowShortcutAccessoryView.xib */,
 				A67D0D251A2EE12A003A8B35 /* MainMenu.strings */,
+				6482913A336D4E3F8D2D3B2A /* MainMenu.strings */,
 				A67D0D261A2EE12A003A8B35 /* MainMenu.xib */,
 				A67D0D271A2EE12A003A8B35 /* NumberOfSpacesAccessoryView.xib */,
 				A67D0D281A2EE12A003A8B35 /* PasteboardHistory.xib */,
@@ -12606,6 +12613,7 @@
 				A6A3EDE52E0D26E100D711DA /* MimeTypeUtilities.swift */,
 				A6A3EDC12E0CA95E00D711DA /* print.swift */,
 				A6F7D51B2E0613920065D09C /* MainMenuMangler.swift */,
+				BFD7D1F3985549C0B1DBCB11 /* iTermMenuLocalizer.swift */,
 				A6F7D4EF2E0532C60065D09C /* DatabaseBackedArray.swift */,
 				A6F7D4ED2E0532B00065D09C /* Database.swift */,
 				A6069F3D2DF88C7100EE6CC7 /* PerformanceCounter.swift */,
@@ -16465,6 +16473,7 @@
 				zh_CN,
 				zh_TW,
 				en,
+				ja,
 				Base,
 			);
 			mainGroup = 0464AB0D006CD2EC7F000001;
@@ -16795,6 +16804,7 @@
 				1D6ED9B919AEA20D005A7799 /* wrap_to_top.png in Resources */,
 				A6E7AEB7214394F600DE9F3B /* graphic_database@2x.png in Resources */,
 				A67D0D701A2EE12A003A8B35 /* MainMenu.strings in Resources */,
+				ACD6BEE69DEE412EB7FB8D3D /* MainMenu.strings in Resources */,
 				A67F61E9214395D50093940A /* graphic_yo@2x.png in Resources */,
 				A6F31A2C295BC41700C1A51E /* uniE0CC_PowerlineExtraSymbols.pdf in Resources */,
 				A6F7A70F213CB143004DE961 /* StatusBarIconJobs.png in Resources */,
@@ -17536,6 +17546,7 @@
 				A6CBB7F12E090ED400B2CCCB /* media-demo.html in Resources */,
 				A6EC808A282A28CE00493544 /* SSHConfigurationWindow.xib in Resources */,
 				A67D0D6F1A2EE12A003A8B35 /* MainMenu.strings in Resources */,
+				DF706B7DEF6D4E2286EFAF3B /* MainMenu.strings in Resources */,
 				A67F6145214395870093940A /* graphic_java.png in Resources */,
 				A6F18B482AE2F39C006C08EE /* uniE0C0_flame-thick.pdf in Resources */,
 				A686A1181C86A6DD0024C2DE /* NewOutputForDarkTheme@2x.png in Resources */,
@@ -17935,6 +17946,7 @@
 				A68E33341DE746F5003F1D8E /* Add Mark Touch Bar Icon@2x.png in Resources */,
 				A612206D2E0F4C2400F48E64 /* get-xpath-at-point.js in Resources */,
 				A67D0D6E1A2EE12A003A8B35 /* MainMenu.strings in Resources */,
+				016A8D9EDF06428B8127FB40 /* MainMenu.strings in Resources */,
 				A6CBB8F72E0A6FC800B2CCCB /* reader-mode.css in Resources */,
 				A67D0D771A2EE12A003A8B35 /* PasteboardHistory.xib in Resources */,
 				A6FE7A8C2E0E679800BEBCE4 /* autofill-demo.html in Resources */,
@@ -19299,6 +19311,7 @@
 				A670F0C42A1FDA6100C740AC /* iTermChangeTrackingDictionary.m in Sources */,
 				A6EB64342D5D2E7100481D33 /* ChatBroker.swift in Sources */,
 				A6F7D51C2E0613970065D09C /* MainMenuMangler.swift in Sources */,
+				171DB965EFAC416086A203E5 /* iTermMenuLocalizer.swift in Sources */,
 				A63B92482F05C75200591B9E /* ExpressionBindingIconView.swift in Sources */,
 				A6AF79D62E06776C008D77BA /* iTermDatabase.swift in Sources */,
 				A68400A71FF82424008D3EE2 /* iTermIndicatorRenderer.m in Sources */,
