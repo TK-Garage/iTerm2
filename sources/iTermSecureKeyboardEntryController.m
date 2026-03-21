@@ -7,6 +7,8 @@
 
 #import "iTermSecureKeyboardEntryController.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTermAdvancedSettingsModel.h"
 #import "iTermUserDefaults.h"
@@ -222,7 +224,7 @@ NSString *const iTermDidToggleSecureInputNotification = @"iTermDidToggleSecureIn
                              accessory:nil
                             identifier:@"NoSyncMontereySecureKeyboardEntryWarning"
                            silenceable:kiTermWarningTypePermanentlySilenceable
-                               heading:@"Secure Keyboard Entry Enabled"
+                               heading:ITLocalizedMenuString(@"Secure Keyboard Entry Enabled")
                                 window:[NSApp keyWindow]];
     if (selection == kiTermWarningSelection0) {
         return;

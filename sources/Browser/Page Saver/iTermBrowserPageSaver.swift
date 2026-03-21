@@ -383,10 +383,10 @@ extension iTermBrowserPageSaver {
     @MainActor
     private static func showSaveError(_ error: Error, window: NSWindow) {
         let alert = NSAlert()
-        alert.messageText = "Save Failed"
-        alert.informativeText = "Could not save the page: \(error.localizedDescription)"
+        alert.messageText = NSLocalizedString("Save Failed", tableName: "iTerm", bundle: .main, comment: "")
+        alert.informativeText = NSLocalizedString("Could not save the page: \(error.localizedDescription)", tableName: "iTerm", bundle: .main, comment: "")
         alert.alertStyle = .warning
-        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: NSLocalizedString("OK", tableName: "iTerm", bundle: .main, comment: ""))
         alert.beginSheetModal(for: window, completionHandler: nil)
     }
 

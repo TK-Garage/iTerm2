@@ -7,6 +7,8 @@
 //
 
 #import "GeneralPreferencesViewController.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "NSBundle+iTerm.h"
 #import "NSImage+iTerm.h"
 #import "NSTextField+iTerm.h"
@@ -1294,8 +1296,8 @@ enum {
 - (IBAction)changeAPIKey:(id)sender {
     NSAlert *alert = [[NSAlert alloc] init];
     alert.messageText = [NSString stringWithFormat:@"Enter the API key for your AI provider. The key will be stored securely in the Keychain."];
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
 
     NSSecureTextField *apiKey = [[NSSecureTextField alloc] initWithFrame:NSMakeRect(0, 0, 500, 24)];
     apiKey.usesSingleLineMode = YES;
@@ -1402,7 +1404,7 @@ enum {
                              accessory:nil
                             identifier:@"NoSyncWindowRestorationDisabled"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Window Restoration Disabled"
+                               heading:ITLocalizedMenuString(@"Window Restoration Disabled")
                                 window:self.view.window];
     if (selection == kiTermWarningSelection0) {
         [[NSWorkspace sharedWorkspace] it_openURL:[NSURL fileURLWithPath:path]
@@ -1550,9 +1552,9 @@ enum {
                 // User didn't hit cancel; if he chose a writable directory, ask if he wants to write to it.
                 if ([[iTermRemotePreferences sharedInstance] remoteLocationIsValid]) {
                     NSAlert *alert = [[NSAlert alloc] init];
-                    alert.messageText = @"Copy local settings to custom folder now?";
-                    [alert addButtonWithTitle:@"Copy"];
-                    [alert addButtonWithTitle:@"Don’t Copy"];
+                    alert.messageText = ITLocalizedMenuString(@"Copy local settings to custom folder now?");
+                    [alert addButtonWithTitle:ITLocalizedMenuString(@"Copy")];
+                    [alert addButtonWithTitle:ITLocalizedMenuString(@"Don’t Copy")];
                     if ([alert runModal] == NSAlertFirstButtonReturn) {
                         [[iTermRemotePreferences sharedInstance] saveLocalUserDefaultsToRemotePrefs];
                     }

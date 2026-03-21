@@ -7,6 +7,8 @@
 
 #import "iTermScriptsMenuController.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTerm2SharedARC-Swift.h"
 #import "iTermAPIHelper.h"
@@ -241,7 +243,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                                        accessory:nil
                                                                       identifier:@"TakingTooLongToEnumerateScripts"
                                                                      silenceable:kiTermWarningTypePersistent
-                                                                         heading:@"Performance Issue"
+                                                                         heading:ITLocalizedMenuString(@"Performance Issue")
                                                                           window:nil];
             if (selection == kiTermWarningSelection0) {
                 _disableEnumeration = YES;
@@ -250,7 +252,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                                            accessory:nil
                                                                           identifier:@"TakingTooLongToEnumerateScripts2"
                                                                          silenceable:kiTermWarningTypePersistent
-                                                                             heading:@"Scripts Disabled"
+                                                                             heading:ITLocalizedMenuString(@"Scripts Disabled")
                                             window:nil];
                 return;
             } else {
@@ -427,7 +429,7 @@ NS_ASSUME_NONNULL_BEGIN
                                         completion:^(NSString *errorMessage, NSURL *zipURL) {
                 if (errorMessage || !zipURL) {
                     NSAlert *alert = [[NSAlert alloc] init];
-                    alert.messageText = @"Export Failed";
+                    alert.messageText = ITLocalizedMenuString(@"Export Failed");
                     alert.informativeText = errorMessage ?: @"Failed to create archive";
                     [alert runModal];
                     return;
@@ -490,18 +492,18 @@ NS_ASSUME_NONNULL_BEGIN
     DLog(@"error=%@ location=%@ url=%@", errorMessage, location, url);
     if (errorMessage) {
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Could Not Install Script";
+        alert.messageText = ITLocalizedMenuString(@"Could Not Install Script");
         alert.informativeText = errorMessage;
-        [alert addButtonWithTitle:@"OK"];
-        [alert addButtonWithTitle:@"Try Again"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Try Again")];
         if ([alert runModal] ==  NSAlertSecondButtonReturn) {
             [self importFromURL:url];
         }
     } else {
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Script Imported Successfully";
-        [alert addButtonWithTitle:@"OK"];
-        [alert addButtonWithTitle:@"Launch"];
+        alert.messageText = ITLocalizedMenuString(@"Script Imported Successfully");
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Launch")];
         const NSModalResponse response = [alert runModal];
         if (response == NSAlertFirstButtonReturn) {
             return;
@@ -792,7 +794,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                                        completion:^(NSError *errorStatus) {
             if (errorStatus != nil) {
                  NSAlert *alert = [[NSAlert alloc] init];
-                 alert.messageText = @"Installation Failed";
+                 alert.messageText = ITLocalizedMenuString(@"Installation Failed");
                  alert.informativeText = [NSString stringWithFormat:@"An error ocurred while installing the Python runtime. Remove ~/Library/Application Support/iTerm2/iterm2env and try again. The error was: %@", errorStatus.localizedDescription];
                  [alert runModal];
                  return;
@@ -1010,10 +1012,10 @@ NS_ASSUME_NONNULL_BEGIN
             return url;
         } else {
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = @"Spaces Not Allowed";
-            alert.informativeText = @"Scripts can't have space characters in their filenames.";
-            [alert addButtonWithTitle:@"Use _ Instead of Space"];
-            [alert addButtonWithTitle:@"Change Name"];
+            alert.messageText = ITLocalizedMenuString(@"Spaces Not Allowed");
+            alert.informativeText = ITLocalizedMenuString(@"Scripts can't have space characters in their filenames.");
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"Use _ Instead of Space")];
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"Change Name")];
             if ([alert runModal] == NSAlertFirstButtonReturn) {
                 return [[url URLByDeletingLastPathComponent] URLByAppendingPathComponent:safeFilename];
             } else {
@@ -1128,7 +1130,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)showAlertForScript:(NSString *)fullPath error:(NSError *)error {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Problem running script";
+    alert.messageText = ITLocalizedMenuString(@"Problem running script");
     alert.informativeText = [NSString stringWithFormat:@"The script at “%@” failed:\n\n%@",
                              fullPath, error.localizedFailureReason];
     [alert runModal];
@@ -1245,7 +1247,7 @@ NS_ASSUME_NONNULL_BEGIN
                              accessory:nil
                             identifier:@"FullEnvironmentScriptsLocationRestricted"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Invalid Folder"
+                               heading:ITLocalizedMenuString(@"Invalid Folder")
                                 window:sender];
     return NO;
 }

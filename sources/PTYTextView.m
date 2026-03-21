@@ -1,4 +1,6 @@
 #import "PTYTextView+MouseHandler.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "PTYTextView.h"
 
 #import "FileTransferManager.h"
@@ -4612,8 +4614,8 @@ static NSString *iTermStringForEventPhase(NSEventPhase eventPhase) {
     }
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
     alert.messageText = text;
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     [alert layout];
     NSInteger button = [alert runModal];
     return (button == NSAlertFirstButtonReturn);
@@ -6701,7 +6703,7 @@ static NSString *iTermStringFromRange(NSRange range) {
                                                                      accessory:nil
                                                                     identifier:@"NoSyncConfirmRemoveAnnotation"
                                                                    silenceable:kiTermWarningTypePermanentlySilenceable
-                                                                       heading:@"Confirm"
+                                                                       heading:ITLocalizedMenuString(@"Confirm")
                                                                         window:self.window];
     if (selection == kiTermWarningSelection1) {
         return;

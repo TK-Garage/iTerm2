@@ -4,6 +4,8 @@
 
 #import "iTermRemotePreferences.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "NSDictionary+iTerm.h"
 #import "NSFileManager+iTerm.h"
@@ -146,13 +148,13 @@ respectingTimeoutSetting:(BOOL)respectingTimeoutSetting
 
 - (NSData *)didFailToLoadFromURL:(NSURL *)url withError:(NSError *)error {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Failed to load settings from URL. Falling back to local copy.";
+    alert.messageText = ITLocalizedMenuString(@"Failed to load settings from URL. Falling back to local copy.");
     alert.informativeText = [NSString stringWithFormat:@"HTTP request failed: %@",
                              [error localizedDescription] ?: @"unknown error"];
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Reveal in Settings"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Reveal in Settings")];
     if ([error.domain isEqual:NSURLErrorDomain] && error.code == NSURLErrorTimedOut) {
-        [alert addButtonWithTitle:@"Try Again Without Timeout"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Try Again Without Timeout")];
     }
 
     const NSModalResponse response = [alert runModal];
@@ -231,16 +233,16 @@ respectingTimeoutSetting:(BOOL)respectingTimeoutSetting
         DLog(@"It's empty");
         if ([[self customFolderOrURL] length] == 0) {
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = @"Error Loading Settings";
-            alert.informativeText = @"You have enabled “Load settings from a custom folder or URL” in settings but the location is not set.";
-            [alert addButtonWithTitle:@"Don’t Load Remote Settings"];
-            [alert addButtonWithTitle:@"Cancel"];
+            alert.messageText = ITLocalizedMenuString(@"Error Loading Settings");
+            alert.informativeText = ITLocalizedMenuString(@"You have enabled “Load settings from a custom folder or URL” in settings but the location is not set.");
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"Don’t Load Remote Settings")];
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
             if ([alert runModal] == NSAlertFirstButtonReturn) {
                 [iTermPreferences setBool:NO forKey:kPreferenceKeyLoadPrefsFromCustomFolder];
             }
         } else {
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = @"Failed to load settings from custom directory. Falling back to local copy.";
+            alert.messageText = ITLocalizedMenuString(@"Failed to load settings from custom directory. Falling back to local copy.");
             alert.informativeText = [NSString stringWithFormat:@"Missing or malformed file at \"%@\"",
                                      [self customFolderOrURL]];
             [alert runModal];
@@ -291,7 +293,7 @@ respectingTimeoutSetting:(BOOL)respectingTimeoutSetting
             @"copy ~/Library/Preferences/com.googlecode.iterm2.plist to "
             @"your hosting provider.";
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Settings cannot be copied to a URL.";
+        alert.messageText = ITLocalizedMenuString(@"Settings cannot be copied to a URL.");
         alert.informativeText = informativeText;
         [alert runModal];
         return;
@@ -301,7 +303,7 @@ respectingTimeoutSetting:(BOOL)respectingTimeoutSetting
     NSDictionary *myDict = iTermRemotePreferencesSave(iTermUserDefaultsDictionary(self.preservedKeys), filename);
     if (!myDict) {
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Failed to copy settings to custom directory.";
+        alert.messageText = ITLocalizedMenuString(@"Failed to copy settings to custom directory.");
         alert.informativeText = [NSString stringWithFormat:@"Tried to copy %@ to %@",
                                  [self remotePrefsLocation], filename];
         [alert runModal];

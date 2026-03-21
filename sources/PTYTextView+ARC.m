@@ -2072,7 +2072,7 @@ toggleTerminalStateForMenuItem:(nonnull NSMenuItem *)item {
 
         NSAlert *alert = [[NSAlert alloc] init];
         alert.messageText = text;
-        [alert addButtonWithTitle:@"OK"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
         [alert layout];
         [alert runModal];
     }

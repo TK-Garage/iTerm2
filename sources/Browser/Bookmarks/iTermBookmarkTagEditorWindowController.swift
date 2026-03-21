@@ -221,10 +221,10 @@ class iTermBookmarkTagEditorWindowController: NSWindowController {
 
     @objc private func deleteBookmark() {
         let alert = NSAlert()
-        alert.messageText = "Delete Bookmark"
-        alert.informativeText = "Are you sure you want to delete this bookmark?"
-        alert.addButton(withTitle: "Delete")
-        alert.addButton(withTitle: "Cancel")
+        alert.messageText = NSLocalizedString("Delete Bookmark", tableName: "iTerm", bundle: .main, comment: "")
+        alert.informativeText = NSLocalizedString("Are you sure you want to delete this bookmark?", tableName: "iTerm", bundle: .main, comment: "")
+        alert.addButton(withTitle: NSLocalizedString("Delete", tableName: "iTerm", bundle: .main, comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: ""))
         alert.alertStyle = .warning
 
         alert.beginSheetModal(for: window!) { response in

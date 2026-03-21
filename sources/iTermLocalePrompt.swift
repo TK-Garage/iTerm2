@@ -145,7 +145,7 @@ class iTermLocalePromptAlert {
     func run(window: NSWindow?, cancelUsesC: Bool) -> (String?, Bool, String?) {
         let alert = NSAlert()
         alert.messageText = message
-        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: NSLocalizedString("OK", tableName: "iTerm", bundle: .main, comment: ""))
         alert.addButton(withTitle: cancelUsesC ? "Use Minimal POSIX Locale" : "Cancel")
 
         let wrapper = NSStackView()

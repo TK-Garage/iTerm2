@@ -7,6 +7,8 @@
 
 #import "iTermSessionLauncher.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTerm2SharedARC-Swift.h"
 #import "iTermAdvancedSettingsModel.h"
@@ -39,7 +41,7 @@
                                  accessory:nil
                                 identifier:nil
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Invalid Profile"
+                                   heading:ITLocalizedMenuString(@"Invalid Profile")
                                     window:nil];
         return NO;
     }
@@ -576,7 +578,7 @@
                                      accessory:nil
                                     identifier:nil
                                    silenceable:kiTermWarningTypePersistent
-                                       heading:@"Illegal Username"
+                                       heading:ITLocalizedMenuString(@"Illegal Username")
                                         window:nil];
             DLog(@"bad username");
             return nil;

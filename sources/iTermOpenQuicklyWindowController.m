@@ -1,5 +1,7 @@
 #import "iTermOpenQuicklyWindowController.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "SFSymbolEnum/SFSymbolEnum.h"
 #import "iTerm2SharedARC-Swift.h"
 #import "ITAddressBookMgr.h"
@@ -349,7 +351,7 @@
                             NSAlert *alert = [[NSAlert alloc] init];
                             [alert setMessageText:@"Function Call Result"];
                             [alert setInformativeText:[NSString stringWithFormat:@"%@ returned:\n%@", item.identifier, [value description]]];
-                            [alert addButtonWithTitle:@"OK"];
+                            [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
                             [alert runModal];
                         }
                     }];

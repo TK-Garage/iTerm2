@@ -7,6 +7,8 @@
 //
 
 #import "SCPFile.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "iTermUserDefaults.h"
 #import <NMSSH/NMSSH.h>
 #import <NMSSH/NMSSHConfig.h>
@@ -428,7 +430,7 @@ static NSError *SCPFileError(NSString *description) {
                                          accessory:nil
                                         identifier:kSecureCopyConnectionFailedWarning
                                        silenceable:kiTermWarningTypePermanentlySilenceable
-                                           heading:@"Connection Failed"
+                                           heading:ITLocalizedMenuString(@"Connection Failed")
                                        cancelLabel:@"Help"
                                             window:nil];
             if (selection == kiTermWarningSelection1) {
@@ -815,7 +817,7 @@ static NSString *const SCPFileKnownHostsUserDefaultsKey = @"NoSyncKnownHosts";
                              accessory:nil
                             identifier:[@"NoSyncConnectTo_" stringByAppendingString:self.userHostPort]
                            silenceable:kiTermWarningTypePermanentlySilenceable
-                               heading:@"Connect to New Host?"
+                               heading:ITLocalizedMenuString(@"Connect to New Host?")
                                 window:nil];
     return selection == kiTermWarningSelection0;
 }

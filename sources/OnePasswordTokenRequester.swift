@@ -78,23 +78,23 @@ class OnePasswordUtils {
 
     static func showUnavailableMessage(_ path: String? = nil) {
         let alert = NSAlert()
-        alert.messageText = "OnePassword Unavailable"
+        alert.messageText = NSLocalizedString("OnePassword Unavailable", tableName: "iTerm", bundle: .main, comment: "")
         if let path = path {
-            alert.informativeText = "The existing installation of the OnePassword CLI at \(path) is an incompatible. The iTerm2 integration requires version 2."
+            alert.informativeText = NSLocalizedString("The existing installation of the OnePassword CLI at \(path) is an incompatible. The iTerm2 integration requires version 2.", tableName: "iTerm", bundle: .main, comment: "")
         } else {
-            alert.informativeText = "Version 2 of the OnePassword CLI could not be found. Check that \(OnePasswordUtils.pathToCLI) is installed and has version 2.x."
+            alert.informativeText = NSLocalizedString("Version 2 of the OnePassword CLI could not be found. Check that \(OnePasswordUtils.pathToCLI) is installed and has version 2.x.", tableName: "iTerm", bundle: .main, comment: "")
         }
-        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: NSLocalizedString("OK", tableName: "iTerm", bundle: .main, comment: ""))
         alert.runModal()
     }
 
     // Returns true to show an open panel to locate it.
     private static func showCannotFindCLIMessage() -> Bool {
         let alert = NSAlert()
-        alert.messageText = "Can’t Find 1Password CLI"
-        alert.informativeText = "In order to use the 1Password integration, iTerm2 needs to know where to find the CLI app named “op”. It’s normally in /usr/local/bin. If you have installed it elsewhere, please select Locate to provide its location."
-        alert.addButton(withTitle: "Locate")
-        alert.addButton(withTitle: "Cancel")
+        alert.messageText = NSLocalizedString("Can’t Find 1Password CLI", tableName: "iTerm", bundle: .main, comment: "")
+        alert.informativeText = NSLocalizedString("In order to use the 1Password integration, iTerm2 needs to know where to find the CLI app named “op”. It’s normally in /usr/local/bin. If you have installed it elsewhere, please select Locate to provide its location.", tableName: "iTerm", bundle: .main, comment: "")
+        alert.addButton(withTitle: NSLocalizedString("Locate", tableName: "iTerm", bundle: .main, comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: ""))
         return alert.runModal() == .alertFirstButtonReturn
     }
 
@@ -330,9 +330,9 @@ class OnePasswordTokenRequester {
 
     private func showErrorMessage(_ reason: String) {
         let alert = NSAlert()
-        alert.messageText = "Authentication Error"
+        alert.messageText = NSLocalizedString("Authentication Error", tableName: "iTerm", bundle: .main, comment: "")
         alert.informativeText = reason
-        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: NSLocalizedString("OK", tableName: "iTerm", bundle: .main, comment: ""))
         alert.runModal()
     }
 

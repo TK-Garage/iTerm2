@@ -24,6 +24,8 @@
 
 #import "NSFileManager+iTerm.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "iTermAdvancedSettingsModel.h"
 #import "DebugLogging.h"
 #import "iTermAdvancedSettingsModel.h"
@@ -147,7 +149,7 @@ NSString * const DirectoryLocationDomain = @"DirectoryLocationDomain";
                                      accessory:nil
                                     identifier:@"NoSyncAppSupportFail"
                                    silenceable:kiTermWarningTypePersistent
-                                       heading:@"Problem with Application Support Directory"
+                                       heading:ITLocalizedMenuString(@"Problem with Application Support Directory")
                                         window:nil];
         });
     }
@@ -391,7 +393,7 @@ NSString * const DirectoryLocationDomain = @"DirectoryLocationDomain";
                                      accessory:nil
                                     identifier:@"NoSyncErrorCreatingConfigFolder"
                                    silenceable:kiTermWarningTypePersistent
-                                       heading:@"Problem Creating Config Folder"
+                                       heading:ITLocalizedMenuString(@"Problem Creating Config Folder")
                                         window:nil];
         });
     }

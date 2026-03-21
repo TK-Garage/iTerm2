@@ -8,6 +8,8 @@
 
 #import "iTermStatusBarGitComponent.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "FontSizeEstimator.h"
 #import "iTermAdvancedSettingsModel.h"
@@ -447,7 +449,7 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
                                  accessory:nil
                                 identifier:@"GitPollerXcodeWarning"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Problem Running git"
+                                   heading:ITLocalizedMenuString(@"Problem Running git")
                                     window:containingView.window];
         return;
     }
@@ -617,7 +619,7 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
 
 - (void)debug {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Debug Info";
+    alert.messageText = ITLocalizedMenuString(@"Debug Info");
     alert.informativeText = [NSString stringWithFormat:
                              @"Directory: %@\n"
                              @"Polling cadence: %@ sec\n"
@@ -631,8 +633,8 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
                              @(-[_gitPoller lastPollTime].timeIntervalSinceNow),
                              [_gitPoller.state prettyDescription],
                              [[iTermGitPollWorker sharedInstance] debugInfoForDirectory:_gitPoller.currentDirectory]];
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Copy"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Copy")];
     if ([alert runModal] == NSAlertSecondButtonReturn) {
         NSPasteboard *pasteboard = [NSPasteboard generalPasteboard];
         [pasteboard clearContents];
@@ -690,7 +692,7 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
                              accessory:nil
                             identifier:@"GitPollerSshWarning"
                            silenceable:kiTermWarningTypePermanentlySilenceable
-                               heading:@"Send Command?"
+                               heading:ITLocalizedMenuString(@"Send Command?")
                                 window:self.statusBarComponentView.window];
     if (selection == kiTermWarningSelection0) {
         [self.delegate statusBarComponent:self writeString:[command stringByAppendingString:@"\n"]];

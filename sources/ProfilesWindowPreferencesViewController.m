@@ -7,6 +7,8 @@
 //
 
 #import "ProfilesWindowPreferencesViewController.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "DebugLogging.h"
 #import "FutureMethods.h"
 #import "ITAddressBookMgr.h"
@@ -823,7 +825,7 @@ typedef NS_ENUM(NSUInteger, iTermWindowUnitsTag) {
                                  accessory:nil
                                 identifier:@"BackgroundImageUnreadable"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Problem Loading Image"
+                                   heading:ITLocalizedMenuString(@"Problem Loading Image")
                                     window:self.view.window];
         return NO;
     }
@@ -833,7 +835,7 @@ typedef NS_ENUM(NSUInteger, iTermWindowUnitsTag) {
                                  accessory:nil
                                 identifier:@"BackgroundImageUnreadable"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Problem Loading Image"
+                                   heading:ITLocalizedMenuString(@"Problem Loading Image")
                                     window:self.view.window];
         return NO;
     }
@@ -843,7 +845,7 @@ typedef NS_ENUM(NSUInteger, iTermWindowUnitsTag) {
                                  accessory:nil
                                 identifier:@"BackgroundImageUnreadable"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Problem Loading Image"
+                                   heading:ITLocalizedMenuString(@"Problem Loading Image")
                                     window:self.view.window];
         return NO;
     }

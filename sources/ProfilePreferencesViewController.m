@@ -7,6 +7,8 @@
 //
 
 #import "BulkCopyProfilePreferencesWindowController.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "DebugLogging.h"
 #import "ITAddressBookMgr.h"
 #import "NSArray+iTerm.h"
@@ -902,7 +904,7 @@ andEditComponentWithIdentifier:(NSString *)identifier
                                              accessory:nil
                                             identifier:@"NoSyncJSONImportFailed"
                                            silenceable:kiTermWarningTypeTemporarilySilenceable
-                                               heading:@"Could not Import Profile"
+                                               heading:ITLocalizedMenuString(@"Could not Import Profile")
                                                 window:self.view.window];
                     if (selection == kiTermWarningSelection1) {
                         return;
@@ -1002,7 +1004,7 @@ andEditComponentWithIdentifier:(NSString *)identifier
         dispatch_async(dispatch_get_main_queue(), ^{
             if (error) {
                 NSAlert *alert = [[NSAlert alloc] init];
-                alert.messageText = @"Error";
+                alert.messageText = ITLocalizedMenuString(@"Error");
                 alert.informativeText = [NSString stringWithFormat:@"Couldn't save to “%@” on %@: %@",
                                          item.filename,
                                          item.host.displayName,
@@ -1042,7 +1044,7 @@ andEditComponentWithIdentifier:(NSString *)identifier
     NSString *string = [self jsonForProfile:profile error:&error];
     if (!string) {
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Error";
+        alert.messageText = ITLocalizedMenuString(@"Error");
         alert.informativeText = [NSString stringWithFormat:@"Couldn't convert profile to JSON: %@",
                                  [error localizedDescription]];
         [alert runModal];
@@ -1077,7 +1079,7 @@ andEditComponentWithIdentifier:(NSString *)identifier
     NSString *string = [self jsonForAllProfilesWithErrorCount:&errors];
     if (errors) {
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Error";
+        alert.messageText = ITLocalizedMenuString(@"Error");
         alert.informativeText = [NSString stringWithFormat:@"Couldn't convert one or more profiles to JSON. Check Console.app for errors."];
         [alert runModal];
         return;

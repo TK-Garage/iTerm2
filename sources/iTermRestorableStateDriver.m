@@ -7,6 +7,8 @@
 
 #import "iTermRestorableStateDriver.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "NSArray+iTerm.h"
 #import "PTYWindow.h"
@@ -93,7 +95,7 @@ static NSString *const iTermRestorableStateControllerUserDefaultsKeyCount = @"No
                                  accessory:nil
                                 identifier:@"RestoreWindows"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Restore Windows?"
+                                   heading:ITLocalizedMenuString(@"Restore Windows?")
                                     window:nil];
         if (selection == kiTermWarningSelection1) {
             [index restorableStateIndexUnlink];

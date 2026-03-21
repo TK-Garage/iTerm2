@@ -8,6 +8,8 @@
 
 #import "ProfilesGeneralPreferencesViewController.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "AdvancedWorkingDirectoryWindowController.h"
 #import "DebugLogging.h"
 #import "iTerm2SharedARC-Swift.h"
@@ -897,9 +899,9 @@ static NSString *const iTermProfilePreferencesUpdateSessionName = @"iTermProfile
         return;
     }
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Plugin Invalid";
+    alert.messageText = ITLocalizedMenuString(@"Plugin Invalid");
     alert.informativeText = error;
-    [alert addButtonWithTitle:@"OK"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
     [alert runSheetModalForWindow:self.view.window];
 }
 

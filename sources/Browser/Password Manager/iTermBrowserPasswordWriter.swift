@@ -106,8 +106,8 @@ private extension iTermBrowserPasswordWriter {
         let message = "The focused field is not a password field. Fill it anyway?"
         let alert = NSAlert()
         alert.messageText = message
-        alert.addButton(withTitle: "OK")
-        alert.addButton(withTitle: "Cancel")
+        alert.addButton(withTitle: NSLocalizedString("OK", tableName: "iTerm", bundle: .main, comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: ""))
         return alert.runModal() == .alertFirstButtonReturn
     }
 

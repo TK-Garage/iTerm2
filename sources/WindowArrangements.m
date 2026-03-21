@@ -191,7 +191,7 @@ static NSInteger sWindowArrangementGeneration;
     alert.messageText = prompt;
     [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
     if (offerExport) {
-        [alert addButtonWithTitle:@"Save to File with Contents…"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Save to File with Contents…")];
     }
     [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
 

@@ -302,9 +302,9 @@ class LastPassDataSource: CommandLinePasswordDataSource {
         return AnyRecipe(CatchRecipe(recipe, errorHandler: { (inputs, error) in
             if error as? LPError == LPError.timedOut {
                 let alert = NSAlert()
-                alert.messageText = "Timeout"
-                alert.informativeText = "The LastPass service took too long to respond. \(message)"
-                alert.addButton(withTitle: "OK")
+                alert.messageText = NSLocalizedString("Timeout", tableName: "iTerm", bundle: .main, comment: "")
+                alert.informativeText = NSLocalizedString("The LastPass service took too long to respond. \(message)", tableName: "iTerm", bundle: .main, comment: "")
+                alert.addButton(withTitle: NSLocalizedString("OK", tableName: "iTerm", bundle: .main, comment: ""))
                 alert.runModal()
                 return
             } else if error as? LPError == LPError.needsLogin {
@@ -517,11 +517,11 @@ class LastPassUtils {
     static func showNotLoggedInMessage() {
         let alert = NSAlert()
         let email = iTermUserDefaults.userDefaults().string(forKey: usernameUserDefaultsKey) ?? "your@email.address"
-        alert.messageText = "Authentication Failed"
-        alert.informativeText = "You can also try opening a terminal window and running `lpass login \(email)`."
-        alert.addButton(withTitle: "Open Terminal Window")
-        alert.addButton(withTitle: "Copy Command")
-        alert.addButton(withTitle: "Cancel")
+        alert.messageText = NSLocalizedString("Authentication Failed", tableName: "iTerm", bundle: .main, comment: "")
+        alert.informativeText = NSLocalizedString("You can also try opening a terminal window and running `lpass login \(email)`.", tableName: "iTerm", bundle: .main, comment: "")
+        alert.addButton(withTitle: NSLocalizedString("Open Terminal Window", tableName: "iTerm", bundle: .main, comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Copy Command", tableName: "iTerm", bundle: .main, comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: ""))
         switch alert.runModal() {
         case .alertFirstButtonReturn:
             let window = iTermController.sharedInstance().openSingleUseLoginWindowAndWrite("lpass login \(email)".data(using: .utf8)!) { session in
@@ -530,9 +530,9 @@ class LastPassUtils {
                                         deadline: nil,
                                         willExpect: nil) { _ in
                     let alert = NSAlert()
-                    alert.messageText = "Login Successful"
-                    alert.informativeText = "Please retry your action in the password manager."
-                    alert.addButton(withTitle: "OK")
+                    alert.messageText = NSLocalizedString("Login Successful", tableName: "iTerm", bundle: .main, comment: "")
+                    alert.informativeText = NSLocalizedString("Please retry your action in the password manager.", tableName: "iTerm", bundle: .main, comment: "")
+                    alert.addButton(withTitle: NSLocalizedString("OK", tableName: "iTerm", bundle: .main, comment: ""))
                     alert.runModal()
                     session?.close()
                 }
@@ -551,11 +551,11 @@ class LastPassUtils {
     // Returns true to show an open panel to locate it.
     private static func showCannotFindCLIMessage() -> Bool {
         let alert = NSAlert()
-        alert.messageText = "Can’t Find LastPass CLI"
-        alert.informativeText = "In order to use the LastPass integration, iTerm2 needs to know where to find the CLI app named “lpass”. Select Locate to provide its location."
-        alert.addButton(withTitle: "Locate")
-        alert.addButton(withTitle: "Cancel")
-        alert.addButton(withTitle: "Help")
+        alert.messageText = NSLocalizedString("Can’t Find LastPass CLI", tableName: "iTerm", bundle: .main, comment: "")
+        alert.informativeText = NSLocalizedString("In order to use the LastPass integration, iTerm2 needs to know where to find the CLI app named “lpass”. Select Locate to provide its location.", tableName: "iTerm", bundle: .main, comment: "")
+        alert.addButton(withTitle: NSLocalizedString("Locate", tableName: "iTerm", bundle: .main, comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Help", tableName: "iTerm", bundle: .main, comment: ""))
         switch alert.runModal() {
         case .alertFirstButtonReturn:
             return true

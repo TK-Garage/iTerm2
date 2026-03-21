@@ -7,6 +7,8 @@
 
 #import "iTermAPIHelper.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "CVector.h"
 #import "DebugLogging.h"
 #import "MovePaneController.h"
@@ -463,7 +465,7 @@ static BOOL iTermAPIHelperLastApplescriptAuthRequiredSetting;
                              accessory:nil
                             identifier:@"NoSyncRequireApplescriptAuth"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Disable per-app authentication?"
+                               heading:ITLocalizedMenuString(@"Disable per-app authentication?")
                                 window:window];
     switch (selection) {
         case kiTermWarningSelection0:
@@ -498,7 +500,7 @@ static BOOL iTermAPIHelperLastApplescriptAuthRequiredSetting;
                              accessory:nil
                             identifier:@"NoSyncFailedToRemoveNoAuth"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Error changing API permissions setting"
+                               heading:ITLocalizedMenuString(@"Error changing API permissions setting")
                                 window:window];
     switch (selection) {
         case kiTermWarningSelection0:
@@ -551,7 +553,7 @@ static BOOL iTermAPIHelperLastApplescriptAuthRequiredSetting;
                              accessory:nil
                             identifier:@"NoSyncFailedToCreateNoAuth"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Failed to make change"
+                               heading:ITLocalizedMenuString(@"Failed to make change")
                                 window:window];
     return NO;
 }
@@ -1523,7 +1525,7 @@ static BOOL iTermAPIHelperLastApplescriptAuthRequiredSetting;
                              accessory:nil
                             identifier:@"NoSyncAllowPythonAPI"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Allow Python API Usage?"
+                               heading:ITLocalizedMenuString(@"Allow Python API Usage?")
                                 window:nil];
     switch (selection) {
         case kiTermWarningSelection0:
@@ -1545,7 +1547,7 @@ static BOOL iTermAPIHelperLastApplescriptAuthRequiredSetting;
                                          accessory:nil
                                         identifier:@"NoSyncConfirmAlways"
                                        silenceable:kiTermWarningTypePersistent
-                                           heading:@"Confirm"
+                                           heading:ITLocalizedMenuString(@"Confirm")
                                             window:nil] == kiTermWarningSelection0) {
                 [iTermAdvancedSettingsModel setSetCookie:YES];
                 *reason = @"Allowed by user";

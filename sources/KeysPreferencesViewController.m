@@ -571,7 +571,7 @@ static NSString *const kKeyCode0MitigationSuffixGlobal = @"Global";
 - (IBAction)emulateUsKeyboardHelp:(id)sender {
     NSAlert *alert = [[NSAlert alloc] init];
     alert.messageText = ITLocalizedMenuString(@"Emulate US Keyboard");
-    alert.informativeText = @"Some keyboard layouts (such as AZERTY) require a modifier to press a number key. This causes problems for switching to a window, tab, or split pane by pressing modifier+number: you might need other modifiers or conflicting modifiers. When “Emulate US Keyboard” is enabled, you can press the configured modifier plus the key on the top row that corresponds to a number key on a US keyboard. For example, on AZERTY, the & key would act as the 1 key.";
+    alert.informativeText = ITLocalizedMenuString(@"Some keyboard layouts (such as AZERTY) require a modifier to press a number key. This causes problems for switching to a window, tab, or split pane by pressing modifier+number: you might need other modifiers or conflicting modifiers. When “Emulate US Keyboard” is enabled, you can press the configured modifier plus the key on the top row that corresponds to a number key on a US keyboard. For example, on AZERTY, the & key would act as the 1 key.");
     [alert runModal];
 }
 

@@ -1,5 +1,7 @@
 #import "iTermWarning.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "NSAlert+iTerm.h"
 #import "NSArray+iTerm.h"
@@ -359,7 +361,7 @@ BOOL gShowRememberedAlerts = NO;
 
     // Add "Permanently Forget Saved Selection" button when in remembered alerts mode.
     if (_shownDueToRememberedAlertsMode && _identifier) {
-        [alert addButtonWithTitle:@"Permanently Forget Saved Selection"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Permanently Forget Saved Selection")];
     }
 
     int numNonCancelActions = [_warningActions count];

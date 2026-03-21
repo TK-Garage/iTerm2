@@ -9161,7 +9161,7 @@ typedef NS_ENUM(NSUInteger, PTYSessionTmuxReport) {
                                  accessory:nil
                                 identifier:nil
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Can’t Disconnect"
+                                   heading:ITLocalizedMenuString(@"Can’t Disconnect")
                                     window:self.view.window];
         return;
     }

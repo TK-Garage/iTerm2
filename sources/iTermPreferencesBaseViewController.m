@@ -8,6 +8,8 @@
 
 #import "iTermPreferencesBaseViewController.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTerm2SharedARC-Swift.h"
 #import "iTermPreferences.h"
@@ -572,7 +574,7 @@ NSString *const iTermPreferencesDidToggleIndicateNonDefaultValues = @"iTermPrefe
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:@"Application Corrupt"];
     [alert setInformativeText:[NSString stringWithFormat:@"While trying to load the setting for “%@”: %@", key, message]];
-    [alert addButtonWithTitle:@"OK"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
     [alert setAlertStyle:NSAlertStyleCritical];
     [alert runModal];
     exit(1);

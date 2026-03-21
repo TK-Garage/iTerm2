@@ -715,7 +715,7 @@ static BOOL hasBecomeActive = NO;
         if ([iTermColorPresets importColorPresetFromFile:filename]) {
             NSAlert *alert = [[[NSAlert alloc] init] autorelease];
             alert.messageText = ITLocalizedMenuString(@"Colors Scheme Imported");
-            alert.informativeText = @"The color scheme was imported and added to presets. You can find it under Settings > Profiles > Colors > Load Presets….";
+            alert.informativeText = ITLocalizedMenuString(@"The color scheme was imported and added to presets. You can find it under Settings > Profiles > Colors > Load Presets….");
             [alert runModal];
         }
         return YES;
@@ -3049,7 +3049,7 @@ static iTermKeyEventReplayer *gReplayer;
     if (reason) {
         alert.informativeText = [NSString stringWithFormat:@"GPU rendering is off in the current session because %@", reason];
     } else {
-        alert.informativeText = @"GPU rendering is enabled for the current session.";
+        alert.informativeText = ITLocalizedMenuString(@"GPU rendering is enabled for the current session.");
     }
     [alert runModal];
 }

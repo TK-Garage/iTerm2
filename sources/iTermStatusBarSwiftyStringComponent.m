@@ -7,6 +7,8 @@
 
 #import "iTermStatusBarSwiftyStringComponent.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "iTermScriptHistory.h"
 #import "iTermStatusBarComponentKnob.h"
 #import "iTermVariableScope.h"
@@ -97,7 +99,7 @@ NSString *const iTermStatusBarSwiftyStringComponentExpressionKey = @"expression"
                                  accessory:nil
                                 identifier:@"NoSyncInterpolatedStatusBarComponentError"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Error"
+                                   heading:ITLocalizedMenuString(@"Error")
                                     window:self.statusBarComponentView.window];
     }
 }

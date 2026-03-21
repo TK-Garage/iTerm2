@@ -6,6 +6,8 @@
 //
 
 #import "TmuxWindowOpener.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "DebugLogging.h"
 #import "iTermAdvancedSettingsModel.h"
 #import "iTermController.h"
@@ -321,8 +323,8 @@ NSString *const kTmuxWindowOpenerWindowOptionStyleValueFullScreen = @"FullScreen
     } else {
         dispatch_async(dispatch_get_main_queue(), ^{
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = @"Error: malformed history line from tmux.";
-            alert.informativeText = @"See Console.app for details";
+            alert.messageText = ITLocalizedMenuString(@"Error: malformed history line from tmux.");
+            alert.informativeText = ITLocalizedMenuString(@"See Console.app for details");
             [alert runModal];
         });
     }

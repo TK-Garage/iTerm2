@@ -1,6 +1,8 @@
 #define MAXRW 1024
 
 #import "PTYTask.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "PTYTask+Private.h"
 
 #import "Coprocess.h"
@@ -841,9 +843,9 @@ static void HandleSigChld(int n) {
 
 - (void)showFailedToCreateTempSocketError {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Error";
+    alert.messageText = ITLocalizedMenuString(@"Error");
     alert.informativeText = [NSString stringWithFormat:@"An error was encountered while creating a temporary file with mkstemps. Verify that %@ exists and is writable.", NSTemporaryDirectory()];
-    [alert addButtonWithTitle:@"OK"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
     [alert runModal];
 }
 
