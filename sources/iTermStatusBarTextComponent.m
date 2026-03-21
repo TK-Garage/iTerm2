@@ -16,6 +16,8 @@
 #import "NSObject+iTerm.h"
 #import "NSStringITerm.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NS_ASSUME_NONNULL_BEGIN
 
 @implementation iTermStatusBarTextComponent {
@@ -26,19 +28,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSArray<iTermStatusBarComponentKnob *> *)statusBarComponentKnobs {
     iTermStatusBarComponentKnob *textColorKnob =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Text Color:"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Text Color:")
                                                           type:iTermStatusBarComponentKnobTypeColor
                                                    placeholder:nil
                                                   defaultValue:nil
                                                            key:iTermStatusBarSharedTextColorKey];
     iTermStatusBarComponentKnob *backgroundColorKnob =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Background Color:"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Background Color:")
                                                           type:iTermStatusBarComponentKnobTypeColor
                                                    placeholder:nil
                                                   defaultValue:nil
                                                            key:iTermStatusBarSharedBackgroundColorKey];
     iTermStatusBarComponentKnob *fontKnob =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Custom Font"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Custom Font")
                                                           type:iTermStatusBarComponentKnobTypeFont
                                                    placeholder:nil
                                                   defaultValue:nil

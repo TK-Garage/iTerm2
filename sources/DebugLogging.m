@@ -155,7 +155,7 @@ static void FlushDebugLog(void) {
         NSError *error = nil;
         const BOOL ok = [data writeToFile:kDebugLogFilename options:0 error:&error];
         if (!ok) {
-            [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"Failed to save debug log: %@", error.localizedDescription] actions:@[ @"OK" ] accessory:nil identifier:nil silenceable:kiTermWarningTypePersistent heading:ITLocalizedMenuString(@"Problem Saving Debug Log") window:nil];
+            [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"Failed to save debug log: %@"), error.localizedDescription] actions:@[ @"OK" ] accessory:nil identifier:nil silenceable:kiTermWarningTypePersistent heading:ITLocalizedMenuString(@"Problem Saving Debug Log") window:nil];
         }
     }
 

@@ -14,6 +14,8 @@
 #import "NSStringITerm.h"
 #import "NSView+iTerm.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 static const CGFloat iTermMemoryUtilizationWidth = 120;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -37,11 +39,11 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Memory Utilization";
+    return ITLocalizedMenuString(@"Memory Utilization");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Shows current memory utilization.";
+    return ITLocalizedMenuString(@"Shows current memory utilization.");
 }
 
 - (id)statusBarComponentExemplarWithBackgroundColor:(NSColor *)backgroundColor

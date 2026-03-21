@@ -127,18 +127,18 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"git state";
+    return ITLocalizedMenuString(@"git state");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Shows a summary of the git state of the current directory.";
+    return ITLocalizedMenuString(@"Shows a summary of the git state of the current directory.");
 }
 
 - (NSArray<iTermStatusBarComponentKnob *> *)statusBarComponentKnobs {
     NSArray<iTermStatusBarComponentKnob *> *knobs;
 
     iTermStatusBarComponentKnob *formatKnob =
-    [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Polling Interval (seconds):"
+    [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Polling Interval (seconds):")
                                                       type:iTermStatusBarComponentKnobTypeDouble
                                                placeholder:nil
                                               defaultValue:@(iTermStatusBarGitComponentDefaultCadence)
@@ -266,17 +266,17 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
         case iTermGitRepoStateNone:
             break;
         case iTermGitRepoStateMerge:
-            return [self attributedStringWithString:@"Merging"];
+            return [self attributedStringWithString:ITLocalizedMenuString(@"Merging")];
         case iTermGitRepoStateRevert:
-            return [self attributedStringWithString:@"Reverting"];
+            return [self attributedStringWithString:ITLocalizedMenuString(@"Reverting")];
         case iTermGitRepoStateCherrypick:
-            return [self attributedStringWithString:@"Cherrypicking"];
+            return [self attributedStringWithString:ITLocalizedMenuString(@"Cherrypicking")];
         case iTermGitRepoStateBisect:
-            return [self attributedStringWithString:@"Bisecting"];
+            return [self attributedStringWithString:ITLocalizedMenuString(@"Bisecting")];
         case iTermGitRepoStateRebase:
-            return [self attributedStringWithString:@"Rebasing"];
+            return [self attributedStringWithString:ITLocalizedMenuString(@"Rebasing")];
         case iTermGitRepoStateApply:
-            return [self attributedStringWithString:@"Applying"];
+            return [self attributedStringWithString:ITLocalizedMenuString(@"Applying")];
     }
     static NSAttributedString *upImage;
     static NSAttributedString *downImage;
@@ -432,11 +432,11 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
     if (_session) {
         NSMenu *menu = [[NSMenu alloc] init];
         NSString *actionName = [_status stringByReplacingOccurrencesOfString:@"…" withString:@""];
-        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:@"Cancel %@", actionName] action:@selector(killSession:) keyEquivalent:@""];
+        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"Cancel %@"), actionName] action:@selector(killSession:) keyEquivalent:@""];
         item.target = self;
         [menu addItem:item];
 
-        item = [[NSMenuItem alloc] initWithTitle:@"Reveal" action:@selector(revealSession:) keyEquivalent:@""];
+        item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Reveal") action:@selector(revealSession:) keyEquivalent:@""];
         item.target = self;
         [menu addItem:item];
         [menu popUpMenuPositioningItem:menu.itemArray.firstObject atLocation:NSMakePoint(0, 0) inView:containingView];
@@ -456,7 +456,7 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
 
     if (self.currentState.branch.length == 0) {
         NSMenu *menu = [[NSMenu alloc] init];
-        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"Show Debug Info" action:@selector(debug) keyEquivalent:@""];
+        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Show Debug Info") action:@selector(debug) keyEquivalent:@""];
         item.target = self;
         [menu addItem:item];
         [menu popUpMenuPositioningItem:menu.itemArray.firstObject atLocation:NSMakePoint(0, 0) inView:containingView];
@@ -485,14 +485,14 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
             return;
         }
         strongSelf->_view = view;
-        addItem(@"Commit", @selector(commit:), state.dirty);
-        addItem(@"Add & Commit", @selector(addAndCommit:), state.dirty);
-        addItem(@"Stash", @selector(stash:), state.dirty);
-        addItem(@"Log", @selector(log:), YES);
-        addItem([NSString stringWithFormat:@"Push origin %@", state.branch],
+        addItem(ITLocalizedMenuString(@"Commit"), @selector(commit:), state.dirty);
+        addItem(ITLocalizedMenuString(@"Add & Commit"), @selector(addAndCommit:), state.dirty);
+        addItem(ITLocalizedMenuString(@"Stash"), @selector(stash:), state.dirty);
+        addItem(ITLocalizedMenuString(@"Log"), @selector(log:), YES);
+        addItem([NSString stringWithFormat:ITLocalizedMenuString(@"Push origin %@"), state.branch],
                 @selector(push:),
                 state.pushArrow.intValue > 0 || [state.pushArrow isEqualToString:@"error"]);
-        addItem([NSString stringWithFormat:@"Pull origin %@", state.branch],
+        addItem([NSString stringWithFormat:ITLocalizedMenuString(@"Pull origin %@"), state.branch],
                 @selector(pull:),
                 !state.dirty);
         [menu addItem:[NSMenuItem separatorItem]];
@@ -503,10 +503,10 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
             if ([branch isEqualToString:state.branch]) {
                 continue;
             }
-            addItem([NSString stringWithFormat:@"Check out %@", branch], @selector(checkout:), YES).userData = branch;
+            addItem([NSString stringWithFormat:ITLocalizedMenuString(@"Check out %@"), branch], @selector(checkout:), YES).userData = branch;
         }
         [menu addItem:[NSMenuItem separatorItem]];
-        addItem(@"Show Debug Info", @selector(debug), YES);
+        addItem(ITLocalizedMenuString(@"Show Debug Info"), @selector(debug), YES);
         [menu popUpMenuPositioningItem:menu.itemArray.firstObject atLocation:NSMakePoint(0, 0) inView:containingView];
     }];
 }
@@ -603,7 +603,7 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
         [popoverVC appendString:[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]];
         if (popoverVC.textView.textStorage.length > 100000) {
             stopped = YES;
-            [popoverVC appendString:@"\n[Truncated]\n"];
+            [popoverVC appendString:ITLocalizedMenuString(@"\n[Truncated]\n")];
             [weakLogRunner terminate];
         }
         completion();
@@ -614,7 +614,7 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
 - (void)commit:(id)sender {
     NSMenuItem *menuItem = sender;
     iTermGitMenuItemContext *context = menuItem.representedObject;
-    [self runGitInWindowWithArguments:@[ @"commit" ] pwd:context.directory status:@"Committing…" bury:NO];
+    [self runGitInWindowWithArguments:@[ @"commit" ] pwd:context.directory status:ITLocalizedMenuString(@"Committing…") bury:NO];
 }
 
 - (void)debug {
@@ -645,13 +645,13 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
 - (void)addAndCommit:(id)sender {
     NSMenuItem *menuItem = sender;
     iTermGitMenuItemContext *context = menuItem.representedObject;
-    [self runGitInWindowWithArguments:@[ @"commit", @"-a" ] pwd:context.directory status:@"Committing…" bury:NO];
+    [self runGitInWindowWithArguments:@[ @"commit", @"-a" ] pwd:context.directory status:ITLocalizedMenuString(@"Committing…") bury:NO];
 }
 
 - (void)stash:(id)sender {
     NSMenuItem *menuItem = sender;
     iTermGitMenuItemContext *context = menuItem.representedObject;
-    [self runGitInWindowWithArguments:@[ @"stash" ] pwd:context.directory status:@"Stashing…" bury:YES];
+    [self runGitInWindowWithArguments:@[ @"stash" ] pwd:context.directory status:ITLocalizedMenuString(@"Stashing…") bury:YES];
 }
 
 - (void)push:(id)sender {
@@ -659,7 +659,7 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
     iTermGitMenuItemContext *context = menuItem.representedObject;
     [self runGitInWindowWithArguments:@[ @"push", @"origin", context.state.branch ]
                                   pwd:context.directory
-                               status:@"Pushing…"
+                               status:ITLocalizedMenuString(@"Pushing…")
                                  bury:YES];
 }
 
@@ -668,7 +668,7 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
     iTermGitMenuItemContext *context = menuItem.representedObject;
     [self runGitInWindowWithArguments:@[ @"pull", @"origin", context.state.branch ]
                                   pwd:context.directory
-                               status:@"Pulling…"
+                               status:ITLocalizedMenuString(@"Pulling…")
                                  bury:YES];
 }
 
@@ -677,7 +677,7 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
     iTermGitMenuItemContext *context = menuItem.representedObject;
     [self runGitInWindowWithArguments:@[ @"checkout", context.userData ]
                                   pwd:context.directory
-                               status:@"Checking out…"
+                               status:ITLocalizedMenuString(@"Checking out…")
                                  bury:YES];
 }
 
@@ -687,7 +687,7 @@ static const NSTimeInterval iTermStatusBarGitComponentDefaultCadence = 2;
     }];
     NSString *command = [NSString stringWithFormat:@"git %@", [quotedArgs componentsJoinedByString:@" "]];
     const iTermWarningSelection selection =
-    [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"Looks like you're sshed somewhere. OK to send the command “%@”?", command]
+    [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"Looks like you’re sshed somewhere. OK to send the command “%@”?"), command]
                                actions:@[ @"OK", @"Cancel" ]
                              accessory:nil
                             identifier:@"GitPollerSshWarning"

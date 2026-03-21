@@ -118,7 +118,7 @@ extern NSString *const SESSION_ARRANGEMENT_SERVER_DICT;
 - (void)failWithError:(NSError *)error {
     DLog(@"%@", error);
     NSString *message =
-        [NSString stringWithFormat:@"Cannot start logging to session with profile “%@”: %@",
+        [NSString stringWithFormat:ITLocalizedMenuString(@"Cannot start logging to session with profile “%@”: %@"),
          self.profile[KEY_NAME],
          error.localizedDescription];
     [iTermWarning showWarningWithTitle:message

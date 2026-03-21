@@ -146,7 +146,7 @@ class iTermLocalePromptAlert {
         let alert = NSAlert()
         alert.messageText = message
         alert.addButton(withTitle: NSLocalizedString("OK", tableName: "iTerm", bundle: .main, comment: ""))
-        alert.addButton(withTitle: cancelUsesC ? "Use Minimal POSIX Locale" : "Cancel")
+        alert.addButton(withTitle: cancelUsesC ? NSLocalizedString("Use Minimal POSIX Locale", tableName: "iTerm", bundle: .main, comment: "") : NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: ""))
 
         let wrapper = NSStackView()
         wrapper.orientation = .vertical
@@ -166,9 +166,9 @@ class iTermLocalePromptAlert {
         alert.showsSuppressionButton = allowRemember
         if allowRemember, let profileName {
             if let arrangementName {
-                alert.suppressionButton?.title = "Save selection to arrangement \(arrangementName)"
+                alert.suppressionButton?.title = String(format: NSLocalizedString("Save selection to arrangement %@", tableName: "iTerm", bundle: .main, comment: ""), arrangementName)
             } else {
-                alert.suppressionButton?.title = "Save selection to profile \(profileName)"
+                alert.suppressionButton?.title = String(format: NSLocalizedString("Save selection to profile %@", tableName: "iTerm", bundle: .main, comment: ""), profileName)
             }
         }
         let popup = self.popup

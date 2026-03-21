@@ -80,16 +80,16 @@ static NSString *const kOldStyleUrlHandlersUserDefaultsKey = @"URLHandlers";
 
     if (appURL == nil) {
         NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-        alert.messageText = [NSString stringWithFormat:@"iTerm is not the default handler for %@. "
-                             @"Would you like to set iTerm as the default handler?",
+        alert.messageText = [NSString stringWithFormat:ITLocalizedMenuString(@"iTerm is not the default handler for %@. "
+                             @"Would you like to set iTerm as the default handler?"),
                              scheme];
         alert.informativeText = ITLocalizedMenuString(@"There is currently no handler.");
         [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
         [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
         set = ([alert runModal] == NSAlertFirstButtonReturn);
     } else if (![[[NSFileManager defaultManager] displayNameAtPath:[appURL path]] isEqualToString:@"iTerm 2"]) {
-        NSString *theTitle = [NSString stringWithFormat:@"iTerm is not the default handler for %@. "
-                                                        @"Would you like to set iTerm as the default handler?", scheme];
+        NSString *theTitle = [NSString stringWithFormat:ITLocalizedMenuString(@"iTerm is not the default handler for %@. "
+                                                        @"Would you like to set iTerm as the default handler?"), scheme];
         NSAlert *alert = [[[NSAlert alloc] init] autorelease];
         alert.messageText = theTitle;
         alert.informativeText = [NSString stringWithFormat:@"The current handler is: %@",
@@ -177,7 +177,7 @@ static NSString *const kOldStyleUrlHandlersUserDefaultsKey = @"URLHandlers";
 
 - (BOOL)offerToPickApplicationToOpenFile:(NSString *)fullPath {
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = [NSString stringWithFormat:@"There is no application set to open the document “%@”", [fullPath lastPathComponent]];
+    alert.messageText = [NSString stringWithFormat:ITLocalizedMenuString(@"There is no application set to open the document “%@”"), [fullPath lastPathComponent]];
     alert.informativeText = ITLocalizedMenuString(@"Choose an application on your computer to open this file.");
     [alert addButtonWithTitle:ITLocalizedMenuString(@"Choose Application…")];
     [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];

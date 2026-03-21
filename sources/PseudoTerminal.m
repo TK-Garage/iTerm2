@@ -1906,7 +1906,7 @@ ITERM_WEAKLY_REFERENCEABLE
     [[self retain] autorelease];
 
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = [NSString stringWithFormat:@"Close %@?", genericName];
+    alert.messageText = [NSString stringWithFormat:ITLocalizedMenuString(@"Close %@?"), genericName];
     alert.informativeText = message;
     [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
     [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];

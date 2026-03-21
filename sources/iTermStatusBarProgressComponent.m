@@ -10,6 +10,8 @@
 #import "NSImage+iTerm.h"
 #import "PasteViewController.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface iTermStatusBarProgressComponent()<PasteViewControllerDelegate>
@@ -47,12 +49,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Progress Indicator";
+    return ITLocalizedMenuString(@"Progress Indicator");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
     [self doesNotRecognizeSelector:_cmd];
-    return @"Generic progress indicator";
+    return ITLocalizedMenuString(@"Generic progress indicator");
 }
 
 - (NSArray<iTermStatusBarComponentKnob *> *)statusBarComponentKnobs {

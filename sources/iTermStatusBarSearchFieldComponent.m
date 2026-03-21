@@ -16,6 +16,8 @@
 #import "NSImage+iTerm.h"
 #import "NSObject+iTerm.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NS_ASSUME_NONNULL_BEGIN
 
 NSString *iTermStatusBarSearchComponentIsTemporaryKey = @"search: temporary";
@@ -44,16 +46,16 @@ NSString *iTermStatusBarSearchComponentIsTemporaryKey = @"search: temporary";
 #pragma mark - iTermStatusBarComponent
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Search Tool";
+    return ITLocalizedMenuString(@"Search Tool");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Search tool to find text in the terminal window.";
+    return ITLocalizedMenuString(@"Search tool to find text in the terminal window.");
 }
 
 - (NSArray<iTermStatusBarComponentKnob *> *)statusBarComponentKnobs {
     return @[
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Color"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Color")
                                                           type:iTermStatusBarComponentKnobTypeColor
                                                    placeholder:nil
                                                   defaultValue:nil

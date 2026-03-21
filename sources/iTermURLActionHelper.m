@@ -444,7 +444,7 @@ workingDirectory:(NSString *)workingDirectory
 
 + (NSString *)usernameToDownloadFileOnHost:(NSString *)host {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = [NSString stringWithFormat:@"Enter username for host %@ to download file with scp", host];
+    alert.messageText = [NSString stringWithFormat:ITLocalizedMenuString(@"Enter username for host %@ to download file with scp"), host];
     [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
     [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
 

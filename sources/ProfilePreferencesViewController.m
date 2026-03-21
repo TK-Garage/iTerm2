@@ -899,7 +899,7 @@ andEditComponentWithIdentifier:(NSString *)identifier
                         actions = [actions arrayByAddingObject:@"Abort"];
                     }
                     iTermWarningSelection selection =
-                    [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"Import from %@ failed: %@", url.path, error.localizedDescription]
+                    [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"Import from %@ failed: %@"), url.path, error.localizedDescription]
                                                actions:actions
                                              accessory:nil
                                             identifier:@"NoSyncJSONImportFailed"

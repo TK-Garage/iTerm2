@@ -830,7 +830,7 @@ typedef NS_ENUM(NSUInteger, iTermWindowUnitsTag) {
         return NO;
     }
     if (data.length == 0) {
-        [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"The image “%@” could not be loaded because the file is empty.", filename.lastPathComponent]
+        [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"The image “%@” could not be loaded because the file is empty."), filename.lastPathComponent]
                                    actions:@[ @"OK" ]
                                  accessory:nil
                                 identifier:@"BackgroundImageUnreadable"
@@ -840,7 +840,7 @@ typedef NS_ENUM(NSUInteger, iTermWindowUnitsTag) {
         return NO;
     }
     if (![[NSImage alloc] initWithData:data]) {
-        [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"The image “%@” could not be loaded because it is corrupt or not a supported format.", filename.lastPathComponent]
+        [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"The image “%@” could not be loaded because it is corrupt or not a supported format."), filename.lastPathComponent]
                                    actions:@[ @"OK" ]
                                  accessory:nil
                                 identifier:@"BackgroundImageUnreadable"

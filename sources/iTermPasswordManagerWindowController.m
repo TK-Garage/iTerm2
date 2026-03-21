@@ -677,7 +677,7 @@ static NSArray<NSString *> *gTerminalCachedCombinedAccountNames;
 
         @autoreleasepool {
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = [NSString stringWithFormat:@"Enter password for %@:", accountName];
+            alert.messageText = [NSString stringWithFormat:ITLocalizedMenuString(@"Enter password for %@:"), accountName];
             [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
             [alert addButtonWithTitle:ITLocalizedMenuString(@"Generate")];
             [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
@@ -904,7 +904,7 @@ static NSArray<NSString *> *gTerminalCachedCombinedAccountNames;
         return;
     }
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = [NSString stringWithFormat:@"Password for %@", accountName];
+    alert.messageText = [NSString stringWithFormat:ITLocalizedMenuString(@"Password for %@"), accountName];
     alert.informativeText = password;
     [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
     [alert addButtonWithTitle:ITLocalizedMenuString(@"Copy")];
@@ -1137,7 +1137,7 @@ static NSArray<NSString *> *gTerminalCachedCombinedAccountNames;
                 DLog(@"passwordForRow: return nil, keychain gave error %@", error);
 
                 NSAlert *alert = [[NSAlert alloc] init];
-                alert.messageText = [NSString stringWithFormat:@"Could not get password. Keychain query failed: %@",
+                alert.messageText = [NSString stringWithFormat:ITLocalizedMenuString(@"Could not get password. Keychain query failed: %@"),
                                      error.localizedDescription];
                 [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
                 [self runModal:alert completion:^(NSModalResponse response) { }];

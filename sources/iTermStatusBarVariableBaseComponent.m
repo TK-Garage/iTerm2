@@ -23,6 +23,8 @@
 #import "iTermProfilePreferences.h"
 #import "VT100RemoteHost.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NS_ASSUME_NONNULL_BEGIN
 
 @implementation iTermStatusBarVariableBaseComponent {
@@ -141,9 +143,9 @@ static NSString *const iTermStatusBarHostnameComponentAbbreviateLocalhost = @"ab
 
 - (NSArray<iTermStatusBarComponentKnob *> *)statusBarComponentKnobs {
     iTermStatusBarComponentKnob *abbreviateLocalhostKnob =
-    [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"localhost replacement"
+    [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"localhost replacement")
                                                       type:iTermStatusBarComponentKnobTypeText
-                                               placeholder:@"Enter replacement text for localhost"
+                                               placeholder:ITLocalizedMenuString(@"Enter replacement text for localhost")
                                               defaultValue:@""
                                                        key:iTermStatusBarHostnameComponentAbbreviateLocalhost];
     return [@[ abbreviateLocalhostKnob ] arrayByAddingObjectsFromArray:[super statusBarComponentKnobs]];
@@ -154,11 +156,11 @@ static NSString *const iTermStatusBarHostnameComponentAbbreviateLocalhost = @"ab
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Host Name";
+    return ITLocalizedMenuString(@"Host Name");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Current host name. Requires shell integration.";
+    return ITLocalizedMenuString(@"Current host name. Requires shell integration.");
 }
 
 - (id)statusBarComponentExemplarWithBackgroundColor:(NSColor *)backgroundColor
@@ -210,11 +212,11 @@ static NSString *const iTermStatusBarHostnameComponentAbbreviateLocalhost = @"ab
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"User Name";
+    return ITLocalizedMenuString(@"User Name");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Current user name. Requires shell integration.";
+    return ITLocalizedMenuString(@"Current user name. Requires shell integration.");
 }
 
 - (id)statusBarComponentExemplarWithBackgroundColor:(NSColor *)backgroundColor
@@ -276,11 +278,11 @@ static NSString *const iTermStatusBarHostnameComponentAbbreviateLocalhost = @"ab
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Current Directory";
+    return ITLocalizedMenuString(@"Current Directory");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Current directory. Best with shell integration.";
+    return ITLocalizedMenuString(@"Current directory. Best with shell integration.");
 }
 
 - (id)statusBarComponentExemplarWithBackgroundColor:(NSColor *)backgroundColor
@@ -346,19 +348,19 @@ static NSString *const iTermStatusBarHostnameComponentAbbreviateLocalhost = @"ab
     if (currentPath.length) {
         [menu addItem:[NSMenuItem separatorItem]];
 
-        NSMenuItem *copyPath = [[NSMenuItem alloc] initWithTitle:@"Copy Path"
+        NSMenuItem *copyPath = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Copy Path")
                                                           action:@selector(copyCurrentPath:)
                                                    keyEquivalent:@""];
         copyPath.target = self;
         [menu addItem:copyPath];
 
-        NSMenuItem *copyBasename = [[NSMenuItem alloc] initWithTitle:@"Copy Folder Name"
+        NSMenuItem *copyBasename = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Copy Folder Name")
                                                               action:@selector(copyCurrentBasename:)
                                                        keyEquivalent:@""];
         copyBasename.target = self;
         [menu addItem:copyBasename];
 
-        NSMenuItem *openInFinder = [[NSMenuItem alloc] initWithTitle:@"Reveal in Finder"
+        NSMenuItem *openInFinder = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Reveal in Finder")
                                                               action:@selector(openCurrentPathInFinder:)
                                                        keyEquivalent:@""];
         openInFinder.target = self;
@@ -366,13 +368,13 @@ static NSString *const iTermStatusBarHostnameComponentAbbreviateLocalhost = @"ab
 
         [menu addItem:[NSMenuItem separatorItem]];
 
-        NSMenuItem *openInNewWindow = [[NSMenuItem alloc] initWithTitle:@"New Session Here in New Window"
+        NSMenuItem *openInNewWindow = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"New Session Here in New Window")
                                                                  action:@selector(openCurrentPathInNewWindow:)
                                                           keyEquivalent:@""];
         openInNewWindow.target = self;
         [menu addItem:openInNewWindow];
 
-        NSMenuItem *openInNewTab = [[NSMenuItem alloc] initWithTitle:@"New Session Here in New Tab"
+        NSMenuItem *openInNewTab = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"New Session Here in New Tab")
                                                               action:@selector(openCurrentPathInNewTab:)
                                                        keyEquivalent:@""];
         openInNewTab.target = self;

@@ -10857,7 +10857,7 @@ typedef NS_ENUM(NSUInteger, PTYSessionTmuxReport) {
                         sideEffectsAllowed:YES
                                 completion:^(iTermExpressionEvaluator *evaluator) {
                 if (evaluator.error) {
-                    [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"The key-binding action Copy Interpolated String “%@” failed:\n\n%@",
+                    [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"The key-binding action Copy Interpolated String “%@” failed:\n\n%@"),
                                                         parameter, evaluator.error.localizedDescription]
                                                actions:@[ @"OK" ]
                                              accessory:nil
@@ -15088,7 +15088,7 @@ typedef NS_ENUM(NSUInteger, PTYSessionTmuxReport) {
                 if (message) {
                     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
                     alert.messageText = ITLocalizedMenuString(@"Error Preparing Upload");
-                    alert.informativeText = [NSString stringWithFormat:@"tar failed with this message: %@", message];
+                    alert.informativeText = [NSString stringWithFormat:ITLocalizedMenuString(@"tar failed with this message: %@"), message];
                     [alert runModal];
                     return;
                 }
@@ -17380,7 +17380,7 @@ static const NSTimeInterval PTYSessionFocusReportBellSquelchTimeIntervalThreshol
 - (BOOL)screenConfirmDownloadNamed:(NSString *)name canExceedSize:(NSInteger)limit {
     NSString *identifier = @"NoSyncAllowBigDownload";
     const iTermWarningSelection selection =
-    [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"The download “%@” is larger than %@. Continue?", name, [NSString it_formatBytes:limit]]
+    [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"The download “%@” is larger than %@. Continue?"), name, [NSString it_formatBytes:limit]]
                                actions:@[ @"Allow", @"Deny" ]
                              accessory:nil
                             identifier:identifier
@@ -17400,13 +17400,13 @@ static const NSTimeInterval PTYSessionFocusReportBellSquelchTimeIntervalThreshol
     NSString *title;
     NSString *heading;
     if (displayInline) {
-        title = [NSString stringWithFormat:@"The terminal has initiated display of a file named “%@” of size %@. Allow it?",
+        title = [NSString stringWithFormat:ITLocalizedMenuString(@"The terminal has initiated display of a file named “%@” of size %@. Allow it?"),
                  name, [NSString it_formatBytes:size]];
-        heading = @"Allow Terminal-Initiated Display?";
+        heading = ITLocalizedMenuString(@"Allow Terminal-Initiated Display?");
     } else {
-        title = [NSString stringWithFormat:@"The terminal has initiated transfer of a file named “%@” of size %@. Download it?",
+        title = [NSString stringWithFormat:ITLocalizedMenuString(@"The terminal has initiated transfer of a file named “%@” of size %@. Download it?"),
                  name, [NSString it_formatBytes:size]];
-        heading = @"Allow Terminal-Initiated Download?";
+        heading = ITLocalizedMenuString(@"Allow Terminal-Initiated Download?");
     }
     const iTermWarningSelection selection =
     [iTermWarning showWarningWithTitle:title

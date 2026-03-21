@@ -100,7 +100,7 @@ class ModalPasswordAlert {
         let newPassword = NSSecureTextField(frame: NSRect(x: 0, y: 0, width: 200, height: 22))
         newPassword.isEditable = true
         newPassword.isSelectable = true
-        newPassword.placeholderString = "Password"
+        newPassword.placeholderString = NSLocalizedString("Password", tableName: "iTerm", bundle: .main, comment: "")
 
         let wrapper = NSStackView()
         wrapper.orientation = .vertical
@@ -122,7 +122,7 @@ class ModalPasswordAlert {
             field.isEditable = true
             field.isSelectable = true
             field.stringValue = username
-            field.placeholderString = "User name"
+            field.placeholderString = NSLocalizedString("User name", tableName: "iTerm", bundle: .main, comment: "")
 
             wrapper.addArrangedSubview(field)
             field.nextKeyView = newPassword

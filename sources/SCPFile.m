@@ -424,7 +424,7 @@ static NSError *SCPFileError(NSString *description) {
             [[FileTransferManager sharedInstance] transferrableFile:self
                                      didFinishTransmissionWithError:theError];
             iTermWarningSelection selection =
-                [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"Failed to connect to %@:%d. Double-check that the host name is correct.", self.hostname, effectivePort]
+                [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"Failed to connect to %@:%d. Double-check that the host name is correct."), self.hostname, effectivePort]
                                            actions:@[ @"Ok", @"Help" ]
                                      actionMapping:nil
                                          accessory:nil

@@ -49,6 +49,8 @@
 #import "RegexKitLite.h"
 #include <sys/utsname.h>
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NSString *const kSemanticHistoryPathSubstitutionKey = @"semanticHistory.path";
 NSString *const kSemanticHistoryPrefixSubstitutionKey = @"semanticHistory.prefix";
 NSString *const kSemanticHistorySuffixSubstitutionKey = @"semanticHistory.suffix";
@@ -663,7 +665,7 @@ NSString *const kSemanticHistoryColumnNumberKey = @"semanticHistory.columnNumber
         return;
     }
     iTermWarning *warning = [[iTermWarning alloc] init];
-    warning.title = [NSString stringWithFormat:@"The following command returned a non-zero exit code:\n\n“%@”",
+    warning.title = [NSString stringWithFormat:ITLocalizedMenuString(@"The following command returned a non-zero exit code:\n\n“%@”"),
                      [parts componentsJoinedByString:@" "]];
     warning.heading = @"Semantic History Command Failed";
     static const iTermSingleUseWindowOptions options = iTermSingleUseWindowOptionsShortLived;

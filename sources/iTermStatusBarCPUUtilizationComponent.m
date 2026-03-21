@@ -16,6 +16,8 @@
 #import "NSStringITerm.h"
 #import "NSView+iTerm.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 static const CGFloat iTermCPUUtilizationWidth = 120;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -51,11 +53,11 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"CPU Utilization";
+    return ITLocalizedMenuString(@"CPU Utilization");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Shows current CPU utilization.";
+    return ITLocalizedMenuString(@"Shows current CPU utilization.");
 }
 
 - (id)statusBarComponentExemplarWithBackgroundColor:(NSColor *)backgroundColor

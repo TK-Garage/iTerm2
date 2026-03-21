@@ -25,6 +25,7 @@
 #import "NSFileManager+iTerm.h"
 
 #define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+#define ITLocalizedString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle mainBundle], nil)
 
 #import "iTermAdvancedSettingsModel.h"
 #import "DebugLogging.h"
@@ -144,7 +145,7 @@ NSString * const DirectoryLocationDomain = @"DirectoryLocationDomain";
     if (result == nil) {
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
-            [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"There was a problem finding or creating your application support directory. iTerm2 won't work very well until this problem is fixed.\n\nIt should be at ~/Library/Application Support/iTerm2.\n\nThe error was:\n%@", error.localizedDescription]
+            [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedString(@"There was a problem finding or creating your application support directory. iTerm2 won't work very well until this problem is fixed.\n\nIt should be at ~/Library/Application Support/iTerm2.\n\nThe error was:\n%@"), error.localizedDescription]
                                        actions:@[ @"OK" ]
                                      accessory:nil
                                     identifier:@"NoSyncAppSupportFail"
@@ -388,7 +389,7 @@ NSString * const DirectoryLocationDomain = @"DirectoryLocationDomain";
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             DLog(@"Failed to create the config directory: %@", error);
-            [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"There was a problem finding or creating the config directory. You can set “Settings > Advanced > Folder for config files“ to set a custom location for this directory. Until this is fixed, some features will be disabled.\n%@", error.localizedDescription]
+            [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedString(@"There was a problem finding or creating the config directory. You can set “Settings > Advanced > Folder for config files“ to set a custom location for this directory. Until this is fixed, some features will be disabled.\n%@"), error.localizedDescription]
                                        actions:@[ @"OK" ]
                                      accessory:nil
                                     identifier:@"NoSyncErrorCreatingConfigFolder"

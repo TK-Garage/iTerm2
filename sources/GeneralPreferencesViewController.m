@@ -1295,7 +1295,7 @@ enum {
 
 - (IBAction)changeAPIKey:(id)sender {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = [NSString stringWithFormat:@"Enter the API key for your AI provider. The key will be stored securely in the Keychain."];
+    alert.messageText = ITLocalizedMenuString(@"Enter the API key for your AI provider. The key will be stored securely in the Keychain.");
     [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
     [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
 

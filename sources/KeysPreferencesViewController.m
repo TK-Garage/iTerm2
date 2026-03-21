@@ -368,12 +368,12 @@ static NSString *const kKeyCode0MitigationSuffixGlobal = @"Global";
         iTermWarningSelection edit = kItermWarningSelectionError;
 
         if (profileHotKeys.count == 1) {
-            namesSentence = [NSString stringWithFormat:@"You already have a Profile with a Hotkey Window named %@", joinedNames];
+            namesSentence = [NSString stringWithFormat:ITLocalizedMenuString(@"You already have a Profile with a Hotkey Window named %@"), joinedNames];
             actions = @[ @"OK", @"Configure Existing Profile", @"Cancel"];
             edit = kiTermWarningSelection1;
             cancel = kiTermWarningSelection2;
         } else {
-            namesSentence = [NSString stringWithFormat:@"You already have Profiles with Hotkey Windows named %@", joinedNames];
+            namesSentence = [NSString stringWithFormat:ITLocalizedMenuString(@"You already have Profiles with Hotkey Windows named %@"), joinedNames];
         }
         namesSentence = [namesSentence stringByInsertingTerminalPunctuation:@"."];
 
@@ -449,8 +449,8 @@ static NSString *const kKeyCode0MitigationSuffixGlobal = @"Global";
                                                               userInfo:nil];
             NSAlert *alert = [[NSAlert alloc] init];
             alert.messageText = ITLocalizedMenuString(@"Hotkey Window Successfully Configured");
-            alert.informativeText = [NSString stringWithFormat:@"A new profile called “%@” was created for you. It is tuned to work well "
-                                     @"for the Hotkey Window feature and it can be customized in the Profiles tab.",
+            alert.informativeText = [NSString stringWithFormat:ITLocalizedMenuString(@"A new profile called “%@” was created for you. It is tuned to work well "
+                                     @"for the Hotkey Window feature and it can be customized in the Profiles tab."),
                                      newProfileName];
             [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
             [alert runModal];
@@ -785,7 +785,7 @@ static NSString *const kKeyCode0MitigationSuffixGlobal = @"Global";
 
 - (NSNumber *)removeBeforeLoading:(NSString *)thing {
     const iTermWarningSelection selection =
-    [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"Remove all key mappings before loading %@?", thing]
+    [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"Remove all key mappings before loading %@?"), thing]
                                actions:@[ @"Keep", @"Remove", @"Cancel" ]
                              accessory:nil
                             identifier:@"RemoveExistingGlobalKeyMappingsBeforeLoading"

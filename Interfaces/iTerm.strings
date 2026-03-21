@@ -230,3 +230,114 @@
 "Unable to Fork!"="Unable to Fork!";
 "iTerm cannot launch the program for this session."="iTerm cannot launch the program for this session.";
 "Close Session"="Close Session";
+
+/* ============================================================ */
+/* Phase 6: iTermWarning internal strings                       */
+/* ============================================================ */
+
+"Warning" = "Warning";
+"Suppress this message for ten minutes" = "Suppress this message for ten minutes";
+"Remember my choice for ten minutes" = "Remember my choice for ten minutes";
+"Suppress this message for 30 days" = "Suppress this message for 30 days";
+"Remember my choice for 30 days" = "Remember my choice for 30 days";
+"Suppress this message permanently" = "Suppress this message permanently";
+"Remember my choice" = "Remember my choice";
+
+/* ============================================================ */
+/* Phase 6: Status bar component strings                        */
+/* ============================================================ */
+
+"Battery Level" = "Battery Level";
+"Shows current battery level and its recent history." = "Shows current battery level and its recent history.";
+"Show Percentage" = "Show Percentage";
+"Show Estimated Time" = "Show Estimated Time";
+"Clock" = "Clock";
+"Shows current date and time with a configurable format." = "Shows current date and time with a configurable format.";
+"Date Format:" = "Date Format:";
+"Localize Date Format" = "Localize Date Format";
+"Show server time in SSH integration?" = "Show server time in SSH integration?";
+"Use server time zone in SSH integration?" = "Use server time zone in SSH integration?";
+"CPU Utilization" = "CPU Utilization";
+"Shows current CPU utilization." = "Shows current CPU utilization.";
+"Memory Utilization" = "Memory Utilization";
+"Shows current memory utilization." = "Shows current memory utilization.";
+"Network Throughput" = "Network Throughput";
+"Shows current network throughput." = "Shows current network throughput.";
+"Download Color:" = "Download Color:";
+"Download Text Color:" = "Download Text Color:";
+"Upload Color:" = "Upload Color:";
+"Upload Text Color:" = "Upload Text Color:";
+"Job Name" = "Job Name";
+"Shows the currently running job. If space permits, parent process names are also shown." = "Shows the currently running job. If space permits, parent process names are also shown.";
+"git state" = "git state";
+"Shows a summary of the git state of the current directory." = "Shows a summary of the git state of the current directory.";
+"Polling Interval (seconds):" = "Polling Interval (seconds):";
+"Merging" = "Merging";
+"Reverting" = "Reverting";
+"Cherrypicking" = "Cherrypicking";
+"Bisecting" = "Bisecting";
+"Rebasing" = "Rebasing";
+"Applying" = "Applying";
+"Cancel %@" = "Cancel %@";
+"Commit" = "Commit";
+"Add & Commit" = "Add & Commit";
+"Stash" = "Stash";
+"Log" = "Log";
+"Push origin %@" = "Push origin %@";
+"Pull origin %@" = "Pull origin %@";
+"Check out %@" = "Check out %@";
+"Show Debug Info" = "Show Debug Info";
+"Committing…" = "Committing…";
+"Stashing…" = "Stashing…";
+"Pushing…" = "Pushing…";
+"Pulling…" = "Pulling…";
+"Checking out…" = "Checking out…";
+"Fixed-size Spacer" = "Fixed-size Spacer";
+"Adds a fixed amount of space" = "Adds a fixed amount of space";
+"Width" = "Width";
+"Empty Space" = "Empty Space";
+"Spring" = "Spring";
+"Empty space that draws only a background color." = "Empty space that draws only a background color.";
+"Compression Resistance:" = "Compression Resistance:";
+"Size Multiple:" = "Size Multiple:";
+"Progress Indicator" = "Progress Indicator";
+"Generic progress indicator" = "Generic progress indicator";
+"Search Tool" = "Search Tool";
+"Search tool to find text in the terminal window." = "Search tool to find text in the terminal window.";
+"Composer" = "Composer";
+"Adds a text field for composing command lines." = "Adds a text field for composing command lines.";
+"Icon Color:" = "Icon Color:";
+"Snippets Menu" = "Snippets Menu";
+"Send Snippet…" = "Send Snippet…";
+"Edit Snippets…" = "Edit Snippets…";
+"Interpolated String" = "Interpolated String";
+"String Value:" = "String Value:";
+"Custom Action" = "Custom Action";
+"Actions Menu" = "Actions Menu";
+"Perform Action…" = "Perform Action…";
+"Edit Actions…" = "Edit Actions…";
+"Action" = "Action";
+"Call Script Function" = "Call Script Function";
+"Label:" = "Label:";
+"Function call:" = "Function call:";
+"Timeout (seconds):" = "Timeout (seconds):";
+"Placeholder" = "Placeholder";
+"Click here to configure status bar" = "Click here to configure status bar";
+"Text Color:" = "Text Color:";
+"Background Color:" = "Background Color:";
+"Custom Font" = "Custom Font";
+"Maximum Width:" = "Maximum Width:";
+"Minimum Width:" = "Minimum Width:";
+"Priority:" = "Priority:";
+"Color" = "Color";
+"localhost replacement" = "localhost replacement";
+"Host Name" = "Host Name";
+"User Name" = "User Name";
+"Current Directory" = "Current Directory";
+"Copy Path" = "Copy Path";
+"Copy Folder Name" = "Copy Folder Name";
+"New Session Here in New Window" = "New Session Here in New Window";
+"New Session Here in New Tab" = "New Session Here in New Tab";
+"Close %@?" = "Close %@?";
+"Password" = "Password";
+"User name" = "User name";

@@ -19,6 +19,8 @@
 #import "PTYSession.h"
 #import "VT100RemoteHost.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 @interface iTermStatusBarComposerComponent() <iTermsStatusBarComposerViewControllerDelegate>
 @end
 
@@ -36,13 +38,13 @@
 
 - (NSArray<iTermStatusBarComponentKnob *> *)statusBarComponentKnobs {
     iTermStatusBarComponentKnob *textColorKnob =
-    [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Icon Color:"
+    [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Icon Color:")
                                                       type:iTermStatusBarComponentKnobTypeColor
                                                placeholder:nil
                                               defaultValue:nil
                                                        key:iTermStatusBarSharedTextColorKey];
     iTermStatusBarComponentKnob *backgroundColorKnob =
-    [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Background Color:"
+    [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Background Color:")
                                                       type:iTermStatusBarComponentKnobTypeColor
                                                placeholder:nil
                                               defaultValue:nil
@@ -66,11 +68,11 @@
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Composer";
+    return ITLocalizedMenuString(@"Composer");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Adds a text field for composing command lines.";
+    return ITLocalizedMenuString(@"Adds a text field for composing command lines.");
 }
 
 - (id)statusBarComponentExemplarWithBackgroundColor:(NSColor *)backgroundColor

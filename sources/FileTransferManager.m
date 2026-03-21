@@ -381,10 +381,10 @@ static const NSTimeInterval kMaximumTimeToKeepFinishedDownload = 24 * 60 * 60;
 - (void)transferrableFile:(TransferrableFile *)transferrableFile
         interactivePrompt:(NSString *)prompt
                completion:(void (^)(NSString *password))completion {
-    NSString *text = [NSString stringWithFormat:@"Authenticate %@", transferrableFile.authRequestor];
+    NSString *text = [NSString stringWithFormat:ITLocalizedMenuString(@"Authenticate %@"), transferrableFile.authRequestor];
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
     alert.messageText = text;
-    alert.informativeText = [NSString stringWithFormat:@"Please enter the %@ for %@ to begin %@.",
+    alert.informativeText = [NSString stringWithFormat:ITLocalizedMenuString(@"Please enter the %@ for %@ to begin %@."),
                              prompt, transferrableFile.authRequestor,
                              transferrableFile.protocolName];
     [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
