@@ -208,7 +208,7 @@ class iTermScreenshotPanel: NSPanel {
         self.isFloatingPanel = true
         self.becomesKeyOnlyIfNeeded = true
         self.hidesOnDeactivate = true  // Hide when iTerm2 is not active
-        self.title = "Make Screenshot"
+        self.title = NSLocalizedString("Make Screenshot", tableName: "iTerm", bundle: .main, comment: "")
         self.isReleasedWhenClosed = false
         self.delegate = self
         setupUI()
@@ -303,7 +303,7 @@ class iTermScreenshotPanel: NSPanel {
         encodingProgressBar.translatesAutoresizingMaskIntoConstraints = false
         encodingProgressContainer.addSubview(encodingProgressBar)
 
-        encodingCancelButton = NSButton(title: "Cancel", target: self, action: #selector(cancelEncodingClicked(_:)))
+        encodingCancelButton = NSButton(title: NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: ""), target: self, action: #selector(cancelEncodingClicked(_:)))
         encodingCancelButton.bezelStyle = .rounded
         encodingCancelButton.controlSize = .small
         encodingCancelButton.translatesAutoresizingMaskIntoConstraints = false
@@ -363,20 +363,20 @@ class iTermScreenshotPanel: NSPanel {
         instructionLabel.textColor = .secondaryLabelColor
         contentView.addSubview(instructionLabel)
 
-        addRedactionButton = NSButton(title: "Redact Selection", target: self, action: #selector(addRedactionClicked(_:)))
+        addRedactionButton = NSButton(title: NSLocalizedString("Redact Selection", tableName: "iTerm", bundle: .main, comment: ""), target: self, action: #selector(addRedactionClicked(_:)))
         addRedactionButton.translatesAutoresizingMaskIntoConstraints = false
         addRedactionButton.bezelStyle = .rounded
         addRedactionButton.isEnabled = false
         contentView.addSubview(addRedactionButton)
 
-        addHighlightButton = NSButton(title: "Highlight Selection", target: self, action: #selector(addHighlightClicked(_:)))
+        addHighlightButton = NSButton(title: NSLocalizedString("Highlight Selection", tableName: "iTerm", bundle: .main, comment: ""), target: self, action: #selector(addHighlightClicked(_:)))
         addHighlightButton.translatesAutoresizingMaskIntoConstraints = false
         addHighlightButton.bezelStyle = .rounded
         addHighlightButton.isEnabled = false
         contentView.addSubview(addHighlightButton)
 
         // Segmented control with "-" (remove selected) and "Clear All"
-        annotationActionsControl = NSSegmentedControl(labels: ["−", "Clear All"],
+        annotationActionsControl = NSSegmentedControl(labels: ["−", NSLocalizedString("Clear All", tableName: "iTerm", bundle: .main, comment: "")],
                                                        trackingMode: .momentary,
                                                        target: self,
                                                        action: #selector(annotationActionClicked(_:)))
@@ -402,7 +402,7 @@ class iTermScreenshotPanel: NSPanel {
         annotationsTableView.usesAlternatingRowBackgroundColors = true
 
         let labelColumn = NSTableColumn(identifier: NSUserInterfaceItemIdentifier("label"))
-        labelColumn.title = "Label"
+        labelColumn.title = NSLocalizedString("Label", tableName: "iTerm", bundle: .main, comment: "")
         labelColumn.minWidth = 200
         annotationsTableView.addTableColumn(labelColumn)
 
