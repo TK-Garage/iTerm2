@@ -302,3 +302,116 @@
 /* PTYSession.m — tmux pane menu */
 "Unpause tmux Pane" = "tmux ペインの一時停止を解除";
 "Pause tmux Pane" = "tmux ペインを一時停止";
+
+/* ============================================================ */
+/* Phase 5: Alert and dialog strings                            */
+/* ============================================================ */
+
+/* Common button titles */
+"OK" = "OK";
+"Cancel" = "キャンセル";
+"Yes" = "はい";
+"No" = "いいえ";
+"Delete" = "削除";
+"Detach" = "デタッチ";
+"Reveal" = "表示";
+"Show Session" = "セッションを表示";
+"Disable This Alert" = "この通知を無効化";
+"Generate" = "生成";
+"Copy" = "コピー";
+"Add it anyway" = "それでも追加";
+
+/* PTYSession.m — alerts */
+"Enter command to send tmux:" = "tmux に送信するコマンドを入力:";
+"Force Detach?" = "強制デタッチしますか？";
+"Alert" = "通知";
+"Error Preparing Upload" = "アップロード準備エラー";
+"Upload in Progress" = "アップロード中";
+"Tmux is not responding. Would you like to force detach?" = "tmux が応答していません。強制デタッチしますか？";
+"A previous detach request has not yet been honored. Force detach?" = "前回のデタッチ要求がまだ処理されていません。強制デタッチしますか？";
+"Please wait for the current upload to complete or cancel it before starting another." = "別のアップロードを開始する前に、現在のアップロードの完了またはキャンセルをお待ちください。";
+"Wrong Encoding Detected" = "不正なエンコーディングを検出";
+"Browser Plugin Missing" = "ブラウザプラグインが見つかりません";
+"Can't Disconnect" = "切断できません";
+"Cannot Attach" = "接続できません";
+"Error Evaluating Interpolated String" = "補間文字列の評価エラー";
+"Permission Required" = "許可が必要です";
+"Allow Large File Download?" = "大きなファイルのダウンロードを許可しますか？";
+"AI Error" = "AI エラー";
+"Done!" = "完了！";
+
+/* PseudoTerminal.m — alerts */
+"Set Window Title" = "ウィンドウタイトルを設定";
+"Set Tab Title" = "タブタイトルを設定";
+"Restart session?" = "セッションを再起動しますか？";
+"Running jobs will be killed." = "実行中のジョブは終了されます。";
+"Not all sessions at password prompt" = "すべてのセッションがパスワードプロンプトにあるわけではありません";
+
+/* iTermApplicationDelegate.m — alerts */
+"Colors Scheme Imported" = "カラースキームをインポートしました";
+"Quit iTerm2?" = "iTerm2 を終了しますか？";
+"GPU Renderer Availability" = "GPU レンダラーの利用状況";
+"Deprecation Notice" = "非推奨のお知らせ";
+"Python Runtime" = "Python ランタイム";
+"Error Installing Python Runtime" = "Python ランタイムのインストールエラー";
+
+/* DebugLogging.m */
+"Debug Logging Enabled" = "デバッグログが有効になりました";
+"Please reproduce the bug. Then toggle debug logging again to save the log." = "バグを再現してください。その後、デバッグログを再度切り替えてログを保存してください。";
+"Debug Logging Stopped" = "デバッグログが停止しました";
+"Please send /tmp/debuglog.txt to the developers." = "/tmp/debuglog.txt を開発者に送信してください。";
+"Problem Saving Debug Log" = "デバッグログの保存に問題があります";
+
+/* ProfilesColorsPreferencesViewController.m */
+"Save Color Preset" = "カラープリセットを保存";
+"Select preset name" = "プリセット名を選択";
+"No deletable color presets." = "削除可能なカラープリセットがありません。";
+"You cannot erase the built-in presets and no custom presets have been imported." = "組み込みプリセットは削除できず、カスタムプリセットもインポートされていません。";
+"Select a preset to delete:" = "削除するプリセットを選択:";
+"Save Failed." = "保存に失敗しました。";
+"Update Which Modes?" = "どのモードを更新しますか？";
+
+/* iTermPasswordManagerWindowController.m */
+"Are you sure you want to delete this password?" = "このパスワードを本当に削除しますか？";
+"Are you sure?" = "本当に実行しますか？";
+
+/* iTermPythonRuntimeDownloader.m */
+"Download Python Runtime?" = "Python ランタイムをダウンロードしますか？";
+"Download Canceled" = "ダウンロードがキャンセルされました";
+"Python Runtime Unavailable" = "Python ランタイムが利用できません";
+"Signature Verification Failed" = "署名の検証に失敗しました";
+"Error unzipping python environment" = "Python 環境の解凍エラー";
+"Dependency Installation Failed" = "依存関係のインストールに失敗しました";
+
+/* KeysPreferencesViewController.m */
+"Hotkey Window Successfully Configured" = "ホットキーウィンドウの設定が完了しました";
+"Emulate US Keyboard" = "US キーボードのエミュレーション";
+"Add Another Hotkey Window Profile?" = "別のホットキーウィンドウプロファイルを追加しますか？";
+"Load Preset" = "プリセットを読み込み";
+
+/* ToolCommandHistoryView.m */
+"Erase Command History" = "コマンド履歴を消去";
+"Command history for all hosts will be erased. Continue?" = "すべてのホストのコマンド履歴が消去されます。続けますか？";
+
+/* ToolDirectoriesView.m */
+"Erase Saved Directories?" = "保存されたディレクトリを消去しますか？";
+
+/* ToolPasteHistory.m */
+"Erase Paste History" = "ペースト履歴を消去";
+"Paste history will be erased. Continue?" = "ペースト履歴が消去されます。続けますか？";
+
+/* WindowArrangements.m */
+"Replace Existing Saved Window Arrangement?" = "既存のウィンドウ配置を置き換えますか？";
+"There is an existing saved window arrangement with this name. Would you like to replace it with the current arrangement?" = "この名前の保存済みウィンドウ配置が既にあります。現在の配置で置き換えますか？";
+"Replace Arrangement?" = "配置を置き換えますか？";
+
+/* iTermColorPresets.m */
+"Import Failed." = "インポートに失敗しました。";
+"The selected file could not be read or did not contain a valid color scheme." = "選択されたファイルを読み込めないか、有効なカラースキームが含まれていません。";
+"Add duplicate color preset?" = "重複するカラープリセットを追加しますか？";
+
+/* iTermTipController.m */
+"See Tips of the Day?" = "今日のヒントを表示しますか？";
+
+/* iTermRestorableStateSQLite.m */
+"Continue restoring state?" = "状態の復元を続けますか？";

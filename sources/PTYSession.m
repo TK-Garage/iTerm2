@@ -2917,7 +2917,7 @@ ITERM_WEAKLY_REFERENCEABLE
                                  accessory:nil
                                 identifier:[@"NoSyncUTF8Mismatch_" stringByAppendingString:guid ?: @""]
                                silenceable:kiTermWarningTypePermanentlySilenceable
-                                   heading:@"Wrong Encoding Detected"
+                                   heading:ITLocalizedMenuString(@"Wrong Encoding Detected")
                                     window:self.view.window];
         if (selection == kiTermWarningSelection1) {
             return YES;
@@ -3070,7 +3070,7 @@ webViewConfiguration:(WKWebViewConfiguration *)webViewConfiguration
                                          accessory:nil
                                         identifier:nil
                                        silenceable:kiTermWarningTypePersistent
-                                           heading:@"Browser Plugin Missing"
+                                           heading:ITLocalizedMenuString(@"Browser Plugin Missing")
                                             window:nil];
                 if (selection == kiTermWarningSelection0) {
                     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://iterm2.com/browser-plugin.html"]];
@@ -3764,9 +3764,9 @@ webViewConfiguration:(WKWebViewConfiguration *)webViewConfiguration
         [self printTmuxMessage:[NSString stringWithFormat:@"tmux logging %@", (_tmuxGateway.tmuxLogging ? @"on" : @"off")]];
     } else if (unicode == 'C') {
         NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-        alert.messageText = @"Enter command to send tmux:";
-        [alert addButtonWithTitle:@"OK"];
-        [alert addButtonWithTitle:@"Cancel"];
+        alert.messageText = ITLocalizedMenuString(@"Enter command to send tmux:");
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
         NSTextField *tmuxCommand = [[[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 200, 24)] autorelease];
         [tmuxCommand setEditable:YES];
         [tmuxCommand setSelectable:YES];
@@ -9517,10 +9517,10 @@ typedef NS_ENUM(NSUInteger, PTYSessionTmuxReport) {
         return;
     }
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = @"Force Detach?";
-    alert.informativeText = @"Tmux is not responding. Would you like to force detach?";
-    [alert addButtonWithTitle:@"Detach"];
-    [alert addButtonWithTitle:@"Cancel"];
+    alert.messageText = ITLocalizedMenuString(@"Force Detach?");
+    alert.informativeText = ITLocalizedMenuString(@"Tmux is not responding. Would you like to force detach?");
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Detach")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     NSWindow *window = self.view.window;
     NSInteger button;
     if (window) {
@@ -9543,10 +9543,10 @@ typedef NS_ENUM(NSUInteger, PTYSessionTmuxReport) {
 
 - (BOOL)tmuxGatewayShouldForceDetach {
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = @"Force Detach?";
-    alert.informativeText = @"A previous detach request has not yet been honored. Force detach?";
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    alert.messageText = ITLocalizedMenuString(@"Force Detach?");
+    alert.informativeText = ITLocalizedMenuString(@"A previous detach request has not yet been honored. Force detach?");
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     NSWindow *window = self.view.window;
     NSInteger button;
     if (window) {
@@ -9857,7 +9857,7 @@ typedef NS_ENUM(NSUInteger, PTYSessionTmuxReport) {
                              accessory:nil
                             identifier:@"AlreadyAttachedToTmuxSession"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Cannot Attach"
+                               heading:ITLocalizedMenuString(@"Cannot Attach")
                                 window:self.view.window];
     switch (selection) {
         case kiTermWarningSelection0:
@@ -10863,7 +10863,7 @@ typedef NS_ENUM(NSUInteger, PTYSessionTmuxReport) {
                                              accessory:nil
                                             identifier:nil
                                            silenceable:kiTermWarningTypePersistent
-                                               heading:@"Error Evaluating Interpolated String"
+                                               heading:ITLocalizedMenuString(@"Error Evaluating Interpolated String")
                                                 window:weakSelf.view.window];
 
                     iTermScriptHistoryEntry *entry =
@@ -14667,10 +14667,10 @@ typedef NS_ENUM(NSUInteger, PTYSessionTmuxReport) {
 
 - (void)showMarkSetAlert {
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = @"Alert";
+    alert.messageText = ITLocalizedMenuString(@"Alert");
     alert.informativeText = [NSString stringWithFormat:@"Mark set in session “%@.”", [self name]];
-    [alert addButtonWithTitle:@"Reveal"];
-    [alert addButtonWithTitle:@"OK"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Reveal")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
     if ([alert runModal] == NSAlertFirstButtonReturn) {
         [self reveal];
     }
@@ -14842,7 +14842,7 @@ typedef NS_ENUM(NSUInteger, PTYSessionTmuxReport) {
                              accessory:nil
                             identifier:identifier
                            silenceable:kiTermWarningTypePermanentlySilenceable
-                               heading:@"Permission Required"
+                               heading:ITLocalizedMenuString(@"Permission Required")
                                 window:nil];
     if (selection == kiTermWarningSelection0) {
         [self reveal];
@@ -15087,7 +15087,7 @@ typedef NS_ENUM(NSUInteger, PTYSessionTmuxReport) {
                 NSString *message = error.userInfo[@"errorMessage"];
                 if (message) {
                     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-                    alert.messageText = @"Error Preparing Upload";
+                    alert.messageText = ITLocalizedMenuString(@"Error Preparing Upload");
                     alert.informativeText = [NSString stringWithFormat:@"tar failed with this message: %@", message];
                     [alert runModal];
                     return;
@@ -17385,7 +17385,7 @@ static const NSTimeInterval PTYSessionFocusReportBellSquelchTimeIntervalThreshol
                              accessory:nil
                             identifier:identifier
                            silenceable:kiTermWarningTypePermanentlySilenceable
-                               heading:@"Allow Large File Download?"
+                               heading:ITLocalizedMenuString(@"Allow Large File Download?")
                                 window:_view.window];
     return selection == kiTermWarningSelection0;
 }
@@ -18172,10 +18172,10 @@ static const NSTimeInterval PTYSessionFocusReportBellSquelchTimeIntervalThreshol
     if (_uploadAndPasteTransfer) {
         DLog(@"Upload already in progress, blocking new upload");
         NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-        alert.messageText = @"Upload in Progress";
-        alert.informativeText = @"Please wait for the current upload to complete or cancel it before starting another.";
+        alert.messageText = ITLocalizedMenuString(@"Upload in Progress");
+        alert.informativeText = ITLocalizedMenuString(@"Please wait for the current upload to complete or cancel it before starting another.");
         alert.alertStyle = NSAlertStyleWarning;
-        [alert addButtonWithTitle:@"OK"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
         if (self.view.window) {
             [alert beginSheetModalForWindow:self.view.window completionHandler:nil];
         } else {
@@ -18529,8 +18529,8 @@ static const NSTimeInterval PTYSessionFocusReportBellSquelchTimeIntervalThreshol
     }
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
     [alert setMessageText:@"Describe the command you want to run in plain English. Press ⇧⏎ to send."];
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
 
     ShiftEnterTextView *input = [[[ShiftEnterTextView alloc] initWithFrame:NSMakeRect(0, 0, 400, 200)] autorelease];
     input.richText = NO;
@@ -18793,7 +18793,7 @@ static const NSTimeInterval PTYSessionFocusReportBellSquelchTimeIntervalThreshol
                                  accessory:nil
                                 identifier:nil
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"AI Error"
+                                   heading:ITLocalizedMenuString(@"AI Error")
                                     window:self.view.window];
     }];
 }
@@ -21166,7 +21166,7 @@ static const NSTimeInterval PTYSessionFocusReportBellSquelchTimeIntervalThreshol
                                  accessory:nil
                                 identifier:nil
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Done!"
+                                   heading:ITLocalizedMenuString(@"Done!")
                                     window:self.view.window];
     } else {
         [iTermWarning showWarningWithTitle:@"Looks like the selection changed and is no longer a valid JSON object.\nYou can find this feature under Edit > Replace Selection > Replace with Pretty-Printed JSON if you want to try again."
@@ -21295,8 +21295,8 @@ static const NSTimeInterval PTYSessionFocusReportBellSquelchTimeIntervalThreshol
                              completion:(void (^)(Profile *))completion {
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:@"Select a profile to use for this session. Your selection will be saved back to the arrangement."];
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
 
     ProfileListView *profiles = [[[ProfileListView alloc] initWithFrame:NSMakeRect(0, 0, 300, 300)
                                                                   model:[ProfileModel sharedInstance]
@@ -22315,9 +22315,9 @@ getOptionKeyBehaviorLeft:(iTermOptionKeyBehavior *)left
     [rateLimit performRateLimitedBlock:^{
         NSAlert *alert = [[[NSAlert alloc] init] autorelease];
         alert.messageText = message ?: @"";
-        [alert addButtonWithTitle:@"OK"];
-        [alert addButtonWithTitle:@"Show Session"];
-        [alert addButtonWithTitle:@"Disable This Alert"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Show Session")];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Disable This Alert")];
         switch ([alert runModal]) {
             case NSAlertFirstButtonReturn:
                 break;

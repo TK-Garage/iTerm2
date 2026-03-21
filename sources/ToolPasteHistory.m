@@ -6,6 +6,8 @@
 //
 
 #import "ToolPasteHistory.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "SFSymbolEnum/SFSymbolEnum.h"
 
 #import "iTerm2SharedARC-Swift.h"
@@ -291,10 +293,10 @@ static const CGFloat kMargin = 4;
 
 - (void)clear:(id)sender {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Erase Paste History";
-    alert.informativeText = @"Paste history will be erased. Continue?";
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    alert.messageText = ITLocalizedMenuString(@"Erase Paste History");
+    alert.informativeText = ITLocalizedMenuString(@"Paste history will be erased. Continue?");
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     if ([alert runModal] == NSAlertFirstButtonReturn) {
         [pasteHistory_ eraseHistory];
         [pasteHistory_ clear];

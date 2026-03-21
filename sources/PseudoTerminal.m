@@ -1908,8 +1908,8 @@ ITERM_WEAKLY_REFERENCEABLE
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
     alert.messageText = [NSString stringWithFormat:@"Close %@?", genericName];
     alert.informativeText = message;
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     return [alert runSheetModalForWindow:self.window] == NSAlertFirstButtonReturn;
 }
 
@@ -2377,7 +2377,7 @@ ITERM_WEAKLY_REFERENCEABLE
                                                  }];
         iTermWarning *warning = [[[iTermWarning alloc] init] autorelease];
         warning.heading = @"Restart session?";
-        warning.title = @"Running jobs will be killed.";
+        warning.title = ITLocalizedMenuString(@"Running jobs will be killed.");
         warning.warningActions = @[ ok, cancel ];
         warning.identifier = @"NoSyncSuppressRestartSessionConfirmationAlert";
         warning.warningType = kiTermWarningTypePermanentlySilenceable;
@@ -3291,7 +3291,7 @@ ITERM_WEAKLY_REFERENCEABLE
 
 - (IBAction)editWindowTitle:(id)sender {
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = @"Set Window Title";
+    alert.messageText = ITLocalizedMenuString(@"Set Window Title");
     alert.informativeText = @"If this is empty, the window takes the active session’s title. Variables and function calls enclosed in \\(…) will be replaced with their evaluation. This interpolated string is evaluated in the window’s context.";
     NSTextField *titleTextField = [[[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 400, 24 * 3)] autorelease];
     iTermFunctionCallTextFieldDelegate *delegate;
@@ -3305,8 +3305,8 @@ ITERM_WEAKLY_REFERENCEABLE
     titleTextField.selectable = YES;
     titleTextField.stringValue = [self.scope valueForVariableName:iTermVariableKeyWindowTitleOverrideFormat] ?: @"";
     alert.accessoryView = titleTextField;
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     BOOL isDark;
     if ((iTermPreferencesTabStyle)[iTermPreferences intForKey:kPreferenceKeyTabStyle] == TAB_STYLE_MINIMAL) {
         isDark = self.minimalTabStyleBackgroundColor.isDark;
@@ -7682,7 +7682,7 @@ hidingToolbeltShouldResizeWindow:(BOOL)hidingToolbeltShouldResizeWindow
 
 - (void)openEditTabTitleWindow {
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = @"Set Tab Title";
+    alert.messageText = ITLocalizedMenuString(@"Set Tab Title");
     alert.informativeText = @"If this is empty, the tab takes the active session’s title. Variables and function calls enclosed in \\(…) will be replaced with their evaluation. This interpolated string is evaluated in the tab’s context.";
     NSTextField *titleTextField = [[[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 400, 24 * 3)] autorelease];
     _currentTabTitleTextFieldDelegate = [[iTermFunctionCallTextFieldDelegate alloc] initWithPathSource:[iTermVariableHistory pathSourceForContext:iTermVariablesSuggestionContextTab]
@@ -7695,8 +7695,8 @@ hidingToolbeltShouldResizeWindow:(BOOL)hidingToolbeltShouldResizeWindow
     titleTextField.selectable = YES;
     titleTextField.stringValue = self.currentTab.variablesScope.tabTitleOverrideFormat ?: @"";
     alert.accessoryView = titleTextField;
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     BOOL isDark;
     if ((iTermPreferencesTabStyle)[iTermPreferences intForKey:kPreferenceKeyTabStyle] == TAB_STYLE_MINIMAL) {
         isDark = self.minimalTabStyleBackgroundColor.isDark;
@@ -12816,7 +12816,7 @@ typedef NS_ENUM(NSUInteger, iTermBroadcastCommand) {
                                                                     accessory:nil
                                                                    identifier:nil
                                                                   silenceable:kiTermWarningTypePersistent
-                                                                      heading:@"Not all sessions at password prompt"
+                                                                      heading:ITLocalizedMenuString(@"Not all sessions at password prompt")
                                                                        window:self.window];
          switch (selection) {
              case kiTermWarningSelection0:

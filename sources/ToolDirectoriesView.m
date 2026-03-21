@@ -7,6 +7,8 @@
 //
 
 #import "ToolDirectoriesView.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "SFSymbolEnum/SFSymbolEnum.h"
 
 #import "iTerm2SharedARC-Swift.h"
@@ -317,9 +319,9 @@ static const CGFloat kHelpMargin = 5;
 
 - (void)clear:(id)sender {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Erase Saved Directories?";
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    alert.messageText = ITLocalizedMenuString(@"Erase Saved Directories?");
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     if ([alert runModal] == NSAlertFirstButtonReturn) {
         [[iTermShellHistoryController sharedInstance] eraseCommandHistory:NO directories:YES];
     }

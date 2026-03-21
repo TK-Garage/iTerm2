@@ -714,7 +714,7 @@ static BOOL hasBecomeActive = NO;
         DLog(@"Importing color presets from %@", filename);
         if ([iTermColorPresets importColorPresetFromFile:filename]) {
             NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-            alert.messageText = @"Colors Scheme Imported";
+            alert.messageText = ITLocalizedMenuString(@"Colors Scheme Imported");
             alert.informativeText = @"The color scheme was imported and added to presets. You can find it under Settings > Profiles > Colors > Load Presets….";
             [alert runModal];
         }
@@ -949,10 +949,10 @@ static BOOL hasBecomeActive = NO;
         }
         [NSApp activateIgnoringOtherApps:YES];
         NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-        alert.messageText = @"Quit iTerm2?";
+        alert.messageText = ITLocalizedMenuString(@"Quit iTerm2?");
         alert.informativeText = message;
-        [alert addButtonWithTitle:@"OK"];
-        [alert addButtonWithTitle:@"Cancel"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
         iTermDisclosableView *accessory = [[iTermDisclosableView alloc] initWithFrame:NSZeroRect
                                                                                prompt:@"Why am I being prompted?"
                                                                               message:[NSString stringWithFormat:@"You are being prompted because:\n\n%@",
@@ -1360,7 +1360,7 @@ void TurnOnDebugLoggingAutomatically(void) {
                                  accessory:nil
                                 identifier:@"NoSyncMacOS11Deprecation"
                                silenceable:kiTermWarningTypePermanentlySilenceable
-                                   heading:@"Deprecation Notice"
+                                   heading:ITLocalizedMenuString(@"Deprecation Notice")
                                     window:nil];
     }
     DLog(@"didFinishLaunching");
@@ -2842,7 +2842,7 @@ static iTermKeyEventReplayer *gReplayer;
                                       accessory:nil
                                      identifier:nil
                                     silenceable:kiTermWarningTypePersistent
-                                        heading:@"Python Runtime"
+                                        heading:ITLocalizedMenuString(@"Python Runtime")
                                          window:nil];
          }
      }];
@@ -2863,7 +2863,7 @@ static iTermKeyEventReplayer *gReplayer;
                                              accessory:nil
                                             identifier:nil
                                            silenceable:kiTermWarningTypePersistent
-                                               heading:@"Python Runtime"
+                                               heading:ITLocalizedMenuString(@"Python Runtime")
                                                 window:nil];
                 } else {
                     [iTermWarning showWarningWithTitle:error.localizedDescription ?: @"Unknown error"
@@ -2871,7 +2871,7 @@ static iTermKeyEventReplayer *gReplayer;
                                              accessory:nil
                                             identifier:nil
                                            silenceable:kiTermWarningTypePersistent
-                                               heading:@"Error Installing Python Runtime"
+                                               heading:ITLocalizedMenuString(@"Error Installing Python Runtime")
                                                 window:nil];
                 }
             }];
@@ -3041,7 +3041,7 @@ static iTermKeyEventReplayer *gReplayer;
 
 - (IBAction)gpuRendererAvailability:(id)sender {
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = @"GPU Renderer Availability";
+    alert.messageText = ITLocalizedMenuString(@"GPU Renderer Availability");
     PseudoTerminal *term = [[iTermController sharedInstance] currentTerminal];
     PTYSession *session = [term currentSession];
     PTYTab *tab = [term tabForSession:session];

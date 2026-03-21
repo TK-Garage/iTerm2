@@ -7,6 +7,8 @@
 //
 
 #import "iTermTipController.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import <Cocoa/Cocoa.h>
 
 #import "NSApplication+iTerm.h"
@@ -122,10 +124,10 @@ static NSString *const kPermissionToShowTip = @"NoSyncPermissionToShowTip";
 
 - (void)askForPermission {
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = @"See Tips of the Day?";
+    alert.messageText = ITLocalizedMenuString(@"See Tips of the Day?");
     alert.informativeText = @"iTerm2 can show you a Tip of the Day message to help you learn about its many features. Are you interested?";
-    [alert addButtonWithTitle:@"Yes"];
-    [alert addButtonWithTitle:@"No"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Yes")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"No")];
     BOOL havePermission = ([alert runModal] == NSAlertFirstButtonReturn);
     [[iTermUserDefaults userDefaults] setBool:havePermission forKey:kPermissionToShowTip];
 }
