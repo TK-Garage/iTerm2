@@ -27,14 +27,14 @@ extension ExpressionBindableView where Self: NSView, Self: NSAlertDelegate {
         let menu = NSMenu()
         let hasExpression = (expression?.isEmpty == false)
         do {
-            let item = NSMenuItem(title: hasExpression ? "Edit Expression Binding" : "Bind to Expression",
+            let item = NSMenuItem(title: hasExpression ? NSLocalizedString("Edit Expression Binding", tableName: "iTerm", bundle: .main, comment: "") : NSLocalizedString("Bind to Expression", tableName: "iTerm", bundle: .main, comment: ""),
                                   action: #selector(editBinding(_:)),
                                   keyEquivalent: "")
             item.target = self
             menu.addItem(item)
         }
         if hasExpression {
-            let item = NSMenuItem(title: "Remove Expression Binding",
+            let item = NSMenuItem(title: NSLocalizedString("Remove Expression Binding", tableName: "iTerm", bundle: .main, comment: ""),
                                   action: #selector(removeBinding(_:)),
                                   keyEquivalent: "")
             item.target = self

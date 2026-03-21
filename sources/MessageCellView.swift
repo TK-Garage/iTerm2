@@ -68,17 +68,17 @@ class MessageCellView: NSView {
             DLog("menu \(self)")
             let menu = NSMenu(title: "Context Menu")
             if editable {
-                let editItem = NSMenuItem(title: "Edit", action: #selector(editMenuItemClicked(_:)), keyEquivalent: "")
+                let editItem = NSMenuItem(title: NSLocalizedString("Edit", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(editMenuItemClicked(_:)), keyEquivalent: "")
                 editItem.target = self
                 menu.addItem(editItem)
             }
 
-            let copyItem = NSMenuItem(title: "Copy", action: #selector(copyMenuItemClicked(_:)), keyEquivalent: "")
+            let copyItem = NSMenuItem(title: NSLocalizedString("Copy", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(copyMenuItemClicked(_:)), keyEquivalent: "")
             copyItem.target = self
             menu.addItem(copyItem)
 
             if editable {
-                let forkItem = NSMenuItem(title: "Fork", action: #selector(forkMenuItemClicked(_:)), keyEquivalent: "")
+                let forkItem = NSMenuItem(title: NSLocalizedString("Fork", tableName: "iTerm", bundle: .main, comment: ""), action: #selector(forkMenuItemClicked(_:)), keyEquivalent: "")
                 forkItem.target = self
                 menu.addItem(forkItem)
             }
