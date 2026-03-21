@@ -1,4 +1,6 @@
 #import "PTYSession+ARC.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "PTYSession+Private.h"
 #import "PTYSession.h"
 
@@ -13123,10 +13125,10 @@ typedef NS_ENUM(NSUInteger, PTYSessionTmuxReport) {
     }
     [menu addItem:[NSMenuItem separatorItem]];
     if (_tmuxPaused) {
-        NSMenuItem *item = [menu addItemWithTitle:@"Unpause tmux Pane" action:@selector(toggleTmuxPaused) keyEquivalent:@""];
+        NSMenuItem *item = [menu addItemWithTitle:ITLocalizedMenuString(@"Unpause tmux Pane") action:@selector(toggleTmuxPaused) keyEquivalent:@""];
         item.target = self;
     } else {
-        NSMenuItem *item = [menu addItemWithTitle:@"Pause tmux Pane" action:@selector(toggleTmuxPaused) keyEquivalent:@""];
+        NSMenuItem *item = [menu addItemWithTitle:ITLocalizedMenuString(@"Pause tmux Pane") action:@selector(toggleTmuxPaused) keyEquivalent:@""];
         item.target = self;
     }
 }

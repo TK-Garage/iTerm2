@@ -230,3 +230,75 @@
 "Unable to Fork!" = "フォークに失敗しました！";
 "iTerm cannot launch the program for this session." = "iTerm はこのセッションのプログラムを起動できません。";
 "Close Session" = "セッションを閉じる";
+
+/* ============================================================ */
+/* Phase 3: Dynamic menu items from source code                 */
+/* ============================================================ */
+
+/* iTermApplicationDelegate.m — Dock / Status Bar menus */
+"Undo Close Session" = "閉じたセッションを元に戻す";
+"Downloads" = "ダウンロード";
+"Uploads" = "アップロード";
+"Clear All" = "すべてクリア";
+"New Window (Default Profile)" = "新規ウィンドウ（デフォルトプロファイル）";
+"Toggle Key Recording" = "キー記録の切替";
+"Replay Recorded Keys" = "記録されたキーを再生";
+"Settings" = "設定";
+"Bring All Windows to Front" = "すべてのウィンドウを手前に移動";
+"Buried Sessions" = "格納済みセッション";
+"Check For Updates" = "アップデートを確認";
+"Main Menu" = "メインメニュー";
+"Quit iTerm2" = "iTerm2 を終了";
+"Restore Arrangement" = "配置を復元";
+
+/* PseudoTerminal.m — Tab context menu */
+"New Tab to the Right" = "右に新規タブ";
+"Edit Session…" = "セッションを編集…";
+"Close Tab" = "タブを閉じる";
+"Duplicate Tab" = "タブを複製";
+"Save Tab as Window Arrangement" = "タブをウィンドウ配置として保存";
+"Move to New Window" = "新規ウィンドウに移動";
+"Close Other Tabs" = "他のタブを閉じる";
+"Close Tabs Below" = "下のタブを閉じる";
+"Close Tabs to the Right" = "右のタブを閉じる";
+"Unpin Tab" = "タブの固定を解除";
+"Pin Tab" = "タブを固定";
+"Tab Color" = "タブカラー";
+"Enable GPU Frame Capture" = "GPU フレームキャプチャを有効化";
+"Capture GPU Frame" = "GPU フレームをキャプチャ";
+
+/* iTermTextViewContextMenuHelper.m — Terminal context menu */
+"Set Baseline for Relative Timestamps" = "相対タイムスタンプの基準を設定";
+"Disable Relative Timestamps" = "相対タイムスタンプを無効化";
+"Remove Named Mark" = "名前付きマークを削除";
+"Command Info" = "コマンド情報";
+"Unfold" = "展開";
+"Fold" = "折りたたみ";
+"Replace with Pretty-Printed JSON" = "整形済み JSON で置換";
+"Replace with Base64-Decoded Value" = "Base64 デコード値で置換";
+"Replace with Base64-Encoded Value" = "Base64 エンコード値で置換";
+"Move Session to Tab" = "セッションをタブに移動";
+"Move Session to Window" = "セッションをウィンドウに移動";
+"Copy Link Address" = "リンクアドレスをコピー";
+"Lock Pane" = "ペインをロック";
+"Unlock All Panes in Tab" = "タブ内の全ペインをロック解除";
+"Lock All Panes in Tab" = "タブ内の全ペインをロック";
+"Terminal State" = "ターミナルの状態";
+"Re-run Command" = "コマンドを再実行";
+"Select Command Output" = "コマンド出力を選択";
+
+/* PTYTextView+ARC.m */
+"Disconnect" = "切断";
+"Fold/Unfold" = "折りたたみ/展開";
+"Unfold in Selection" = "選択範囲を展開";
+"Fold Selected Lines" = "選択行を折りたたむ";
+"Look Up in Dictionary" = "辞書で調べる";
+"Quick Look" = "クイックルック";
+
+/* iTermStatusBarContainerView.m — Status bar context menu */
+"Configure Status Bar" = "ステータスバーを設定";
+"Disable Status Bar" = "ステータスバーを無効化";
+
+/* PTYSession.m — tmux pane menu */
+"Unpause tmux Pane" = "tmux ペインの一時停止を解除";
+"Pause tmux Pane" = "tmux ペインを一時停止";

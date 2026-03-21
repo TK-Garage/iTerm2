@@ -7,6 +7,8 @@
 
 #import "PTYTextView+ARC.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "FileTransferManager.h"
 #import "iTerm2SharedARC-Swift.h"
@@ -146,7 +148,7 @@ iTermCommandInfoViewControllerDelegate>
             item.title = [NSString stringWithFormat:@"Disconnect from %@", name];
             return YES;
         } else {
-            item.title = @"Disconnect";
+            item.title = ITLocalizedMenuString(@"Disconnect");
         }
     }
     if (item.action == @selector(performNaturalLanguageQuery:)) {
@@ -160,13 +162,13 @@ iTermCommandInfoViewControllerDelegate>
             return NO;
         }
         if (!self.selection.hasSelection && !self.selection.live) {
-            item.title = @"Fold/Unfold";
+            item.title = ITLocalizedMenuString(@"Fold/Unfold");
             return NO;
         }
         if ([self selectionContainsFold]) {
-            item.title = @"Unfold in Selection";
+            item.title = ITLocalizedMenuString(@"Unfold in Selection");
         } else {
-            item.title = @"Fold Selected Lines";
+            item.title = ITLocalizedMenuString(@"Fold Selected Lines");
         }
         return YES;
     }
@@ -772,10 +774,10 @@ iTermCommandInfoViewControllerDelegate>
                         mouseLocation:(NSPoint)mouseLocation {
     iTermSimpleContextMenu *menu = [[iTermSimpleContextMenu alloc] init];
     __weak __typeof(self) weakSelf = self;
-    [menu addItemWithTitle:@"Look Up in Dictionary" action:^{
+    [menu addItemWithTitle:ITLocalizedMenuString(@"Look Up in Dictionary") action:^{
         [weakSelf showDefinitionForWordAt:clickPoint];
     }];
-    [menu addItemWithTitle:@"Quick Look" action:^{
+    [menu addItemWithTitle:ITLocalizedMenuString(@"Quick Look") action:^{
         [weakSelf openQuickLookForURL:url
                             urlAction:urlAction
                             withEvent:event];
