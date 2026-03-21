@@ -38,7 +38,7 @@ class ChatToolbar {
         self.dataSource = dataSource
 
         // Create the title label for toolbar use
-        let label = NSTextField(labelWithString: "AI Chat")
+        let label = NSTextField(labelWithString: NSLocalizedString("AI Chat", tableName: "iTerm", bundle: .main, comment: ""))
         // Match the font size of our popup buttons (20pt)
         label.font = NSFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = NSColor.labelColor

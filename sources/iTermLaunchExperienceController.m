@@ -7,6 +7,8 @@
 
 #import "iTermLaunchExperienceController.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "NSArray+iTerm.h"
 #import "NSStringITerm.h"
 #import "PFMoveApplication.h"
@@ -227,7 +229,7 @@ typedef NS_ENUM(NSUInteger, iTermLaunchExperienceChoice) {
                                      accessory:nil
                                     identifier:@"SystemPythonModuleOutdated"
                                    silenceable:kiTermWarningTypePersistent
-                                       heading:@"Upgrade system Python iterm2 module?"
+                                       heading:ITLocalizedMenuString(@"Upgrade system Python iterm2 module?")
                                         window:nil];
             switch (selection) {
                 case kiTermWarningSelection0: {
@@ -279,7 +281,7 @@ typedef NS_ENUM(NSUInteger, iTermLaunchExperienceChoice) {
                              accessory:nil
                             identifier:nil
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Important Change"
+                               heading:ITLocalizedMenuString(@"Important Change")
                                 window:nil];
     [[iTermUserDefaults userDefaults] setBool:YES forKey:kHaveWarnedAboutPasteConfirmationChange];
 }

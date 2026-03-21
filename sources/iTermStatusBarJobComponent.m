@@ -17,6 +17,8 @@
 #import "iTermProcessCache.h"
 #import "iTermVariableReference.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface iTermStatusBarJobComponent()
@@ -66,11 +68,11 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Job Name";
+    return ITLocalizedMenuString(@"Job Name");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Shows the currently running job. If space permits, parent process names are also shown.";
+    return ITLocalizedMenuString(@"Shows the currently running job. If space permits, parent process names are also shown.");
 }
 
 - (id)statusBarComponentExemplarWithBackgroundColor:(NSColor *)backgroundColor

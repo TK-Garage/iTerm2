@@ -7,6 +7,8 @@
 
 #import "iTermScriptImporter.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTermBuildingScriptWindowController.h"
 #import "iTermCommandRunner.h"
@@ -248,7 +250,7 @@ static BOOL sInstallingScript;
                                                                accessory:nil
                                                               identifier:nil
                                                              silenceable:kiTermWarningTypePersistent
-                                                                 heading:@"Confirm Installation"
+                                                                 heading:ITLocalizedMenuString(@"Confirm Installation")
                                                                   window:nil];
     completion(selection != kiTermWarningSelection1, selection == kiTermWarningSelection2);
 }
@@ -300,7 +302,7 @@ static BOOL sInstallingScript;
                                                  accessory:nil
                                                 identifier:nil
                                                silenceable:kiTermWarningTypePersistent
-                                                   heading:@"Script Already Exists"
+                                                   heading:ITLocalizedMenuString(@"Script Already Exists")
                                                     window:nil];
         }
         if (selection == kiTermWarningSelection0) {

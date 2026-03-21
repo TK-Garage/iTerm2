@@ -7,6 +7,8 @@
 
 #import "iTermDependencyEditorWindowController.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTermAPIScriptLauncher.h"
 #import "iTermApplicationDelegate.h"
@@ -311,7 +313,7 @@
                                                                accessory:nil
                                                               identifier:@"DependencyEditorPip3Confirmation"
                                                              silenceable:kiTermWarningTypePersistent
-                                                                 heading:@"Run this Command?"
+                                                                 heading:ITLocalizedMenuString(@"Run this Command?")
                                                                   window:self.window];
     if (selection == kiTermWarningSelection1) {
         return;
@@ -345,7 +347,7 @@
                              accessory:nil
                             identifier:@"DependencyEditorInstallationFailed"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Removal Failed"
+                               heading:ITLocalizedMenuString(@"Removal Failed")
                                 window:self.window];
 }
 
@@ -358,7 +360,7 @@
                                  accessory:nil
                                 identifier:@"DependencyEditorInstallationFailed"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Installation Failed"
+                                   heading:ITLocalizedMenuString(@"Installation Failed")
                                     window:self.window];
         return;
     }
@@ -418,7 +420,7 @@
                                                                    completion:^(NSError *errorStatus) {
         if (errorStatus != nil) {
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = @"Installation Failed";
+            alert.messageText = ITLocalizedMenuString(@"Installation Failed");
             alert.informativeText = [NSString stringWithFormat:@"Please file a bug report at https://iterm2.com/bugs. The following error occurred while upgrading a dependency: %@", errorStatus.localizedDescription];
             [alert runModal];
             return;
@@ -441,7 +443,7 @@
                                  error:&error];
     if (error) {
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Installation Failed";
+        alert.messageText = ITLocalizedMenuString(@"Installation Failed");
         alert.informativeText = [NSString stringWithFormat:@"Error creating %@: %@", innerFolder, error.localizedDescription];
         [alert runModal];
         return;
@@ -454,7 +456,7 @@
                           error:&error];
     if (error) {
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Installation Failed";
+        alert.messageText = ITLocalizedMenuString(@"Installation Failed");
         alert.informativeText = [NSString stringWithFormat:@"Error moving %@ to %@: %@", item.path, destination, error.localizedDescription];
         [alert runModal];
         return;

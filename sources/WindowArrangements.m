@@ -8,6 +8,8 @@
 
 #import "WindowArrangements.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "NSAlert+iTerm.h"
 #import "NSObject+iTerm.h"
 #import "NSTextField+iTerm.h"
@@ -187,11 +189,11 @@ static NSInteger sWindowArrangementGeneration;
                completion:(void (^)(NSString *name, iTermSavePanelItem *saveItem))completion {
     NSAlert *alert = [[NSAlert alloc] init];
     alert.messageText = prompt;
-    [alert addButtonWithTitle:@"OK"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
     if (offerExport) {
-        [alert addButtonWithTitle:@"Save to File with Contents…"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Save to File with Contents…")];
     }
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
 
     NSTextField *input = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 24)];
     [input setStringValue:defaultValue];
@@ -275,10 +277,10 @@ static NSInteger sWindowArrangementGeneration;
         }
         if ([WindowArrangements hasWindowArrangement:name]) {
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = @"Replace Existing Saved Window Arrangement?";
-            alert.informativeText = @"There is an existing saved window arrangement with this name. Would you like to replace it with the current arrangement?";
-            [alert addButtonWithTitle:@"Yes"];
-            [alert addButtonWithTitle:@"No"];
+            alert.messageText = ITLocalizedMenuString(@"Replace Existing Saved Window Arrangement?");
+            alert.informativeText = ITLocalizedMenuString(@"There is an existing saved window arrangement with this name. Would you like to replace it with the current arrangement?");
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"Yes")];
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"No")];
             if ([alert runModal] == NSAlertSecondButtonReturn) {
                 completion(nil);
                 return;
@@ -343,10 +345,10 @@ static NSInteger sWindowArrangementGeneration;
     NSDictionary *value = [dict[oldName] copy];
     if (dict[newName]) {
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Replace Arrangement?";
+        alert.messageText = ITLocalizedMenuString(@"Replace Arrangement?");
         alert.informativeText = [NSString stringWithFormat:@"An arrangement named “%@” already exists. Would you like to replace it?", newName];
-        [alert addButtonWithTitle:@"OK"];
-        [alert addButtonWithTitle:@"Cancel"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
         if ([alert runSheetModalForWindow:self.view.window] == NSAlertSecondButtonReturn) {
             textField.stringValue = oldName;
             return;

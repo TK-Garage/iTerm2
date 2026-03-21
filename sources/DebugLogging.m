@@ -7,6 +7,8 @@
 //
 
 #import "DebugLogging.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "iTerm2SharedARC-Swift.h"
 #import "iTermAdvancedSettingsModel.h"
 #import "iTermApplication.h"
@@ -153,7 +155,7 @@ static void FlushDebugLog(void) {
         NSError *error = nil;
         const BOOL ok = [data writeToFile:kDebugLogFilename options:0 error:&error];
         if (!ok) {
-            [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"Failed to save debug log: %@", error.localizedDescription] actions:@[ @"OK" ] accessory:nil identifier:nil silenceable:kiTermWarningTypePersistent heading:@"Problem Saving Debug Log" window:nil];
+            [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"Failed to save debug log: %@"), error.localizedDescription] actions:@[ @"OK" ] accessory:nil identifier:nil silenceable:kiTermWarningTypePersistent heading:ITLocalizedMenuString(@"Problem Saving Debug Log") window:nil];
         }
     }
 
@@ -370,17 +372,17 @@ BOOL TurnOffDebugLoggingSilently(void) {
 void ToggleDebugLogging(void) {
     if (!gDebugLogging) {
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Debug Logging Enabled";
-        alert.informativeText = @"Please reproduce the bug. Then toggle debug logging again to save the log.";
-        [alert addButtonWithTitle:@"OK"];
+        alert.messageText = ITLocalizedMenuString(@"Debug Logging Enabled");
+        alert.informativeText = ITLocalizedMenuString(@"Please reproduce the bug. Then toggle debug logging again to save the log.");
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
         [alert runModal];
         StartDebugLogging();
     } else {
         StopDebugLogging();
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Debug Logging Stopped";
-        alert.informativeText = @"Please send /tmp/debuglog.txt to the developers.";
-        [alert addButtonWithTitle:@"OK"];
+        alert.messageText = ITLocalizedMenuString(@"Debug Logging Stopped");
+        alert.informativeText = ITLocalizedMenuString(@"Please send /tmp/debuglog.txt to the developers.");
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
         [alert runModal];
     }
 }

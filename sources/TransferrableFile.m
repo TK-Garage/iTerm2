@@ -8,6 +8,8 @@
 
 #import "TransferrableFile.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "NSFileManager+iTerm.h"
 #import "iTermNotificationController.h"
@@ -136,7 +138,7 @@ static NSMutableSet<NSString *> *iTermTransferrableFileLockedFileNames(void) {
                                                                      accessory:nil
                                                                     identifier:@"NoSyncOverwriteOrReplaceFile"
                                                                    silenceable:kiTermWarningTypePermanentlySilenceable
-                                                                       heading:@"Overwrite existing file?"
+                                                                       heading:ITLocalizedMenuString(@"Overwrite existing file?")
                                                                         window:nil];
     if (selection == kiTermWarningSelection1) {
         return [destinationDirectory stringByAppendingPathComponent:baseName];
@@ -218,7 +220,7 @@ static NSMutableSet<NSString *> *iTermTransferrableFileLockedFileNames(void) {
                              accessory:nil
                             identifier:nil
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Danger!"
+                               heading:ITLocalizedMenuString(@"Danger!")
                                 window:nil];
 }
 

@@ -13,6 +13,8 @@
 // and the view controller may customize how its control's appearance changes dynamically.
 
 #import "DebugLogging.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "NSArray+iTerm.h"
 #import "NSNumber+iTerm.h"
 #import "PSMTabBarControl.h"
@@ -429,7 +431,7 @@ static NSString *sPreviousVersion;
                              accessory:nil
                             identifier:nil
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Load Gitlab Settings"
+                               heading:ITLocalizedMenuString(@"Load Gitlab Settings")
                                 window:nil];
     if (selection == kiTermWarningSelection0) {
         [ud setBool:YES forKey:kPreferenceKeyLoadPrefsFromCustomFolder];

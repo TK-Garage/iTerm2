@@ -29,6 +29,8 @@
 #import "iTermUserDefaults.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NSString *const kActionsToolName = @"Actions";
 NSString *const kCapturedOutputToolName = @"Captured Output";
 NSString *const kCommandHistoryToolName = @"Command History";
@@ -189,7 +191,7 @@ static NSString *const kDynamicToolURL = @"URL";
 + (void)addToolsToMenu:(NSMenu *)menu {
     NSArray *names = [[iTermToolbeltView allTools] sortedArrayUsingSelector:@selector(compare:)];
     for (NSString *theName in names) {
-        NSMenuItem *i = [[NSMenuItem alloc] initWithTitle:theName
+        NSMenuItem *i = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(theName)
                                                    action:@selector(toggleToolbeltTool:)
                                             keyEquivalent:@""];
         i.tag = (ProfileType)[gRegisteredTools[theName] supportedProfileTypes];
@@ -285,7 +287,7 @@ static NSString *const kDynamicToolURL = @"URL";
 
         _noToolsMessage = [NSTextField newLabelStyledTextField];
         _noToolsMessage.alignment = NSTextAlignmentCenter;
-        _noToolsMessage.stringValue = @"No Tools enabled. Select them from the menu above.";
+        _noToolsMessage.stringValue = ITLocalizedMenuString(@"No Tools enabled. Select them from the menu above.");
         _noToolsMessage.frame = self.bounds;
         [self addSubview:_noToolsMessage];
         [self layoutNoToolsMessage];

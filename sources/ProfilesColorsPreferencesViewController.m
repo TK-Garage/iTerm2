@@ -7,6 +7,8 @@
 //
 
 #import "ProfilesColorsPreferencesViewController.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "DebugLogging.h"
 #import "iTerm2SharedARC-Swift.h"
 #import "ITAddressBookMgr.h"
@@ -657,8 +659,8 @@ static NSString * const kColorGalleryURL = @"https://www.iterm2.com/colorgallery
 - (void)showSaveColorPresetAlertWithItems:(NSArray<NSString *> *)items
                                completion:(void (^)(NSString *name))completion {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Save Color Preset";
-    alert.informativeText = @"Select preset name";
+    alert.messageText = ITLocalizedMenuString(@"Save Color Preset");
+    alert.informativeText = ITLocalizedMenuString(@"Select preset name");
     alert.alertStyle = NSAlertStyleInformational;
 
     // Add the ComboBox
@@ -668,8 +670,8 @@ static NSString * const kColorGalleryURL = @"https://www.iterm2.com/colorgallery
 
     alert.accessoryView = comboBox;
 
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
 
     [alert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse response) {
         if (response == NSAlertFirstButtonReturn) {
@@ -700,17 +702,17 @@ static NSString * const kColorGalleryURL = @"https://www.iterm2.com/colorgallery
     iTermColorPresetDictionary *customPresets = [iTermColorPresets customColorPresets];
     if (!customPresets || [customPresets count] == 0) {
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"No deletable color presets.";
-        alert.informativeText = @"You cannot erase the built-in presets and no custom presets have been imported.";
-        [alert addButtonWithTitle:@"OK"];
+        alert.messageText = ITLocalizedMenuString(@"No deletable color presets.");
+        alert.informativeText = ITLocalizedMenuString(@"You cannot erase the built-in presets and no custom presets have been imported.");
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
         [alert runModal];
         return;
     }
 
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Select a preset to delete:";
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    alert.messageText = ITLocalizedMenuString(@"Select a preset to delete:");
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     NSPopUpButton *popUpButton = [[NSPopUpButton alloc] init];
     for (NSString *key in [[customPresets allKeys] sortedArrayUsingSelector:@selector(compare:)]) {
         [popUpButton addItemWithTitle:key];
@@ -753,9 +755,9 @@ static NSString * const kColorGalleryURL = @"https://www.iterm2.com/colorgallery
     [theDict writeToSaveItem:item completionHandler:^(NSError *error) {
         if (error) {
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = @"Save Failed.";
+            alert.messageText = ITLocalizedMenuString(@"Save Failed.");
             alert.informativeText = [NSString stringWithFormat:@"Could not save to %@", item.displayName];
-            [alert addButtonWithTitle:@"OK"];
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
             [alert runModal];
         } else {
             [item revealInFinderIfLocal];
@@ -781,7 +783,7 @@ static NSString * const kColorGalleryURL = @"https://www.iterm2.com/colorgallery
                                  accessory:nil
                                 identifier:@"NoSyncUpdateWhichModes_PresetHasModes"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Update Which Modes?"
+                                   heading:ITLocalizedMenuString(@"Update Which Modes?")
                                     window:self.view.window];
         return (selection == 0);
     }
@@ -797,7 +799,7 @@ static NSString * const kColorGalleryURL = @"https://www.iterm2.com/colorgallery
                              accessory:nil
                             identifier:@"NoSyncUpdateWhichModes_PresetLacksModes"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Update Which Modes?"
+                               heading:ITLocalizedMenuString(@"Update Which Modes?")
                                 window:self.view.window];
     return (selection == 0);
 }

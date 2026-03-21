@@ -7,6 +7,8 @@
 
 #import "iTermMigrationHelper.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "ITAddressBookMgr.h"
 #import "NSArray+iTerm.h"
@@ -65,7 +67,7 @@
                              accessory:nil
                             identifier:@"NoSyncMoveOpenAIAPIKeyIntoKeychain"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Move Key" 
+                               heading:ITLocalizedMenuString(@"Move Key") 
                                 window:nil];
     if (selection == kiTermWarningSelection0) {
         [self addOpenAIKeyToKeychain:key];
@@ -110,8 +112,8 @@
         }
 
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Manual Update Needed";
-        alert.informativeText = @"iTerm2's Application Support directory has changed.\n\n"
+        alert.messageText = ITLocalizedMenuString(@"Manual Update Needed");
+        alert.informativeText = ITLocalizedMenuString(@"iTerm2's Application Support directory has changed.\n\n")
         @"Previously, both these directories were supported:\n~/Library/Application Support/iTerm\n~/Library/Application Support/iTerm2.\n\n"
             @"Now, only the iTerm2 version is supported. But you have files in both so please move everything from iTerm to iTerm2.";
 
@@ -146,9 +148,9 @@
         [unfucker layout];
         alert.accessoryView = unfucker;
 
-        [alert addButtonWithTitle:@"Open in Finder"];
-        [alert addButtonWithTitle:@"I Fixed It"];
-        [alert addButtonWithTitle:@"Not Now"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Open in Finder")];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"I Fixed It")];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Not Now")];
         switch ([alert runModal]) {
             case NSAlertFirstButtonReturn:
                 [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:@[ [NSURL fileURLWithPath:legacy],
@@ -300,7 +302,7 @@ static NSString *const iTermMigrationHelperRemoveDeprecatedKeyMappingsUserDefaul
                              accessory:nil
                             identifier:nil
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Remove Deprecated Key Mappings?"
+                               heading:ITLocalizedMenuString(@"Remove Deprecated Key Mappings?")
                                 window:nil];
     switch (selection) {
         case kiTermWarningSelection0:  // ok

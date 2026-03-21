@@ -1,0 +1,1018 @@
+/* Japanese localization — iTerm.strings */
+/* Context menus, toolbar items, alerts, and general UI strings */
+
+/* Context menu */
+"-> Browser" = "→ ブラウザ";
+"-> Mail" = "→ メール";
+"-> Google" = "→ Google";
+
+/* Toolbar Item: Bookmarks */
+"Bookmarks" = "ブックマーク";
+
+/* Close window */
+"All sessions will be closed" = "すべてのセッションが閉じられます";
+
+/* Cancel */
+"Cancel" = "キャンセル";
+
+/* Context menu */
+"Clear Buffer" = "バッファをクリア";
+
+/* Toolbar Item: Close Session */
+"Close" = "閉じる";
+
+/* Toolbar Item Tip: Close */
+"Close the current session" = "現在のセッションを閉じる";
+
+/* Close window */
+"Close Window?" = "ウィンドウを閉じますか？";
+"Quit iTerm?" = "iTerm を終了しますか？";
+
+/* Close Session */
+"This session will be closed." = "このセッションは閉じられます。";
+"All unsaved data will be lost" = "保存されていないデータはすべて失われます";
+
+/* Toolbar Item: Info */
+"Info" = "情報";
+
+/* Toolbar Item Tip: Info */
+"Window/Session Info" = "ウィンドウ/セッション情報";
+
+/* Context menu */
+"Info..." = "情報…";
+
+/* Context menu */
+"Copy" = "コピー";
+
+/* Context menu */
+"New Tab" = "新規タブ";
+
+/* Context menu */
+"New Window" = "新規ウィンドウ";
+
+/* Removal Alert */
+"Do you really want to remove this item?" = "この項目を本当に削除しますか？";
+
+/* Toolbar Item: New */
+"Default Session" = "デフォルトセッション";
+"New" = "新規";
+"Press Option for New Window" = "Option キーを押して新規ウィンドウ";
+"Open In New Window" = "新規ウィンドウで開く";
+"Open a new session" = "新規セッションを開く";
+"Execute" = "実行";
+"Execute Command or Launch URL" = "コマンドを実行または URL を開く";
+
+/* OK */
+"OK" = "OK";
+
+/* Toolbar Item Tip: Bookmarks */
+"Open the bookmarks" = "ブックマークを開く";
+
+/* Context menu */
+"Paste" = "ペースト";
+
+/* Context menu */
+"Save" = "保存";
+
+/* Context menu */
+"Select" = "選択";
+
+/* Context menu */
+"Move to new window" = "新規ウィンドウに移動";
+
+/* Anti-Idle: wrong input */
+"Please enter a valid code (0~255)" = "有効なコード（0〜255）を入力してください";
+
+/* wrong input */
+"Please enter a valid window size" = "有効なウィンドウサイズを入力してください";
+
+/* Remove */
+"Remove" = "削除";
+
+/* Context menu */
+"Select All" = "すべてを選択";
+"Print..." = "プリント…";
+"Print Selection..." = "選択範囲をプリント…";
+
+/* Removal Alert */
+"There is no undo for this operation." = "この操作は取り消せません。";
+
+/* wrong input */
+"Wrong Input" = "無効な入力";
+
+/* Upgrade */
+"Upgrade Warning: New language encodings available!" = "アップグレード警告: 新しい言語エンコーディングが利用可能です！";
+"Please reset all the encoding settings in your preference and bookmarks" = "設定とブックマークのエンコーディング設定をすべてリセットしてください";
+
+/* Author */
+"fabian" = "fabian";
+"Ujwal S. Setlur" = "Ujwal S. Setlur";
+
+/* About */
+"Report A Bug" = "バグを報告";
+
+/* Config */
+"Configuration saved as a new entry in Bookmarks" = "設定がブックマークに新しいエントリとして保存されました";
+"Configuration saved" = "設定が保存されました";
+
+/* OS Version */
+"Minimum_OS" = "iTerm の実行には OS X 10.2 以降が必要です。このアプリケーションは終了します。";
+
+/* Sorry */
+"Sorry" = "申し訳ありません";
+
+/* Quit */
+"Quit" = "終了";
+
+/* PreferencePanel */
+"Display" = "表示";
+"Shell" = "シェル";
+"Emulation" = "エミュレーション";
+"Color" = "カラー";
+
+/* Script */
+"Script" = "スクリプト";
+"Refresh" = "更新";
+
+/* Key Binding Profiles */
+"Global" = "グローバル";
+
+/* Display Profiles */
+"Default" = "デフォルト";
+
+/* Key Binding Actions */
+"next tab" = "次のタブ";
+"next window" = "次のウィンドウ";
+"previous tab" = "前のタブ";
+"previous window" = "前のウィンドウ";
+"scroll end" = "末尾へスクロール";
+"scroll home" = "先頭へスクロール";
+"scroll line down" = "1行下へスクロール";
+"scroll line up" = "1行上へスクロール";
+"scroll page down" = "1ページ下へスクロール";
+"scroll page up" = "1ページ上へスクロール";
+"send ^[" = "^[ を送信";
+"send hex code" = "16進コードを送信";
+"send" = "送信";
+"ignore" = "無視";
+"unknown action ID" = "不明なアクション ID";
+
+/* Key Names */
+"cursor down" = "カーソル下";
+"cursor left" = "カーソル左";
+"cursor right" = "カーソル右";
+"cursor up" = "カーソル上";
+"del" = "del";
+"delete" = "delete";
+"end" = "end";
+"help" = "help";
+"home" = "home";
+"numlock" = "numlock";
+"page down" = "page down";
+"page up" = "page up";
+"unknown key" = "不明なキー";
+
+/* Save Confirmation */
+"%@'s display profile %@ and terminal profile %@ have been updated" = "%@ の表示プロファイル %@ とターミナルプロファイル %@ が更新されました";
+"All bookmarks associated with this profile are affected" = "このプロファイルに関連するすべてのブックマークが影響を受けます";
+
+/* Profiles */
+"Delete Profile" = "プロファイルを削除";
+"Are you sure that you want to delete %@? There is no way to undo this action." = "%@ を本当に削除しますか？この操作は取り消せません。";
+"Delete" = "削除";
+"Untitled" = "名称未設定";
+"%@ copy" = "%@ のコピー";
+
+/* Bookmarks */
+"Delete Bookmark" = "ブックマークを削除";
+
+/* Warning */
+"Warning!" = "警告！";
+
+/* Keyboard Input */
+"Keyboard input will be sent to all sessions in this terminal." = "キーボード入力はこのターミナルのすべてのセッションに送信されます。";
+
+/* Growl Alerts */
+"Alert" = "通知";
+"Session %@ #%d: %@" = "セッション %@ #%d: %@";
+"Bell" = "ベル";
+"Session %@ #%d just rang a bell!" = "セッション %@ #%d でベルが鳴りました！";
+"Broken Pipe" = "パイプ切断";
+"Session %@ #%d just terminated." = "セッション %@ #%d が終了しました。";
+"Idle" = "アイドル";
+"Session %@ #%d becomes idle." = "セッション %@ #%d がアイドルになりました。";
+"New Output" = "新しい出力";
+"New Output was received in %@ #%d." = "%@ #%d で新しい出力がありました。";
+
+/* Info */
+"Update %@" = "%@ を更新";
+
+/* Tab Tooltips */
+"Name: %@\nCommand: %@\nTerminal Profile: %@\nDisplay Profile: %@\nKeyboard Profile: %@" = "名前: %@\nコマンド: %@\nターミナルプロファイル: %@\n表示プロファイル: %@\nキーボードプロファイル: %@";
+
+/* Profiles */
+"Keyboard Profiles" = "キーボードプロファイル";
+"Display Profiles" = "表示プロファイル";
+"Terminal Profiles" = "ターミナルプロファイル";
+"eg. [OC for ESC [OC." = "例: ESC [OC の場合 [OC";
+"eg. 7F for backward delete." = "例: Backward Delete の場合 7F";
+"use \n for new-line, etc" = "改行には \\n を使用";
+
+/* Error */
+"Out of memory" = "メモリ不足";
+"New session cannot be created. Try smaller buffer sizes." = "新しいセッションを作成できません。バッファサイズを小さくしてください。";
+
+/* Security Warnings */
+"Bad User Shell" = "無効なユーザーシェル";
+"The shell for this account is not a valid shell as defined in /etc/shells. Contact your system administrator." = "このアカウントのシェルは /etc/shells で定義された有効なシェルと一致しません。システム管理者に連絡してください。";
+
+/* Fork Error */
+"Unable to Fork!" = "フォークに失敗しました！";
+"iTerm cannot launch the program for this session." = "iTerm はこのセッションのプログラムを起動できません。";
+"Close Session" = "セッションを閉じる";
+
+/* ============================================================ */
+/* Phase 3: Dynamic menu items from source code                 */
+/* ============================================================ */
+
+/* iTermApplicationDelegate.m — Dock / Status Bar menus */
+"Undo Close Session" = "閉じたセッションを元に戻す";
+"Downloads" = "ダウンロード";
+"Uploads" = "アップロード";
+"Clear All" = "すべてクリア";
+"New Window (Default Profile)" = "新規ウィンドウ（デフォルトプロファイル）";
+"Toggle Key Recording" = "キー記録の切替";
+"Replay Recorded Keys" = "記録されたキーを再生";
+"Settings" = "設定";
+"Bring All Windows to Front" = "すべてのウィンドウを手前に移動";
+"Buried Sessions" = "格納済みセッション";
+"Check For Updates" = "アップデートを確認";
+"Main Menu" = "メインメニュー";
+"Quit iTerm2" = "iTerm2 を終了";
+"Restore Arrangement" = "配置を復元";
+
+/* PseudoTerminal.m — Tab context menu */
+"New Tab to the Right" = "右に新規タブ";
+"Edit Session…" = "セッションを編集…";
+"Close Tab" = "タブを閉じる";
+"Duplicate Tab" = "タブを複製";
+"Save Tab as Window Arrangement" = "タブをウィンドウ配置として保存";
+"Move to New Window" = "新規ウィンドウに移動";
+"Close Other Tabs" = "他のタブを閉じる";
+"Close Tabs Below" = "下のタブを閉じる";
+"Close Tabs to the Right" = "右のタブを閉じる";
+"Unpin Tab" = "タブの固定を解除";
+"Pin Tab" = "タブを固定";
+"Tab Color" = "タブカラー";
+"Enable GPU Frame Capture" = "GPU フレームキャプチャを有効化";
+"Capture GPU Frame" = "GPU フレームをキャプチャ";
+
+/* iTermTextViewContextMenuHelper.m — Terminal context menu */
+"Set Baseline for Relative Timestamps" = "相対タイムスタンプの基準を設定";
+"Disable Relative Timestamps" = "相対タイムスタンプを無効化";
+"Remove Named Mark" = "名前付きマークを削除";
+"Command Info" = "コマンド情報";
+"Unfold" = "展開";
+"Fold" = "折りたたみ";
+"Replace with Pretty-Printed JSON" = "整形済み JSON で置換";
+"Replace with Base64-Decoded Value" = "Base64 デコード値で置換";
+"Replace with Base64-Encoded Value" = "Base64 エンコード値で置換";
+"Move Session to Tab" = "セッションをタブに移動";
+"Move Session to Window" = "セッションをウィンドウに移動";
+"Copy Link Address" = "リンクアドレスをコピー";
+"Lock Pane" = "ペインをロック";
+"Unlock All Panes in Tab" = "タブ内の全ペインをロック解除";
+"Lock All Panes in Tab" = "タブ内の全ペインをロック";
+"Terminal State" = "ターミナルの状態";
+"Re-run Command" = "コマンドを再実行";
+"Select Command Output" = "コマンド出力を選択";
+
+/* PTYTextView+ARC.m */
+"Disconnect" = "切断";
+"Fold/Unfold" = "折りたたみ/展開";
+"Unfold in Selection" = "選択範囲を展開";
+"Fold Selected Lines" = "選択行を折りたたむ";
+"Look Up in Dictionary" = "辞書で調べる";
+"Quick Look" = "クイックルック";
+
+/* iTermStatusBarContainerView.m — Status bar context menu */
+"Configure Status Bar" = "ステータスバーを設定";
+"Disable Status Bar" = "ステータスバーを無効化";
+
+/* PTYSession.m — tmux pane menu */
+"Unpause tmux Pane" = "tmux ペインの一時停止を解除";
+"Pause tmux Pane" = "tmux ペインを一時停止";
+
+/* ============================================================ */
+/* Phase 5: Alert and dialog strings                            */
+/* ============================================================ */
+
+/* Common button titles */
+"OK" = "OK";
+"Cancel" = "キャンセル";
+"Yes" = "はい";
+"No" = "いいえ";
+"Delete" = "削除";
+"Detach" = "デタッチ";
+"Reveal" = "表示";
+"Show Session" = "セッションを表示";
+"Disable This Alert" = "この通知を無効化";
+"Generate" = "生成";
+"Copy" = "コピー";
+"Add it anyway" = "それでも追加";
+
+/* PTYSession.m — alerts */
+"Enter command to send tmux:" = "tmux に送信するコマンドを入力:";
+"Force Detach?" = "強制デタッチしますか？";
+"Alert" = "通知";
+"Error Preparing Upload" = "アップロード準備エラー";
+"Upload in Progress" = "アップロード中";
+"Tmux is not responding. Would you like to force detach?" = "tmux が応答していません。強制デタッチしますか？";
+"A previous detach request has not yet been honored. Force detach?" = "前回のデタッチ要求がまだ処理されていません。強制デタッチしますか？";
+"Please wait for the current upload to complete or cancel it before starting another." = "別のアップロードを開始する前に、現在のアップロードの完了またはキャンセルをお待ちください。";
+"Wrong Encoding Detected" = "不正なエンコーディングを検出";
+"Browser Plugin Missing" = "ブラウザプラグインが見つかりません";
+"Can't Disconnect" = "切断できません";
+"Cannot Attach" = "接続できません";
+"Error Evaluating Interpolated String" = "補間文字列の評価エラー";
+"Permission Required" = "許可が必要です";
+"Allow Large File Download?" = "大きなファイルのダウンロードを許可しますか？";
+"AI Error" = "AI エラー";
+"Done!" = "完了！";
+
+/* PseudoTerminal.m — alerts */
+"Set Window Title" = "ウィンドウタイトルを設定";
+"Set Tab Title" = "タブタイトルを設定";
+"Restart session?" = "セッションを再起動しますか？";
+"Running jobs will be killed." = "実行中のジョブは終了されます。";
+"Not all sessions at password prompt" = "すべてのセッションがパスワードプロンプトにあるわけではありません";
+
+/* iTermApplicationDelegate.m — alerts */
+"Colors Scheme Imported" = "カラースキームをインポートしました";
+"Quit iTerm2?" = "iTerm2 を終了しますか？";
+"GPU Renderer Availability" = "GPU レンダラーの利用状況";
+"Deprecation Notice" = "非推奨のお知らせ";
+"Python Runtime" = "Python ランタイム";
+"Error Installing Python Runtime" = "Python ランタイムのインストールエラー";
+
+/* DebugLogging.m */
+"Debug Logging Enabled" = "デバッグログが有効になりました";
+"Please reproduce the bug. Then toggle debug logging again to save the log." = "バグを再現してください。その後、デバッグログを再度切り替えてログを保存してください。";
+"Debug Logging Stopped" = "デバッグログが停止しました";
+"Please send /tmp/debuglog.txt to the developers." = "/tmp/debuglog.txt を開発者に送信してください。";
+"Problem Saving Debug Log" = "デバッグログの保存に問題があります";
+
+/* ProfilesColorsPreferencesViewController.m */
+"Save Color Preset" = "カラープリセットを保存";
+"Select preset name" = "プリセット名を選択";
+"No deletable color presets." = "削除可能なカラープリセットがありません。";
+"You cannot erase the built-in presets and no custom presets have been imported." = "組み込みプリセットは削除できず、カスタムプリセットもインポートされていません。";
+"Select a preset to delete:" = "削除するプリセットを選択:";
+"Save Failed." = "保存に失敗しました。";
+"Update Which Modes?" = "どのモードを更新しますか？";
+
+/* iTermPasswordManagerWindowController.m */
+"Are you sure you want to delete this password?" = "このパスワードを本当に削除しますか？";
+"Are you sure?" = "本当に実行しますか？";
+
+/* iTermPythonRuntimeDownloader.m */
+"Download Python Runtime?" = "Python ランタイムをダウンロードしますか？";
+"Download Canceled" = "ダウンロードがキャンセルされました";
+"Python Runtime Unavailable" = "Python ランタイムが利用できません";
+"Signature Verification Failed" = "署名の検証に失敗しました";
+"Error unzipping python environment" = "Python 環境の解凍エラー";
+"Dependency Installation Failed" = "依存関係のインストールに失敗しました";
+
+/* KeysPreferencesViewController.m */
+"Hotkey Window Successfully Configured" = "ホットキーウィンドウの設定が完了しました";
+"Emulate US Keyboard" = "US キーボードのエミュレーション";
+"Add Another Hotkey Window Profile?" = "別のホットキーウィンドウプロファイルを追加しますか？";
+"Load Preset" = "プリセットを読み込み";
+
+/* ToolCommandHistoryView.m */
+"Erase Command History" = "コマンド履歴を消去";
+"Command history for all hosts will be erased. Continue?" = "すべてのホストのコマンド履歴が消去されます。続けますか？";
+
+/* ToolDirectoriesView.m */
+"Erase Saved Directories?" = "保存されたディレクトリを消去しますか？";
+
+/* ToolPasteHistory.m */
+"Erase Paste History" = "ペースト履歴を消去";
+"Paste history will be erased. Continue?" = "ペースト履歴が消去されます。続けますか？";
+
+/* WindowArrangements.m */
+"Replace Existing Saved Window Arrangement?" = "既存のウィンドウ配置を置き換えますか？";
+"There is an existing saved window arrangement with this name. Would you like to replace it with the current arrangement?" = "この名前の保存済みウィンドウ配置が既にあります。現在の配置で置き換えますか？";
+"Replace Arrangement?" = "配置を置き換えますか？";
+
+/* iTermColorPresets.m */
+"Import Failed." = "インポートに失敗しました。";
+"The selected file could not be read or did not contain a valid color scheme." = "選択されたファイルを読み込めないか、有効なカラースキームが含まれていません。";
+"Add duplicate color preset?" = "重複するカラープリセットを追加しますか？";
+
+/* iTermTipController.m */
+"See Tips of the Day?" = "今日のヒントを表示しますか？";
+
+/* iTermRestorableStateSQLite.m */
+"Continue restoring state?" = "状態の復元を続けますか？";
+
+/* ============================================================ */
+/* Phase 5 continued: Remaining alert/dialog strings            */
+/* ============================================================ */
+
+"1Password took too long to respond." = "1Password の応答に時間がかかりすぎました。";
+"About Shell Integration" = "シェル統合について";
+"Allow" = "許可";
+"Allow Auto-Launch?" = "自動起動を許可しますか？";
+"Allow Printing?" = "印刷を許可しますか？";
+"Allow Python API Usage?" = "Python API の使用を許可しますか？";
+"Always launch this script when iTerm2 starts?" = "iTerm2 の起動時に常にこのスクリプトを起動しますか？";
+"Application Corrupt" = "アプリケーションが破損しています";
+"Authentication Error" = "認証エラー";
+"Authentication Failed" = "認証に失敗しました";
+"Bind Expression to Setting" = "式を設定にバインド";
+"Block" = "ブロック";
+"Can't Disconnect" = "切断できません";
+"Can't Find 1Password CLI" = "1Password CLI が見つかりません";
+"Can't Find LastPass CLI" = "LastPass CLI が見つかりません";
+"Can't Load Recording" = "録画を読み込めません";
+"Change Name" = "名前を変更";
+"Changes to Make" = "変更内容";
+"Choose Application…" = "アプリケーションを選択…";
+"Choose an application on your computer to open this file." = "このファイルを開くアプリケーションを選択してください。";
+"Confirm" = "確認";
+"Confirm Installation" = "インストールの確認";
+"Confirm Shortcut" = "ショートカットの確認";
+"Confirmation Needed" = "確認が必要です";
+"Connect to New Host?" = "新しいホストに接続しますか？";
+"Connection Failed" = "接続に失敗しました";
+"Copy Command" = "コマンドをコピー";
+"Copy local settings to custom folder now?" = "ローカル設定をカスタムフォルダにコピーしますか？";
+"Copy to Pasteboard" = "ペーストボードにコピー";
+"Could Not Install Script" = "スクリプトをインストールできませんでした";
+"Could not Import Profile" = "プロファイルをインポートできませんでした";
+"Could not read the file: its envelope was malformed." = "ファイルを読み込めません: エンベロープが不正です。";
+"Danger!" = "危険！";
+"Debug Info" = "デバッグ情報";
+"Disable per-app authentication?" = "アプリごとの認証を無効にしますか？";
+"Don't Copy" = "コピーしない";
+"Don't Load Remote Settings" = "リモート設定を読み込まない";
+"Enter Mark Name" = "マーク名を入力";
+"Enter expression to bind to this setting, or leave empty to clear the binding." = "この設定にバインドする式を入力するか、バインドを解除するには空のままにしてください。";
+"Error" = "エラー";
+"Error Loading Recording" = "録画の読み込みエラー";
+"Error Loading Settings" = "設定の読み込みエラー";
+"Error Updating Settings" = "設定の更新エラー";
+"Error Upgrading Script" = "スクリプトのアップグレードエラー";
+"Error changing API permissions setting" = "API 権限設定の変更エラー";
+"Error in Trigger Parameter" = "トリガーパラメーターのエラー";
+"Error running script" = "スクリプトの実行エラー";
+"Error: malformed history line from tmux." = "エラー: tmux からの不正な履歴行";
+"Escaping" = "エスケープ処理";
+"Export Failed" = "エクスポートに失敗しました";
+"Failed to copy settings to custom directory." = "カスタムディレクトリへの設定のコピーに失敗しました。";
+"Failed to launch coprocess." = "コプロセスの起動に失敗しました。";
+"Failed to load settings from URL. Falling back to local copy." = "URL からの設定の読み込みに失敗しました。ローカルコピーにフォールバックします。";
+"Failed to load settings from custom directory. Falling back to local copy." = "カスタムディレクトリからの設定の読み込みに失敗しました。ローカルコピーにフォールバックします。";
+"Failed to make change" = "変更に失敗しました";
+"File Transfer Summary" = "ファイル転送の概要";
+"Fix corrupted tab colors?" = "破損したタブカラーを修正しますか？";
+"GPU rendering is enabled for the current session." = "現在のセッションで GPU レンダリングが有効になっています。";
+"Go" = "移動";
+"Go to the folder:" = "フォルダに移動:";
+"Help" = "ヘルプ";
+"I Fixed It" = "修正しました";
+"If this is empty, the tab takes the active session’s title. Variables and function calls enclosed in \\(…) will be replaced with their evaluation. This interpolated string is evaluated in the tab’s context." = "空の場合、タブはアクティブセッションのタイトルを使用します。\\(…) で囲まれた変数や関数呼び出しは評価結果に置き換えられます。";
+"If this is empty, the window takes the active session’s title. Variables and function calls enclosed in \\(…) will be replaced with their evaluation. This interpolated string is evaluated in the window’s context." = "空の場合、ウィンドウはアクティブセッションのタイトルを使用します。\\(…) で囲まれた変数や関数呼び出しは評価結果に置き換えられます。";
+"Illegal Username" = "無効なユーザー名";
+"Important Change" = "重要な変更";
+"In order to use the 1Password integration, iTerm2 needs to know where to find the CLI app named “op”. It’s normally in /usr/local/bin. If you have installed it elsewhere, please select Locate to provide its location." = "1Password 統合を使用するには、“op” という CLI アプリの場所を指定する必要があります。通常は /usr/local/bin にあります。別の場所にインストールした場合は「場所を指定」を選択してください。";
+"In order to use the LastPass integration, iTerm2 needs to know where to find the CLI app named “lpass”. Select Locate to provide its location." = "LastPass 統合を使用するには、“lpass” という CLI アプリの場所を指定する必要があります。「場所を指定」を選択してください。";
+"Install Now" = "今すぐインストール";
+"Install Rosetta?" = "Rosetta をインストールしますか？";
+"Installation Failed" = "インストールに失敗しました";
+"Invalid Folder" = "無効なフォルダ";
+"Invalid Profile" = "無効なプロファイル";
+"It's taking a long time to check the validity of the state restoration database. Keep trying to open it? Select Ok to keep waiting or Delete to lose saved windows." = "状態復元データベースの検証に時間がかかっています。開き続けますか？ OK で待機を続行、削除で保存されたウィンドウを破棄します。";
+"Launch" = "起動";
+"Learn More…" = "詳しく見る…";
+"Load Gitlab Settings" = "Gitlab 設定を読み込み";
+"Locate" = "場所を指定";
+"Login Successful" = "ログイン成功";
+"Manual Update Needed" = "手動更新が必要です";
+"Move Key" = "キーを移動";
+"Not Now" = "後で";
+"OnePassword Unavailable" = "OnePassword が利用できません";
+"Open Terminal Window" = "ターミナルウィンドウを開く";
+"Open in Finder" = "Finder で開く";
+"Open in iTerm2?" = "iTerm2 で開きますか？";
+"Overwrite existing file?" = "既存のファイルを上書きしますか？";
+"Password Manager…" = "パスワードマネージャー…";
+"Paste Failed" = "ペーストに失敗しました";
+"Paste Limit Exceeded" = "ペースト制限を超えました";
+"Performance Issue" = "パフォーマンスの問題";
+"Permanently Forget Saved Selection" = "保存された選択を完全に忘れる";
+"Please choose an account:" = "アカウントを選択してください:";
+"Please retry your action in the password manager." = "パスワードマネージャーで操作をやり直してください。";
+"Plugin Invalid" = "プラグインが無効です";
+"Problem Creating Config Folder" = "設定フォルダの作成に問題があります";
+"Problem Loading Image" = "画像の読み込みに問題があります";
+"Problem Running git" = "git の実行に問題があります";
+"Problem Saving Snippets" = "スニペットの保存に問題があります";
+"Problem Starting iTerm2 Daemon" = "iTerm2 デーモンの起動に問題があります";
+"Problem Updating Hotkey Window" = "ホットキーウィンドウの更新に問題があります";
+"Problem running script" = "スクリプトの実行に問題があります";
+"Problem with Application Support Directory" = "Application Support ディレクトリに問題があります";
+"Really Enable Clipboard Reporting?" = "クリップボードレポートを本当に有効にしますか？";
+"Removal Failed" = "削除に失敗しました";
+"Remove Deprecated Key Mappings?" = "非推奨のキーマッピングを削除しますか？";
+"Replace" = "置換";
+"Replacing it will overwrite its current contents." = "置き換えると現在の内容が上書きされます。";
+"Reporting the content of the clipboard to apps running inside iTerm2 may expose sensitive information such as passwords. Think carefully before enabling this." = "クリップボードの内容を iTerm2 内で実行中のアプリに報告すると、パスワードなどの機密情報が漏洩する可能性があります。有効にする前によく考えてください。";
+"Required File Missing" = "必要なファイルが見つかりません";
+"Restore Windows?" = "ウィンドウを復元しますか？";
+"Reveal in Finder" = "Finder で表示";
+"Reveal in Settings" = "設定で表示";
+"Run this Command?" = "このコマンドを実行しますか？";
+"Save Failed" = "保存に失敗しました";
+"Save to File with Contents…" = "内容をファイルに保存…";
+"Script Already Exists" = "スクリプトは既に存在します";
+"Script Imported Successfully" = "スクリプトのインポートに成功しました";
+"Scripts Disabled" = "スクリプトが無効です";
+"Scripts can't have space characters in their filenames." = "スクリプトのファイル名にスペース文字は使用できません。";
+"Secure Keyboard Entry Enabled" = "安全なキーボード入力が有効です";
+"See Console.app for details" = "詳細は Console.app を参照してください";
+"Select an Account" = "アカウントを選択";
+"Send Command?" = "コマンドを送信しますか？";
+"Session Logging Problem" = "セッションログの問題";
+"Settings cannot be copied to a URL." = "設定を URL にコピーできません。";
+"Some keyboard layouts (such as AZERTY) require a modifier to press a number key. This causes problems for switching to a window, tab, or split pane by pressing modifier+number: you might need other modifiers or conflicting modifiers. When “Emulate US Keyboard” is enabled, you can press the configured modifier plus the key on the top row that corresponds to a number key on a US keyboard. For example, on AZERTY, the & key would act as the 1 key." = "AZERTY などの一部のキーボードレイアウトでは、数字キーの入力に修飾キーが必要です。これにより、修飾キー+数字でウィンドウやタブを切り替える際に問題が生じます。「US キーボードのエミュレーション」を有効にすると、設定された修飾キーと US キーボードの数字キーに対応する最上段のキーを押して切り替えできます。";
+"Spaces Not Allowed" = "スペースは使用できません";
+"The color scheme was imported and added to presets. You can find it under Settings > Profiles > Colors > Load Presets…." = "カラースキームがインポートされ、プリセットに追加されました。設定 > プロファイル > カラー > プリセットを読み込み… で確認できます。";
+"The iTermServer executable is missing from the application bundle. This indicates iTerm2 is corrupted or incomplete. Please reinstall iTerm2 from the official website." = "iTermServer 実行ファイルがアプリケーションバンドルにありません。iTerm2 が破損しているか不完全です。公式サイトから再インストールしてください。";
+"The recording could not be saved." = "録画を保存できませんでした。";
+"There is currently no handler." = "現在ハンドラーが設定されていません。";
+"Timeout" = "タイムアウト";
+"Try Again" = "再試行";
+"Try Again Without Timeout" = "タイムアウトなしで再試行";
+"Type a pathname or select from the pop-up menu" = "パス名を入力するかポップアップメニューから選択してください";
+"Unable to create folder" = "フォルダを作成できません";
+"Upgrade Python Runtime?" = "Python ランタイムをアップグレードしますか？";
+"Upgrade system Python iterm2 module?" = "システムの Python iterm2 モジュールをアップグレードしますか？";
+"Use _ Instead of Space" = "スペースの代わりに _ を使用";
+"Web Page Alert" = "Web ページの通知";
+"Web Page Confirmation" = "Web ページの確認";
+"Window Restoration Disabled" = "ウィンドウの復元が無効です";
+"iTerm2 can show you a Tip of the Day message to help you learn about its many features. Are you interested?" = "iTerm2 は多くの機能を紹介する今日のヒントを表示できます。興味がありますか？";
+
+/* ============================================================ */
+/* Phase 6: iTermWarning internal strings                       */
+/* ============================================================ */
+
+"Warning" = "警告";
+"%@\n\nThis alert had a saved selection of \u201c%@\u201d. It is being shown because \u201cAlways Show Alerts with Remembered Selections\u201d is enabled." = "%@\n\nこの通知には\u201c%@\u201dという保存された選択がありました。\u201c記憶された選択のある通知を常に表示\u201dが有効なため表示されています。";
+"Suppress this message for ten minutes" = "このメッセージを10分間抑制する";
+"Remember my choice for ten minutes" = "選択を10分間記憶する";
+"Suppress this message for 30 days" = "このメッセージを30日間抑制する";
+"Remember my choice for 30 days" = "選択を30日間記憶する";
+"Suppress this message permanently" = "このメッセージを永久に抑制する";
+"Remember my choice" = "選択を記憶する";
+
+/* ============================================================ */
+/* Phase 6: Status bar component strings                        */
+/* ============================================================ */
+
+/* Battery */
+"Battery Level" = "バッテリー残量";
+"Shows current battery level and its recent history." = "現在のバッテリー残量とその最近の履歴を表示します。";
+"Show Percentage" = "パーセンテージを表示";
+"Show Estimated Time" = "推定時間を表示";
+
+/* Clock */
+"Clock" = "時計";
+"Shows current date and time with a configurable format." = "設定可能なフォーマットで現在の日付と時刻を表示します。";
+"Date Format:" = "日付フォーマット:";
+"Localize Date Format" = "日付フォーマットをローカライズ";
+"Show server time in SSH integration?" = "SSH 統合でサーバー時間を表示しますか？";
+"Use server time zone in SSH integration?" = "SSH 統合でサーバーのタイムゾーンを使用しますか？";
+
+/* CPU */
+"CPU Utilization" = "CPU 使用率";
+"Shows current CPU utilization." = "現在の CPU 使用率を表示します。";
+
+/* Memory */
+"Memory Utilization" = "メモリ使用率";
+"Shows current memory utilization." = "現在のメモリ使用率を表示します。";
+
+/* Network */
+"Network Throughput" = "ネットワークスループット";
+"Shows current network throughput." = "現在のネットワークスループットを表示します。";
+"Download Color:" = "ダウンロード色:";
+"Download Text Color:" = "ダウンロードテキスト色:";
+"Upload Color:" = "アップロード色:";
+"Upload Text Color:" = "アップロードテキスト色:";
+
+/* Job */
+"Job Name" = "ジョブ名";
+"Shows the currently running job. If space permits, parent process names are also shown." = "現在実行中のジョブを表示します。スペースに余裕があれば親プロセス名も表示されます。";
+
+/* Git */
+"git state" = "git の状態";
+"Shows a summary of the git state of the current directory." = "カレントディレクトリの git の状態の概要を表示します。";
+"Polling Interval (seconds):" = "ポーリング間隔（秒）:";
+"Merging" = "マージ中";
+"Reverting" = "リバート中";
+"Cherrypicking" = "チェリーピック中";
+"Bisecting" = "バイセクト中";
+"Rebasing" = "リベース中";
+"Applying" = "適用中";
+"Cancel %@" = "%@ をキャンセル";
+"Commit" = "コミット";
+"Add & Commit" = "追加してコミット";
+"Stash" = "スタッシュ";
+"Log" = "ログ";
+"Push origin %@" = "origin %@ にプッシュ";
+"Pull origin %@" = "origin %@ からプル";
+"Check out %@" = "%@ をチェックアウト";
+"Show Debug Info" = "デバッグ情報を表示";
+"\n[Truncated]\n" = "\n[省略]\n";
+"Committing…" = "コミット中…";
+"Stashing…" = "スタッシュ中…";
+"Pushing…" = "プッシュ中…";
+"Pulling…" = "プル中…";
+"Checking out…" = "チェックアウト中…";
+"Looks like you're sshed somewhere. OK to send the command \u201c%@\u201d?" = "SSH 先に接続中のようです。コマンド\u201c%@\u201dを送信してもよいですか？";
+
+/* Fixed Spacer */
+"Fixed-size Spacer" = "固定サイズスペーサー";
+"Adds a fixed amount of space" = "固定量のスペースを追加します";
+"Width" = "幅";
+
+/* Spring */
+"Empty Space" = "空白スペース";
+"Spring" = "スプリング";
+"Empty space that draws only a background color." = "背景色のみを描画する空白スペースです。";
+"Pushes items apart. Use one spring to right-align status bar elements that follow it. Use two to center those inbetween." = "アイテムを押し離します。スプリング1つで後続のステータスバー要素を右揃えに、2つで間の要素を中央揃えにできます。";
+"Compression Resistance:" = "圧縮抵抗:";
+"Size Multiple:" = "サイズ倍率:";
+
+/* Progress */
+"Progress Indicator" = "プログレスインジケーター";
+"Generic progress indicator" = "汎用プログレスインジケーター";
+
+/* Search */
+"Search Tool" = "検索ツール";
+"Search tool to find text in the terminal window." = "ターミナルウィンドウ内のテキストを検索するツールです。";
+
+/* Composer */
+"Composer" = "コンポーザー";
+"Adds a text field for composing command lines." = "コマンドラインを作成するためのテキストフィールドを追加します。";
+"Icon Color:" = "アイコン色:";
+
+/* Snippets */
+"Snippets Menu" = "スニペットメニュー";
+"When clicked, opens a menu of snippets. Snippets are saved text strings that can be pasted quickly." = "クリックするとスニペットのメニューが開きます。スニペットはすばやくペーストできる保存済みテキストです。";
+"Send Snippet…" = "スニペットを送信…";
+"Edit Snippets…" = "スニペットを編集…";
+
+/* Interpolated String */
+"Interpolated String" = "補間文字列";
+"Shows the evaluation of a string with inline expressions which may include session variables or the output of registered scripting functions" = "セッション変数や登録済みスクリプト関数の出力を含むインライン式を持つ文字列の評価結果を表示します";
+"String Value:" = "文字列値:";
+
+/* Custom Action */
+"Custom Action" = "カスタムアクション";
+"Adds a button that performs a user-configurable action, similar to a key binding." = "キーバインドに似た、ユーザーが設定可能なアクションを実行するボタンを追加します。";
+"Actions Menu" = "アクションメニュー";
+"When clicked, opens a menu of actions. Actions are like custom key bindings, but without a keystroke attached." = "クリックするとアクションのメニューが開きます。アクションはカスタムキーバインドに似ていますが、キー入力は不要です。";
+"Perform Action…" = "アクションを実行…";
+"Edit Actions…" = "アクションを編集…";
+"Action" = "アクション";
+
+/* Function Call */
+"Call Script Function" = "スクリプト関数を呼び出し";
+"Adds a button that invokes a script function with a user-provided invocation." = "ユーザーが指定した呼び出しでスクリプト関数を実行するボタンを追加します。";
+"Label:" = "ラベル:";
+"Function call:" = "関数呼び出し:";
+"Timeout (seconds):" = "タイムアウト（秒）:";
+
+/* Placeholder */
+"Placeholder" = "プレースホルダー";
+"Click here to configure status bar" = "ここをクリックしてステータスバーを設定";
+
+/* Common knob labels */
+"Text Color:" = "テキスト色:";
+"Background Color:" = "背景色:";
+"Custom Font" = "カスタムフォント";
+"Maximum Width:" = "最大幅:";
+"Minimum Width:" = "最小幅:";
+"Priority:" = "優先度:";
+"Color" = "カラー";
+
+/* Variable Base Component */
+"localhost replacement" = "localhost の置換";
+"Enter replacement text for localhost" = "localhost の置換テキストを入力";
+"Host Name" = "ホスト名";
+"Current host name. Requires shell integration." = "現在のホスト名。シェル統合が必要です。";
+"User Name" = "ユーザー名";
+"Current user name. Requires shell integration." = "現在のユーザー名。シェル統合が必要です。";
+"Current Directory" = "カレントディレクトリ";
+"Current directory. Best with shell integration." = "カレントディレクトリ。シェル統合との併用が最適です。";
+"Copy Path" = "パスをコピー";
+"Copy Folder Name" = "フォルダ名をコピー";
+"Reveal in Finder" = "Finder で表示";
+"New Session Here in New Window" = "ここで新規ウィンドウに新規セッション";
+"New Session Here in New Tab" = "ここで新規タブに新規セッション";
+
+/* ============================================================ */
+/* Phase 6: Dynamic format strings in alerts                    */
+/* ============================================================ */
+
+/* iTermAPIScriptLauncher.m */
+"The Python API script \u201c%@\u201d needs a newer version of the runtime environment for security reasons. You must upgrade it before this version of iTerm2 can launch the script." = "Python API スクリプト\u201c%@\u201dはセキュリティ上の理由により、より新しいバージョンのランタイム環境が必要です。このバージョンの iTerm2 でスクリプトを起動する前にアップグレードしてください。";
+
+/* PTYSession.m */
+"The key-binding action Copy Interpolated String \u201c%@\u201d failed:\n\n%@" = "キーバインドアクション「補間文字列をコピー」\u201c%@\u201dが失敗しました:\n\n%@";
+"tar failed with this message: %@" = "tar が次のメッセージで失敗しました: %@";
+"The download \u201c%@\u201d is larger than %@. Continue?" = "ダウンロード\u201c%@\u201dは %@ より大きいです。続行しますか？";
+"The terminal has initiated display of a file named \u201c%@\u201d of size %@. Allow it?" = "ターミナルがファイル\u201c%@\u201d（サイズ %@）の表示を開始しました。許可しますか？";
+"The terminal has initiated transfer of a file named \u201c%@\u201d of size %@. Download it?" = "ターミナルがファイル\u201c%@\u201d（サイズ %@）の転送を開始しました。ダウンロードしますか？";
+
+/* PTYSession+ARC.m */
+"Cannot start logging to session with profile \u201c%@\u201d: %@" = "プロファイル\u201c%@\u201dのセッションへのログ記録を開始できません: %@";
+
+/* DebugLogging.m */
+"Failed to save debug log: %@" = "デバッグログの保存に失敗しました: %@";
+
+/* KeysPreferencesViewController.m */
+"You already have a Profile with a Hotkey Window named %@" = "すでに %@ という名前のホットキーウィンドウを持つプロファイルがあります";
+"You already have Profiles with Hotkey Windows named %@" = "すでに %@ という名前のホットキーウィンドウを持つプロファイルが複数あります";
+"A new profile called \u201c%@\u201d was created for you. It is tuned to work well for the Hotkey Window feature and it can be customized in the Profiles tab." = "新しいプロファイル\u201c%@\u201dが作成されました。ホットキーウィンドウ機能に最適化されており、プロファイルタブでカスタマイズできます。";
+"Remove all key mappings before loading %@?" = "%@ を読み込む前にすべてのキーマッピングを削除しますか？";
+
+/* NSFileManager+iTerm.m */
+"There was a problem finding or creating your application support directory. iTerm2 won\u2019t work very well until this problem is fixed.\n\nIt should be at ~/Library/Application Support/iTerm2.\n\nThe error was:\n%@" = "Application Support ディレクトリの検索または作成に問題がありました。この問題が解決されるまで iTerm2 は正常に動作しません。\n\n~/Library/Application Support/iTerm2 に存在するはずです。\n\nエラー:\n%@";
+"There was a problem finding or creating the config directory. You can set \u201cSettings > Advanced > Folder for config files\u201d to set a custom location for this directory. Until this is fixed, some features will be disabled.\n%@" = "設定ディレクトリの検索または作成に問題がありました。\u201c設定 > 詳細 > 設定ファイルのフォルダ\u201dでカスタムの場所を指定できます。修正されるまで一部の機能が無効になります。\n%@";
+
+/* ProfilePreferencesViewController.m */
+"Import from %@ failed: %@" = "%@ からのインポートに失敗しました: %@";
+
+/* ProfilesWindowPreferencesViewController.m */
+"The image \u201c%@\u201d could not be loaded because the file is empty." = "画像\u201c%@\u201dはファイルが空のため読み込めませんでした。";
+"The image \u201c%@\u201d could not be loaded because it is corrupt or not a supported format." = "画像\u201c%@\u201dは破損しているかサポートされていないフォーマットのため読み込めませんでした。";
+
+/* SCPFile.m */
+"Failed to connect to %@:%d. Double-check that the host name is correct." = "%@:%d への接続に失敗しました。ホスト名が正しいか確認してください。";
+
+/* iTermPythonRuntimeDownloader.m */
+"The Python Runtime is used by Python scripts that work with iTerm2. It must be downloaded to complete the requested action. The download is about %@. OK to download it now?" = "Python ランタイムは iTerm2 と連携する Python スクリプトで使用されます。要求されたアクションを完了するにはダウンロードが必要です。ダウンロードサイズは約 %@ です。今すぐダウンロードしますか？";
+"The Python Runtime is used by Python scripts that work with iTerm2. The download is about %@. OK to download it now?" = "Python ランタイムは iTerm2 と連携する Python スクリプトで使用されます。ダウンロードサイズは約 %@ です。今すぐダウンロードしますか？";
+
+/* FileTransferManager.m */
+"Authenticate %@" = "%@ を認証";
+"Please enter the %@ for %@ to begin %@." = "%@ を開始するために %@ の %@ を入力してください。";
+
+/* GeneralPreferencesViewController.m */
+"Enter the API key for your AI provider. The key will be stored securely in the Keychain." = "AI プロバイダの API キーを入力してください。キーは Keychain に安全に保存されます。";
+
+/* iTermSemanticHistoryController.m */
+"The following command returned a non-zero exit code:\n\n\u201c%@\u201d" = "次のコマンドがゼロ以外の終了コードを返しました:\n\n\u201c%@\u201d";
+
+/* iTermPasswordManagerWindowController.m */
+"Enter password for %@:" = "%@ のパスワードを入力:";
+"Password for %@" = "%@ のパスワード";
+"Could not get password. Keychain query failed: %@" = "パスワードを取得できませんでした。Keychain クエリに失敗しました: %@";
+
+/* iTermURLActionHelper.m */
+"Enter username for host %@ to download file with scp" = "scp でファイルをダウンロードするためにホスト %@ のユーザー名を入力";
+
+/* PseudoTerminal.m */
+"Close %@?" = "%@ を閉じますか？";
+
+/* iTermLaunchServices.m */
+"iTerm is not the default handler for %@. Would you like to set iTerm as the default handler?" = "iTerm は %@ のデフォルトハンドラーではありません。iTerm をデフォルトハンドラーに設定しますか？";
+"There is no application set to open the document \u201c%@\u201d" = "ドキュメント\u201c%@\u201dを開くアプリケーションが設定されていません";
+
+/* ModalPasswordAlert.swift */
+"Password" = "パスワード";
+"User name" = "ユーザー名";
+
+/* iTermLocalePrompt.swift */
+"Use Minimal POSIX Locale" = "最小限の POSIX ロケールを使用";
+"Save selection to arrangement %@" = "選択を配置 %@ に保存";
+"Save selection to profile %@" = "選択をプロファイル %@ に保存";
+
+/* ============================================================ */
+/* Phase 7: Tool panels, menus, buttons, placeholders           */
+/* ============================================================ */
+
+/* Tool panel titles (iTermToolbeltView.m) */
+"Actions" = "アクション";
+"Captured Output" = "キャプチャ出力";
+"Command History" = "コマンド履歴";
+"Recent Directories" = "最近のディレクトリ";
+"Jobs" = "ジョブ";
+"Notes" = "メモ";
+"Paste History" = "ペースト履歴";
+"Profiles" = "プロファイル";
+"Snippets" = "スニペット";
+"Named Marks" = "名前付きマーク";
+"Codecierge" = "Codecierge";
+"No Tools enabled. Select them from the menu above." = "有効なツールがありません。上のメニューから選択してください。";
+
+/* FileTransferManager.m — menu items */
+"Stop" = "停止";
+"Show in Finder" = "Finder で表示";
+"Remove from List" = "リストから削除";
+"Open" = "開く";
+"Get Info" = "情報を見る";
+
+/* iTermKeyMappingViewController.m */
+"Import…" = "インポート…";
+"Export…" = "エクスポート…";
+
+/* Tool accessibility and menu items */
+"Delete All" = "すべて削除";
+"Clear" = "クリア";
+"Open in Advanced Paste" = "詳細ペーストで開く";
+"Toggle Star" = "スターを切替";
+"Toggle Checkmark" = "チェックマークを切替";
+"Open Profile" = "プロファイルを開く";
+
+/* PreferencePanel.m */
+"General" = "一般";
+"Appearance" = "外観";
+"Keys" = "キー";
+"Arrangements" = "配置";
+"Pointer" = "ポインタ";
+"Advanced" = "詳細";
+"Shortcuts" = "ショートカット";
+"Edit Session" = "セッションを編集";
+"Settings" = "設定";
+"Search Options" = "検索オプション";
+"Show indicators for non-default values" = "デフォルト以外の値のインジケーターを表示";
+
+/* iTermSnippetsEditingViewController.m */
+"Duplicate" = "複製";
+"Add Above" = "上に追加";
+"Add Below" = "下に追加";
+"Edit" = "編集";
+
+/* iTermController.m */
+"Open All" = "すべてを開く";
+"Open All in New Window" = "すべてを新規ウィンドウで開く";
+
+/* iTermStatusBarSetupViewController.m */
+"Reset to System Font" = "システムフォントにリセット";
+"System Font" = "システムフォント";
+
+/* iTermImageWell.m */
+"No Image Selected —Click to set" = "画像が未選択 — クリックして設定";
+"Click to change" = "クリックして変更";
+
+/* iTermInstantReplayWindowController.m */
+"Set Start" = "開始を設定";
+"Set End" = "終了を設定";
+"Live View" = "ライブビュー";
+
+/* PasteViewController.m */
+"Sending…" = "送信中…";
+
+/* iTermSavePanel.m */
+"Raw data" = "生データ";
+"Plain text" = "プレーンテキスト";
+"HTML" = "HTML";
+"ASCIInema" = "ASCIInema";
+
+/* iTermNonTextPasteHelper.swift */
+"How would you like to paste %@?" = "%@ をどのようにペーストしますか？";
+"The clipboard contains %@ image data (%@). How would you like to paste it?" = "クリップボードに %@ 画像データ（%@）が含まれています。どのようにペーストしますか？";
+"OK to paste %@ bytes of base64-encoded data?" = "%@ バイトの Base64 エンコードデータをペーストしてもよいですか？";
+"Large Paste" = "大量ペースト";
+
+/* ChatWindowController.swift */
+"AI Chat" = "AI チャット";
+"Are you sure you want to delete this chat? This action cannot be undone." = "このチャットを削除してもよいですか？この操作は取り消せません。";
+
+/* Conductor.swift */
+"Download %@ or view in browser?" = "%@ をダウンロードしますか、それともブラウザで表示しますか？";
+"Download" = "ダウンロード";
+"View" = "表示";
+
+/* iTermBrowserGateway.swift */
+"iTerm2 can display web pages! But first you must download the Browser Plugin." = "iTerm2 は Web ページを表示できます！まずブラウザプラグインをダウンロードしてください。";
+"Use System Browser" = "システムブラウザを使用";
+
+/* ImportExport.swift */
+"Export iTerm2 Settings and Data" = "iTerm2 の設定とデータをエクスポート";
+
+/* CommandURLHandler.swift */
+"Username" = "ユーザー名";
+"Directory" = "ディレクトリ";
+"Run in New Window" = "新規ウィンドウで実行";
+"Run in New Tab" = "新規タブで実行";
+"Run in Current Session" = "現在のセッションで実行";
+"Run Command from URL" = "URL からコマンドを実行";
+
+/* iTermBookmarkTagEditorWindowController.swift */
+"Edit Bookmark" = "ブックマークを編集";
+"Enter tags..." = "タグを入力…";
+"Delete Bookmark" = "ブックマークを削除";
+"Save" = "保存";
+
+/* ChatInputView.swift */
+"\u21a9 to submit" = "\u21a9 で送信";
+
+/* CommandInfoViewController.swift */
+"Still Running" = "実行中";
+"Unknown" = "不明";
+"Started at %@" = "%@ に開始";
+
+/* iTermUploadIndicator.swift */
+"Uploading \u201c%@\u201d\u2026" = "\u201c%@\u201dをアップロード中\u2026";
+
+/* SSHFilePanel.swift */
+"Enter filename" = "ファイル名を入力";
+"Search" = "検索";
+"New Folder" = "新規フォルダ";
+"Use System Panel\u2026" = "システムパネルを使用\u2026";
+"Go to Folder\u2026" = "フォルダに移動\u2026";
+"Go to Home" = "ホームに移動";
+"Go Up" = "上へ移動";
+"Back" = "戻る";
+"Forward" = "進む";
+"Show Hidden Files" = "隠しファイルを表示";
+"untitled folder" = "名称未設定フォルダ";
+"Create" = "作成";
+
+/* SSHFolderDialog.swift */
+"Enter path (e.g., /usr/local/bin)" = "パスを入力（例: /usr/local/bin）";
+
+/* SSHConfigurationWindowController.swift */
+"Select SSH Binary" = "SSH バイナリを選択";
+
+/* ToolCodecierge.swift */
+"Get Started" = "始める";
+"Reveal Setting" = "設定を表示";
+"Generative AI has been disabled by the system administrator." = "生成 AI はシステム管理者によって無効にされています。";
+"You must enable AI features to use Codecierge." = "Codecierge を使用するには AI 機能を有効にする必要があります。";
+"What are you trying to do? I\u2019ll suggest commands and explain their output." = "何をしようとしていますか？コマンドを提案し、出力を説明します。";
+"I want to\u2026" = "やりたいこと\u2026";
+"Run commands automatically" = "コマンドを自動的に実行";
+"Start" = "開始";
+"Goal: " = "目標: ";
+"End Task" = "タスクを終了";
+"Response" = "応答";
+
+/* Browser context menu */
+"Search with %@" = "%@ で検索";
+"Add Named Mark\u2026" = "名前付きマークを追加\u2026";
+"Save Page As\u2026" = "ページを別名で保存\u2026";
+"Copy Page Title" = "ページタイトルをコピー";
+"View Source" = "ソースを表示";
+"Remove Element" = "要素を削除";
+
+/* Browser toolbar */
+"Ask AI\u2026" = "AI に質問\u2026";
+"Manage Bookmarks" = "ブックマークを管理";
+"History" = "履歴";
+"Unmute Current Page" = "現在のページのミュートを解除";
+
+/* VideoPlaybackWindowController.swift */
+"Instant Replay" = "インスタントリプレイ";
+
+/* Screenshots */
+"Make Screenshot" = "スクリーンショットを作成";
+"Redact Selection" = "選択範囲を墨消し";
+"Highlight Selection" = "選択範囲をハイライト";
+
+/* iTermModernSavePanel.swift / iTermOpenPanel.swift */
+"Open SSH Panel..." = "SSH パネルを開く…";
+
+/* CompletionsWindow.swift */
+
+/* ExpressionBindableView.swift */
+"Edit Expression Binding" = "式バインドを編集";
+"Bind to Expression" = "式にバインド";
+"Remove Expression Binding" = "式バインドを削除";
+
+/* MessageCellView.swift */
+"Fork" = "フォーク";
+
+/* SelectSessionButton.swift */
+"Select this Session" = "このセッションを選択";
+
+/* FileAttachmentSubpartView.swift */
+
+/* iTermStatusBarTriggersComponent.swift */
+"Add Trigger\u2026" = "トリガーを追加\u2026";
+"Edit Triggers\u2026" = "トリガーを編集\u2026";
+
+/* AdapterPasswordDataSource.swift */
+"Select a database file for %@" = "%@ のデータベースファイルを選択";
+"Locate the CLI for %@ named %@" = "%2$@ という名前の %1$@ の CLI の場所を指定";
+
+/* iTermBrowserPluginFinder.swift */
+"Select %@" = "%@ を選択";
+"Choose" = "選択";
+"Select %@." = "%@ を選択してください。";

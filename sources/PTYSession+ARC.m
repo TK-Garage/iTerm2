@@ -6,6 +6,8 @@
 //
 
 #import "PTYSession+ARC.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "PTYSession+Private.h"
 
 #import "DebugLogging.h"
@@ -116,7 +118,7 @@ extern NSString *const SESSION_ARRANGEMENT_SERVER_DICT;
 - (void)failWithError:(NSError *)error {
     DLog(@"%@", error);
     NSString *message =
-        [NSString stringWithFormat:@"Cannot start logging to session with profile “%@”: %@",
+        [NSString stringWithFormat:ITLocalizedMenuString(@"Cannot start logging to session with profile “%@”: %@"),
          self.profile[KEY_NAME],
          error.localizedDescription];
     [iTermWarning showWarningWithTitle:message
@@ -124,7 +126,7 @@ extern NSString *const SESSION_ARRANGEMENT_SERVER_DICT;
                              accessory:nil
                             identifier:@"NoSyncCannotStartLogging"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Session Logging Problem"
+                               heading:ITLocalizedMenuString(@"Session Logging Problem")
                                 window:nil];
 }
 

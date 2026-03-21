@@ -6,6 +6,8 @@
 //
 
 #import "iTermJobTreeViewController.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "SFSymbolEnum/SFSymbolEnum.h"
 
 #import "DebugLogging.h"
@@ -335,7 +337,7 @@ static int gSignalsToList[] = {
                              accessory:nil
                             identifier:@"NoSyncSuppressSendSignal"
                            silenceable:kiTermWarningTypePermanentlySilenceable
-                               heading:@"Confirmation Needed"
+                               heading:ITLocalizedMenuString(@"Confirmation Needed")
                                 window:self.view.window];
     return selection == kiTermWarningSelection0;
 }

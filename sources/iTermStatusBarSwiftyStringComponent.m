@@ -7,6 +7,8 @@
 
 #import "iTermStatusBarSwiftyStringComponent.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "iTermScriptHistory.h"
 #import "iTermStatusBarComponentKnob.h"
 #import "iTermVariableScope.h"
@@ -32,17 +34,17 @@ NSString *const iTermStatusBarSwiftyStringComponentExpressionKey = @"expression"
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Interpolated String";
+    return ITLocalizedMenuString(@"Interpolated String");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Shows the evaluation of a string with inline expressions which may include session "
-           @"variables or the output of registered scripting functions";
+    return ITLocalizedMenuString(@"Shows the evaluation of a string with inline expressions which may include session "
+           @"variables or the output of registered scripting functions");
 }
 
 - (NSArray<iTermStatusBarComponentKnob *> *)statusBarComponentKnobs {
     iTermStatusBarComponentKnob *expressionKnob =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"String Value:"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"String Value:")
                                                           type:iTermStatusBarComponentKnobTypeText
                                                    placeholder:@"String with \\(expressions)"
                                                   defaultValue:@""
@@ -97,7 +99,7 @@ NSString *const iTermStatusBarSwiftyStringComponentExpressionKey = @"expression"
                                  accessory:nil
                                 identifier:@"NoSyncInterpolatedStatusBarComponentError"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Error"
+                                   heading:ITLocalizedMenuString(@"Error")
                                     window:self.statusBarComponentView.window];
     }
 }

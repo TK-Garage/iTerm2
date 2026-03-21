@@ -189,7 +189,7 @@ class AdapterPasswordDataSource: CommandLinePasswordDataSource {
         openPanel.canChooseDirectories = false
         openPanel.canChooseFiles = true
         openPanel.allowsMultipleSelection = false
-        openPanel.message = "Select a database file for \(identifier)"
+        openPanel.message = String(format: NSLocalizedString("Select a database file for %@", tableName: "iTerm", bundle: .main, comment: ""), identifier)
 
         if let ext = `extension` {
             openPanel.allowedContentTypes = [UTType(filenameExtension: ext) ?? .data]
@@ -228,7 +228,7 @@ class AdapterPasswordDataSource: CommandLinePasswordDataSource {
         openPanel.canChooseDirectories = false
         openPanel.canChooseFiles = true
         openPanel.allowsMultipleSelection = false
-        openPanel.message = "Locate the CLI for \(identifier) named \(name)"
+        openPanel.message = String(format: NSLocalizedString("Locate the CLI for %@ named %@", tableName: "iTerm", bundle: .main, comment: ""), identifier, name)
         openPanel.allowedContentTypes = [UTType.unixExecutable]
 
         let delegate = AdapterCLIFinderOpenPanelDelegate(name: name)

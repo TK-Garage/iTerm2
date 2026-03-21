@@ -7,6 +7,8 @@
 
 #import "iTermStatusBarRPCProvidedTextComponent.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTermAPIHelper.h"
 #import "iTermExpressionParser.h"
@@ -397,7 +399,7 @@ static NSString *const iTermStatusBarRPCRegistrationRequestV2Key = @"registratio
                                  accessory:nil
                                 identifier:[NSString stringWithFormat:@"NoSyncAutoLaunchScript_%@", _fullPath]
                                silenceable:kiTermWarningTypePermanentlySilenceable
-                                   heading:@"Always launch this script when iTerm2 starts?"
+                                   heading:ITLocalizedMenuString(@"Always launch this script when iTerm2 starts?")
                                     window:self.delegate.textField.window] == kiTermWarningSelection0) {
         [menuController moveScriptToAutoLaunch:_fullPath];
     }

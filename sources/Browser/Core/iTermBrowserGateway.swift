@@ -126,8 +126,8 @@ class iTermBrowserGateway: NSObject {
         // would cause an infinite loop since the plugin would still not be installed.
         // Remembering "Cancel" is also not useful.
         let warning = iTermWarning()
-        warning.title = "iTerm2 can display web pages! But first you must download the Browser Plugin."
-        warning.actionLabels = ["Download", "Use System Browser", "Cancel"]
+        warning.title = NSLocalizedString("iTerm2 can display web pages! But first you must download the Browser Plugin.", tableName: "iTerm", bundle: .main, comment: "")
+        warning.actionLabels = [NSLocalizedString("Download", tableName: "iTerm", bundle: .main, comment: ""), NSLocalizedString("Use System Browser", tableName: "iTerm", bundle: .main, comment: ""), NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: "")]
         warning.identifier = upsellWarningIdentifier
         warning.warningType = .kiTermWarningTypePermanentlySilenceable
         warning.heading = "Plugin Required"

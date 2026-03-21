@@ -41,6 +41,8 @@
 #import "NSWorkspace+iTerm.h"
 #import <ColorPicker/ColorPicker.h>
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NS_ASSUME_NONNULL_BEGIN
 
 
@@ -234,7 +236,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSView *)fontPanelAccessory {
     NSButton *button = [[NSButton alloc] init];
-    button.title = @"Reset to System Font";
+    button.title = ITLocalizedMenuString(@"Reset to System Font");
     button.buttonType = NSButtonTypeMomentaryPushIn;
     button.bezelStyle = NSBezelStyleRounded;
     button.target = self;
@@ -279,7 +281,7 @@ NS_ASSUME_NONNULL_BEGIN
     _layout.advancedConfiguration.font = font;
 
     if ([font isEqual:[iTermStatusBarAdvancedConfiguration defaultFont]]) {
-        _fontLabel.stringValue = @"System Font";
+        _fontLabel.stringValue = ITLocalizedMenuString(@"System Font");
         return;
     }
     _fontLabel.stringValue = [NSString stringWithFormat:@"%@pt %@", @(font.pointSize), font.fontName];

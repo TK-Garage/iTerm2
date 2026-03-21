@@ -74,6 +74,8 @@
 
 #include <objc/runtime.h>
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 @import Sparkle;
 
 NSString *const iTermSnippetsTagsDidChange = @"iTermSnippetsTagsDidChange";
@@ -873,7 +875,7 @@ replaceInitialDirectoryForSessionWithGUID:(NSString *)guid
 
     if (openAllSelector && count > 1) {
         [subMenu addItem:[NSMenuItem separatorItem]];
-        aMenuItem = [[NSMenuItem alloc] initWithTitle:@"Open All"
+        aMenuItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Open All")
                                                action:openAllSelector
                                         keyEquivalent:@""];
         if (@available(macOS 26, *)) {
@@ -892,7 +894,7 @@ replaceInitialDirectoryForSessionWithGUID:(NSString *)guid
         [subMenu addItem:aMenuItem];
 
         // Add alternate -------------------------------------------------------
-        aMenuItem = [[NSMenuItem alloc] initWithTitle:@"Open All in New Window"
+        aMenuItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Open All in New Window")
                                                action:openAllSelector
                                         keyEquivalent:@""];
         modifierMask = NSEventModifierFlagCommand | NSEventModifierFlagControl;

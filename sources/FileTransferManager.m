@@ -7,6 +7,8 @@
 //
 
 #import "FileTransferManager.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "iTermApplicationDelegate.h"
 #import "iTermPasswordManagerWindowController.h"
 #import "NSArray+iTerm.h"
@@ -265,7 +267,7 @@ static const NSTimeInterval kMaximumTimeToKeepFinishedDownload = 24 * 60 * 60;
     [item setAction:@selector(itemSelected:)];
 
     NSMenu *submenu = [[[NSMenu alloc] init] autorelease];
-    NSMenuItem *subItem = [[[NSMenuItem alloc] initWithTitle:@"Stop"
+    NSMenuItem *subItem = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Stop")
                                                       action:@selector(stop:)
                                                keyEquivalent:@""] autorelease];
     [subItem setTarget:controller];
@@ -273,7 +275,7 @@ static const NSTimeInterval kMaximumTimeToKeepFinishedDownload = 24 * 60 * 60;
     controller.stopSubItem = subItem;
 
     if (transferrableFile.isDownloading) {
-        subItem = [[[NSMenuItem alloc] initWithTitle:@"Show in Finder"
+        subItem = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Show in Finder")
                                               action:@selector(showInFinder:)
                                        keyEquivalent:@""] autorelease];
         [subItem setTarget:controller];
@@ -281,7 +283,7 @@ static const NSTimeInterval kMaximumTimeToKeepFinishedDownload = 24 * 60 * 60;
         controller.showInFinderSubItem = subItem;
     }
 
-    subItem = [[[NSMenuItem alloc] initWithTitle:@"Remove from List"
+    subItem = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Remove from List")
                                           action:@selector(removeFromList:)
                                    keyEquivalent:@""] autorelease];
     [subItem setTarget:controller];
@@ -289,7 +291,7 @@ static const NSTimeInterval kMaximumTimeToKeepFinishedDownload = 24 * 60 * 60;
     controller.removeFromListSubItem = subItem;
 
     if (transferrableFile.isDownloading) {
-        subItem = [[[NSMenuItem alloc] initWithTitle:@"Open"
+        subItem = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Open")
                                               action:@selector(open:)
                                        keyEquivalent:@""] autorelease];
         [subItem setTarget:controller];
@@ -297,7 +299,7 @@ static const NSTimeInterval kMaximumTimeToKeepFinishedDownload = 24 * 60 * 60;
         controller.openSubItem = subItem;
     }
 
-    subItem = [[[NSMenuItem alloc] initWithTitle:@"Get Info"
+    subItem = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Get Info")
                                           action:@selector(getInfo:)
                                    keyEquivalent:@""] autorelease];
     [subItem setTarget:controller];
@@ -379,15 +381,15 @@ static const NSTimeInterval kMaximumTimeToKeepFinishedDownload = 24 * 60 * 60;
 - (void)transferrableFile:(TransferrableFile *)transferrableFile
         interactivePrompt:(NSString *)prompt
                completion:(void (^)(NSString *password))completion {
-    NSString *text = [NSString stringWithFormat:@"Authenticate %@", transferrableFile.authRequestor];
+    NSString *text = [NSString stringWithFormat:ITLocalizedMenuString(@"Authenticate %@"), transferrableFile.authRequestor];
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
     alert.messageText = text;
-    alert.informativeText = [NSString stringWithFormat:@"Please enter the %@ for %@ to begin %@.",
+    alert.informativeText = [NSString stringWithFormat:ITLocalizedMenuString(@"Please enter the %@ for %@ to begin %@."),
                              prompt, transferrableFile.authRequestor,
                              transferrableFile.protocolName];
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
-    [alert addButtonWithTitle:@"Password Manager…"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Password Manager…")];
 
     NSSecureTextField *input =
         [[[NSSecureTextField alloc] initWithFrame:NSMakeRect(0, 0, 200, 24)] autorelease];
@@ -424,8 +426,8 @@ static const NSTimeInterval kMaximumTimeToKeepFinishedDownload = 24 * 60 * 60;
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
     alert.messageText = title;
     alert.informativeText = message;
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
 
     [alert layout];
     NSInteger button = [alert runModal];

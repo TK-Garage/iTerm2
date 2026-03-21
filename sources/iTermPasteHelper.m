@@ -7,6 +7,8 @@
 //
 
 #import "DebugLogging.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "NSData+iTerm.h"
 #import "NSStringITerm.h"
 #import "PasteContext.h"
@@ -644,7 +646,7 @@ const NSInteger iTermQuickPasteBytesPerCallDefaultValue = 768;
                                      accessory:nil
                                     identifier:@"NoSyncPasteOverCharacterLimitWarning"
                                    silenceable:kiTermWarningTypePersistent
-                                       heading:@"Paste Limit Exceeded"
+                                       heading:ITLocalizedMenuString(@"Paste Limit Exceeded")
                                         window:self.delegate.pasteHelperViewForIndicator.window];
             switch (selection) {
                 case kiTermWarningSelection0:

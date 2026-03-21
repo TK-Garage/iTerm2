@@ -6,6 +6,8 @@
 //
 
 #import "TmuxController.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "DebugLogging.h"
 #import "EquivalenceClassSet.h"
 #import "iTerm2SharedARC-Swift.h"
@@ -3073,7 +3075,7 @@ static NSDictionary *iTermTmuxControllerDefaultFontOverridesFromProfile(Profile 
                                  accessory:nil
                                 identifier:@"NoSyncResetRedTmuxTabs"
                                silenceable:kiTermWarningTypePermanentlySilenceable
-                                   heading:@"Fix corrupted tab colors?"
+                                   heading:ITLocalizedMenuString(@"Fix corrupted tab colors?")
                                     window:[NSApp keyWindow]];
         if (selection == kiTermWarningSelection0) {
             [_tabColors removeObjectsPassingTest:^BOOL(NSNumber *key, NSString *obj) {

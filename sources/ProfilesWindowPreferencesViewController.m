@@ -7,6 +7,8 @@
 //
 
 #import "ProfilesWindowPreferencesViewController.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "DebugLogging.h"
 #import "FutureMethods.h"
 #import "ITAddressBookMgr.h"
@@ -823,27 +825,27 @@ typedef NS_ENUM(NSUInteger, iTermWindowUnitsTag) {
                                  accessory:nil
                                 identifier:@"BackgroundImageUnreadable"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Problem Loading Image"
+                                   heading:ITLocalizedMenuString(@"Problem Loading Image")
                                     window:self.view.window];
         return NO;
     }
     if (data.length == 0) {
-        [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"The image “%@” could not be loaded because the file is empty.", filename.lastPathComponent]
+        [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"The image “%@” could not be loaded because the file is empty."), filename.lastPathComponent]
                                    actions:@[ @"OK" ]
                                  accessory:nil
                                 identifier:@"BackgroundImageUnreadable"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Problem Loading Image"
+                                   heading:ITLocalizedMenuString(@"Problem Loading Image")
                                     window:self.view.window];
         return NO;
     }
     if (![[NSImage alloc] initWithData:data]) {
-        [iTermWarning showWarningWithTitle:[NSString stringWithFormat:@"The image “%@” could not be loaded because it is corrupt or not a supported format.", filename.lastPathComponent]
+        [iTermWarning showWarningWithTitle:[NSString stringWithFormat:ITLocalizedMenuString(@"The image “%@” could not be loaded because it is corrupt or not a supported format."), filename.lastPathComponent]
                                    actions:@[ @"OK" ]
                                  accessory:nil
                                 identifier:@"BackgroundImageUnreadable"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Problem Loading Image"
+                                   heading:ITLocalizedMenuString(@"Problem Loading Image")
                                     window:self.view.window];
         return NO;
     }

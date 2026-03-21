@@ -139,7 +139,7 @@ class iTermNonTextPasteHelper: NSObject {
         let fileDescription = descriptionForFiles(existingPaths, isDirectory: isDirectory)
 
         let warning = iTermWarning()
-        warning.title = "How would you like to paste \(fileDescription)?"
+        warning.title = String(format: NSLocalizedString("How would you like to paste %@?", tableName: "iTerm", bundle: .main, comment: ""), fileDescription)
         warning.actionLabels = actions.map { $0.rawValue }
         warning.identifier = singleFile ? "NoSyncPasteNonTextFile" : "NoSyncPasteNonTextFiles"
         warning.warningType = .kiTermWarningTypePermanentlySilenceable
@@ -224,10 +224,10 @@ class iTermNonTextPasteHelper: NSObject {
 
     private func showError(_ message: String) {
         let alert = NSAlert()
-        alert.messageText = "Paste Failed"
+        alert.messageText = NSLocalizedString("Paste Failed", tableName: "iTerm", bundle: .main, comment: "")
         alert.informativeText = message
         alert.alertStyle = .warning
-        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: NSLocalizedString("OK", tableName: "iTerm", bundle: .main, comment: ""))
         if let window = delegate?.nonTextPasteHelperWindow(self) {
             alert.beginSheetModal(for: window)
         } else {
@@ -267,7 +267,7 @@ class iTermNonTextPasteHelper: NSObject {
         DLog("handleImageDataPaste: actions=\(actions.map { $0.rawValue })")
 
         let warning = iTermWarning()
-        warning.title = "The clipboard contains \(typeDescription) image data (\(sizeDescription)). How would you like to paste it?"
+        warning.title = String(format: NSLocalizedString("The clipboard contains %@ image data (%@). How would you like to paste it?", tableName: "iTerm", bundle: .main, comment: ""), typeDescription, sizeDescription)
         warning.actionLabels = actions.map { $0.rawValue }
         warning.identifier = canUpload ? "NoSyncPasteImageDataRemote" : "NoSyncPasteImageData"
         warning.warningType = .kiTermWarningTypePermanentlySilenceable
@@ -408,12 +408,12 @@ class iTermNonTextPasteHelper: NSObject {
         }
 
         let warning = iTermWarning()
-        warning.title = "OK to paste \(base64.count.formatted()) bytes of base64-encoded data?"
-        warning.actionLabels = ["OK", "Cancel"]
+        warning.title = String(format: NSLocalizedString("OK to paste %@ bytes of base64-encoded data?", tableName: "iTerm", bundle: .main, comment: ""), base64.count.formatted())
+        warning.actionLabels = [NSLocalizedString("OK", tableName: "iTerm", bundle: .main, comment: ""), NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: "")]
         warning.identifier = "NoSyncPasteLargeBase64"
         warning.warningType = .kiTermWarningTypePermanentlySilenceable
-        warning.heading = "Large Paste"
-        warning.cancelLabel = "Cancel"
+        warning.heading = NSLocalizedString("Large Paste", tableName: "iTerm", bundle: .main, comment: "")
+        warning.cancelLabel = NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: "")
         warning.window = delegate?.nonTextPasteHelperWindow(self)
 
         warning.runModalAsync { [weak self] selection, _ in

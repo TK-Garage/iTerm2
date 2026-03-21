@@ -45,7 +45,7 @@ class iTermBookmarkTagEditorWindowController: NSWindowController {
                            styleMask: [.titled, .closable],
                            backing: .buffered,
                            defer: false)
-        panel.title = "Edit Bookmark"
+        panel.title = NSLocalizedString("Edit Bookmark", tableName: "iTerm", bundle: .main, comment: "")
         panel.isFloatingPanel = true
         panel.level = .modalPanel
         panel.center()
@@ -88,19 +88,19 @@ class iTermBookmarkTagEditorWindowController: NSWindowController {
         tagsTokenField = NSTokenField()
         tagsTokenField.translatesAutoresizingMaskIntoConstraints = false
         tagsTokenField.delegate = self
-        tagsTokenField.placeholderString = "Enter tags..."
+        tagsTokenField.placeholderString = NSLocalizedString("Enter tags...", tableName: "iTerm", bundle: .main, comment: "")
 
         // Buttons
-        deleteButton = NSButton(title: "Delete Bookmark", target: self, action: #selector(deleteBookmark))
+        deleteButton = NSButton(title: NSLocalizedString("Delete Bookmark", tableName: "iTerm", bundle: .main, comment: ""), target: self, action: #selector(deleteBookmark))
         deleteButton.translatesAutoresizingMaskIntoConstraints = false
         deleteButton.bezelStyle = .rounded
 
-        cancelButton = NSButton(title: "Cancel", target: self, action: #selector(cancel))
+        cancelButton = NSButton(title: NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: ""), target: self, action: #selector(cancel))
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
         cancelButton.bezelStyle = .rounded
         cancelButton.keyEquivalent = "\u{1b}" // Escape key
 
-        saveButton = NSButton(title: "Save", target: self, action: #selector(saveChanges))
+        saveButton = NSButton(title: NSLocalizedString("Save", tableName: "iTerm", bundle: .main, comment: ""), target: self, action: #selector(saveChanges))
         saveButton.translatesAutoresizingMaskIntoConstraints = false
         saveButton.bezelStyle = .rounded
         saveButton.keyEquivalent = "\r"
@@ -221,10 +221,10 @@ class iTermBookmarkTagEditorWindowController: NSWindowController {
 
     @objc private func deleteBookmark() {
         let alert = NSAlert()
-        alert.messageText = "Delete Bookmark"
-        alert.informativeText = "Are you sure you want to delete this bookmark?"
-        alert.addButton(withTitle: "Delete")
-        alert.addButton(withTitle: "Cancel")
+        alert.messageText = NSLocalizedString("Delete Bookmark", tableName: "iTerm", bundle: .main, comment: "")
+        alert.informativeText = NSLocalizedString("Are you sure you want to delete this bookmark?", tableName: "iTerm", bundle: .main, comment: "")
+        alert.addButton(withTitle: NSLocalizedString("Delete", tableName: "iTerm", bundle: .main, comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: ""))
         alert.alertStyle = .warning
 
         alert.beginSheetModal(for: window!) { response in

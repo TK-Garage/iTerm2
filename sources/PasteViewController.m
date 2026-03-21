@@ -15,6 +15,8 @@
 #import "PseudoTerminal.h"
 #import "PreferencePanel.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 static float kAnimationDuration = 0.25;
 
 static NSString *iTermPasteViewControllerNibName(BOOL mini) {
@@ -72,7 +74,7 @@ static NSString *iTermPasteViewControllerNibName(BOOL mini) {
 
 - (void)awakeFromNib {
     if (pasteContext_.isUpload) {
-        _label.stringValue = @"Sending…";
+        _label.stringValue = ITLocalizedMenuString(@"Sending…");
     }
 }
 

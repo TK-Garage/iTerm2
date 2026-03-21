@@ -9,6 +9,8 @@
 
 #import "NSDictionary+iTerm.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 static NSString *const iTermStatusBarFixedSpacerComponentWidthKnob = @"iTermStatusBarFixedSpacerComponentWidthKnob";
 
 NS_ASSUME_NONNULL_BEGIN
@@ -38,11 +40,11 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Fixed-size Spacer";
+    return ITLocalizedMenuString(@"Fixed-size Spacer");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Adds a fixed amount of space";
+    return ITLocalizedMenuString(@"Adds a fixed amount of space");
 }
 
 - (NSView *)statusBarComponentView {
@@ -65,13 +67,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSArray<iTermStatusBarComponentKnob *> *)statusBarComponentKnobs {
     iTermStatusBarComponentKnob *backgroundColorKnob =
-    [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Color"
+    [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Color")
                                                       type:iTermStatusBarComponentKnobTypeColor
                                                placeholder:nil
                                               defaultValue:nil
                                                        key:iTermStatusBarSharedBackgroundColorKey];
     iTermStatusBarComponentKnob *widthKnob =
-    [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Width"
+    [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Width")
                                                       type:iTermStatusBarComponentKnobTypeDouble
                                                placeholder:nil
                                               defaultValue:@5

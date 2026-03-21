@@ -126,7 +126,7 @@ class ChatInputView: NSView, NSTextFieldDelegate {
             self?.updateSendButtonEnabled()
         }
         
-        hintLabel = NSTextField(labelWithString: "↩ to submit")
+        hintLabel = NSTextField(labelWithString: NSLocalizedString("↩ to submit", tableName: "iTerm", bundle: .main, comment: ""))
         hintLabel.translatesAutoresizingMaskIntoConstraints = false
         hintLabel.font = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize - 1)
         hintLabel.textColor = .tertiaryLabelColor

@@ -1,0 +1,21 @@
+/* Japanese localization — configPanel.strings */
+
+"Preferences" = "設定";
+"Window" = "ウィンドウ";
+"Session" = "セッション";
+"Cols:" = "列数:";
+"Rows:" = "行数:";
+"Font" = "フォント";
+"Non-ASCII Font" = "非 ASCII フォント";
+"Anti-Aliasing" = "アンチエイリアス";
+"Cancel" = "キャンセル";
+"OK" = "OK";
+"Name:" = "名前:";
+"Encoding:" = "エンコーディング:";
+"Transparency:" = "透明度:";
+"Text:" = "テキスト:";
+"Selection:" = "選択:";
+"Background:" = "背景:";
+"Bold:" = "太字:";
+"Idle character" = "アイドル文字";
+"ASCII code:" = "ASCII コード:";

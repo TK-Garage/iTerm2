@@ -27,6 +27,8 @@
 
 #import "iTermApplicationDelegate.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "AppearancePreferencesViewController.h"
 #import "ColorsMenuItemView.h"
 #import "FileTransferManager.h"
@@ -398,7 +400,7 @@ static BOOL hasBecomeActive = NO;
         if (undoResponder) {
             return YES;
         } else {
-            menuItem.title = @"Undo Close Session";
+            menuItem.title = ITLocalizedMenuString(@"Undo Close Session");
             return [[iTermController sharedInstance] hasRestorableSession];
         }
     } else if ([menuItem action] == @selector(enableMarkAlertShowsModalAlert:)) {
@@ -636,13 +638,13 @@ static BOOL hasBecomeActive = NO;
 - (NSMenu *)downloadsMenu {
     if (!downloadsMenu_) {
         downloadsMenu_ = [[[NSMenuItem alloc] init] autorelease];
-        downloadsMenu_.title = @"Downloads";
+        downloadsMenu_.title = ITLocalizedMenuString(@"Downloads");
         NSMenu *mainMenu = [[NSApplication sharedApplication] mainMenu];
         [mainMenu insertItem:downloadsMenu_
                      atIndex:mainMenu.itemArray.count - 1];
-        [downloadsMenu_ setSubmenu:[[[NSMenu alloc] initWithTitle:@"Downloads"] autorelease]];
+        [downloadsMenu_ setSubmenu:[[[NSMenu alloc] initWithTitle:ITLocalizedMenuString(@"Downloads")] autorelease]];
 
-        NSMenuItem *clearAll = [[[NSMenuItem alloc] initWithTitle:@"Clear All" action:@selector(clearAllDownloads:) keyEquivalent:@""] autorelease];
+        NSMenuItem *clearAll = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Clear All") action:@selector(clearAllDownloads:) keyEquivalent:@""] autorelease];
         [downloadsMenu_.submenu addItem:clearAll];
         [downloadsMenu_.submenu addItem:[NSMenuItem separatorItem]];
     }
@@ -652,13 +654,13 @@ static BOOL hasBecomeActive = NO;
 - (NSMenu *)uploadsMenu {
     if (!uploadsMenu_) {
         uploadsMenu_ = [[[NSMenuItem alloc] init] autorelease];
-        uploadsMenu_.title = @"Uploads";
+        uploadsMenu_.title = ITLocalizedMenuString(@"Uploads");
         NSMenu *mainMenu = [[NSApplication sharedApplication] mainMenu];
         [mainMenu insertItem:uploadsMenu_
                      atIndex:mainMenu.itemArray.count - 1];
-        [uploadsMenu_ setSubmenu:[[[NSMenu alloc] initWithTitle:@"Uploads"] autorelease]];
+        [uploadsMenu_ setSubmenu:[[[NSMenu alloc] initWithTitle:ITLocalizedMenuString(@"Uploads")] autorelease]];
 
-        NSMenuItem *clearAll = [[[NSMenuItem alloc] initWithTitle:@"Clear All" action:@selector(clearAllUploads:) keyEquivalent:@""] autorelease];
+        NSMenuItem *clearAll = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Clear All") action:@selector(clearAllUploads:) keyEquivalent:@""] autorelease];
         [uploadsMenu_.submenu addItem:clearAll];
         [uploadsMenu_.submenu addItem:[NSMenuItem separatorItem]];
     }
@@ -712,8 +714,8 @@ static BOOL hasBecomeActive = NO;
         DLog(@"Importing color presets from %@", filename);
         if ([iTermColorPresets importColorPresetFromFile:filename]) {
             NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-            alert.messageText = @"Colors Scheme Imported";
-            alert.informativeText = @"The color scheme was imported and added to presets. You can find it under Settings > Profiles > Colors > Load Presets….";
+            alert.messageText = ITLocalizedMenuString(@"Colors Scheme Imported");
+            alert.informativeText = ITLocalizedMenuString(@"The color scheme was imported and added to presets. You can find it under Settings > Profiles > Colors > Load Presets….");
             [alert runModal];
         }
         return YES;
@@ -947,10 +949,10 @@ static BOOL hasBecomeActive = NO;
         }
         [NSApp activateIgnoringOtherApps:YES];
         NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-        alert.messageText = @"Quit iTerm2?";
+        alert.messageText = ITLocalizedMenuString(@"Quit iTerm2?");
         alert.informativeText = message;
-        [alert addButtonWithTitle:@"OK"];
-        [alert addButtonWithTitle:@"Cancel"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
         iTermDisclosableView *accessory = [[iTermDisclosableView alloc] initWithFrame:NSZeroRect
                                                                                prompt:@"Why am I being prompted?"
                                                                               message:[NSString stringWithFormat:@"You are being prompted because:\n\n%@",
@@ -1043,7 +1045,7 @@ static BOOL hasBecomeActive = NO;
 - (NSMenu *)applicationDockMenu:(NSApplication *)sender {
     NSMenu* aMenu = [[NSMenu alloc] initWithTitle: @"Dock Menu"];
 
-    [aMenu addItemWithTitle:@"New Window (Default Profile)"
+    [aMenu addItemWithTitle:ITLocalizedMenuString(@"New Window (Default Profile)")
                      action:@selector(newWindow:)
               keyEquivalent:@""];
     [aMenu addItem:[NSMenuItem separatorItem]];
@@ -1348,6 +1350,8 @@ void TurnOnDebugLoggingAutomatically(void) {
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [iTermMenuLocalizer localizeMainMenu];
+
     if (@available(macOS 12, *)) {
         // ok
     } else {
@@ -1356,7 +1360,7 @@ void TurnOnDebugLoggingAutomatically(void) {
                                  accessory:nil
                                 identifier:@"NoSyncMacOS11Deprecation"
                                silenceable:kiTermWarningTypePermanentlySilenceable
-                                   heading:@"Deprecation Notice"
+                                   heading:ITLocalizedMenuString(@"Deprecation Notice")
                                     window:nil];
     }
     DLog(@"didFinishLaunching");
@@ -1492,10 +1496,10 @@ void TurnOnDebugLoggingAutomatically(void) {
     NSMenu *appMenu = [[[[NSApp mainMenu] itemArray] firstObject] submenu];
     [appMenu addItem:[NSMenuItem separatorItem]];
 
-    NSMenuItem *item = [[[NSMenuItem alloc] initWithTitle:@"Toggle Key Recording" action:@selector(toggleKeyRecording:) keyEquivalent:@""] autorelease];
+    NSMenuItem *item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Toggle Key Recording") action:@selector(toggleKeyRecording:) keyEquivalent:@""] autorelease];
     [appMenu addItem:item];
 
-    item = [[[NSMenuItem alloc] initWithTitle:@"Replay Recorded Keys" action:@selector(replayRecordedKeys:) keyEquivalent:@""] autorelease];
+    item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Replay Recorded Keys") action:@selector(replayRecordedKeys:) keyEquivalent:@""] autorelease];
     [appMenu addItem:item];
 #endif
 }
@@ -1541,12 +1545,12 @@ static iTermKeyEventReplayer *gReplayer;
     NSMenu *menu = [[[NSMenu alloc] init] autorelease];
     NSMenuItem *item;
 
-    item = [[[NSMenuItem alloc] initWithTitle:@"Settings"
+    item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Settings")
                                        action:@selector(showAndOrderFrontRegardlessPrefWindow:)
                                 keyEquivalent:@""] autorelease];
     [menu addItem:item];
 
-    item = [[[NSMenuItem alloc] initWithTitle:@"Bring All Windows to Front"
+    item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Bring All Windows to Front")
                                        action:@selector(arrangeInFront:)
                                 keyEquivalent:@""] autorelease];
     [menu addItem:item];
@@ -1554,21 +1558,21 @@ static iTermKeyEventReplayer *gReplayer;
     item = [[[NSMenuItem alloc] init] autorelease];
     _statusIconBuriedSessions = [[[NSMenu alloc] init] autorelease];
     item.submenu = _statusIconBuriedSessions;
-    item.title = @"Buried Sessions";
+    item.title = ITLocalizedMenuString(@"Buried Sessions");
     [menu addItem:item];
 
     [[iTermBuriedSessions sharedInstance] setMenus:[NSArray arrayWithObjects:_buriedSessions, _statusIconBuriedSessions, nil]];
 
-    item = [[[NSMenuItem alloc] initWithTitle:@"Check For Updates"
+    item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Check For Updates")
                                        action:@selector(checkForUpdatesFromMenu:)
                                 keyEquivalent:@""] autorelease];
     [menu addItem:item];
 
-    NSMenuItem *mainMenuItem = [[[NSMenuItem alloc] initWithTitle:@"Main Menu" action:nil keyEquivalent:@""] autorelease];
+    NSMenuItem *mainMenuItem = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Main Menu") action:nil keyEquivalent:@""] autorelease];
     mainMenuItem.submenu = [[NSApp mainMenu] it_deepCopy];
     [menu addItem:mainMenuItem];
-    
-    item = [[[NSMenuItem alloc] initWithTitle:@"Quit iTerm2"
+
+    item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Quit iTerm2")
                                        action:@selector(terminate:)
                                 keyEquivalent:@""] autorelease];
     [menu addItem:item];
@@ -2286,7 +2290,7 @@ static iTermKeyEventReplayer *gReplayer;
 }
 
 - (void)addArrangementsToDockMenu:(NSMenu *)theMenu {
-    NSMenuItem *container = [theMenu addItemWithTitle:@"Restore Arrangement"
+    NSMenuItem *container = [theMenu addItemWithTitle:ITLocalizedMenuString(@"Restore Arrangement")
                                                action:nil
                                         keyEquivalent:@""];
     NSMenu *subMenu = [[[NSMenu alloc] init] autorelease];
@@ -2838,7 +2842,7 @@ static iTermKeyEventReplayer *gReplayer;
                                       accessory:nil
                                      identifier:nil
                                     silenceable:kiTermWarningTypePersistent
-                                        heading:@"Python Runtime"
+                                        heading:ITLocalizedMenuString(@"Python Runtime")
                                          window:nil];
          }
      }];
@@ -2859,7 +2863,7 @@ static iTermKeyEventReplayer *gReplayer;
                                              accessory:nil
                                             identifier:nil
                                            silenceable:kiTermWarningTypePersistent
-                                               heading:@"Python Runtime"
+                                               heading:ITLocalizedMenuString(@"Python Runtime")
                                                 window:nil];
                 } else {
                     [iTermWarning showWarningWithTitle:error.localizedDescription ?: @"Unknown error"
@@ -2867,7 +2871,7 @@ static iTermKeyEventReplayer *gReplayer;
                                              accessory:nil
                                             identifier:nil
                                            silenceable:kiTermWarningTypePersistent
-                                               heading:@"Error Installing Python Runtime"
+                                               heading:ITLocalizedMenuString(@"Error Installing Python Runtime")
                                                 window:nil];
                 }
             }];
@@ -3037,7 +3041,7 @@ static iTermKeyEventReplayer *gReplayer;
 
 - (IBAction)gpuRendererAvailability:(id)sender {
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = @"GPU Renderer Availability";
+    alert.messageText = ITLocalizedMenuString(@"GPU Renderer Availability");
     PseudoTerminal *term = [[iTermController sharedInstance] currentTerminal];
     PTYSession *session = [term currentSession];
     PTYTab *tab = [term tabForSession:session];
@@ -3045,7 +3049,7 @@ static iTermKeyEventReplayer *gReplayer;
     if (reason) {
         alert.informativeText = [NSString stringWithFormat:@"GPU rendering is off in the current session because %@", reason];
     } else {
-        alert.informativeText = @"GPU rendering is enabled for the current session.";
+        alert.informativeText = ITLocalizedMenuString(@"GPU rendering is enabled for the current session.");
     }
     [alert runModal];
 }

@@ -6,6 +6,8 @@
 //
 
 #import "iTermFileDescriptorMultiClient.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "iTermFileDescriptorMultiClient+MRR.h"
 
 #import "DebugLogging.h"
@@ -785,7 +787,7 @@ static NSString *iTermMultiServerStringForMessageFromClient(iTermMultiServerClie
         [rateLimit performRateLimitedBlock:^{
             DLog(@"Called");
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = @"Problem Starting iTerm2 Daemon";
+            alert.messageText = ITLocalizedMenuString(@"Problem Starting iTerm2 Daemon");
             alert.informativeText = message;
             [alert runModal];
         }];
@@ -849,10 +851,10 @@ static NSString *iTermMultiServerStringForMessageFromClient(iTermMultiServerClie
         if (!sourcePath || ![fileManager fileExistsAtPath:sourcePath]) {
             dispatch_sync(dispatch_get_main_queue(), ^{
                 NSAlert *alert = [[NSAlert alloc] init];
-                alert.messageText = @"Required File Missing";
-                alert.informativeText = @"The iTermServer executable is missing from the application bundle. This indicates iTerm2 is corrupted or incomplete. Please reinstall iTerm2 from the official website.";
+                alert.messageText = ITLocalizedMenuString(@"Required File Missing");
+                alert.informativeText = ITLocalizedMenuString(@"The iTermServer executable is missing from the application bundle. This indicates iTerm2 is corrupted or incomplete. Please reinstall iTerm2 from the official website.");
                 alert.alertStyle = NSAlertStyleCritical;
-                [alert addButtonWithTitle:@"Quit"];
+                [alert addButtonWithTitle:ITLocalizedMenuString(@"Quit")];
                 [alert runModal];
 
                 // Terminate the application

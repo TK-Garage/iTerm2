@@ -8,6 +8,8 @@
 
 #import "iTermShortcutInputView.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "NSEvent+iTerm.h"
 #import "NSStringITerm.h"
 #import "NSImage+iTerm.h"
@@ -238,7 +240,7 @@
                                      accessory:nil
                                     identifier:nil
                                    silenceable:kiTermWarningTypePersistent
-                                       heading:@"Confirm Shortcut"
+                                       heading:ITLocalizedMenuString(@"Confirm Shortcut")
                                         window:self.window];
             if (selection == kiTermWarningSelection1) {
                 [self revert];

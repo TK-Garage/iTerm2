@@ -7,16 +7,18 @@
 
 #import "iTermStatusBarPlaceholderComponent.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NS_ASSUME_NONNULL_BEGIN
 
 @implementation iTermStatusBarPlaceholderComponent
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Placeholder";
+    return ITLocalizedMenuString(@"Placeholder");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Placeholder";
+    return ITLocalizedMenuString(@"Placeholder");
 }
 
 - (id)statusBarComponentExemplarWithBackgroundColor:(NSColor *)backgroundColor
@@ -34,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (nullable NSString *)stringValue {
-    return @"Click here to configure status bar";
+    return ITLocalizedMenuString(@"Click here to configure status bar");
 }
 
 - (nullable NSString *)stringValueForCurrentWidth {

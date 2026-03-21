@@ -7,6 +7,8 @@
 
 #import "iTermAPIScriptLauncher.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTerm2SharedARC-Swift.h"
 #import "iTermAPIConnectionIdentifierController.h"
@@ -63,14 +65,14 @@ static NSString *const iTermAPIScriptLauncherScriptDidFailUserNotificationCallba
                           configParser:(iTermSetupCfgParser *)configParser
                             completion:(void (^)(NSString *))completion {
     DLog(@"%@", fullPath);
-    NSString *message = [NSString stringWithFormat:@"The Python API script “%@” needs a newer version of the runtime environment for security reasons. You must upgrade it before this version of iTerm2 can launch the script.", fullPath.lastPathComponent];
+    NSString *message = [NSString stringWithFormat:ITLocalizedMenuString(@"The Python API script “%@” needs a newer version of the runtime environment for security reasons. You must upgrade it before this version of iTerm2 can launch the script."), fullPath.lastPathComponent];
     const iTermWarningSelection selection =
     [iTermWarning showWarningWithTitle:message
                                actions:@[ @"Upgrade", @"Cancel" ]
                              accessory:nil
                             identifier:@"UpgradeFullEnvironmentScript"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Upgrade Python Runtime?"
+                               heading:ITLocalizedMenuString(@"Upgrade Python Runtime?")
                                 window:nil];
     switch (selection) {
         case kiTermWarningSelection0:
@@ -163,7 +165,7 @@ static NSString *const iTermAPIScriptLauncherScriptDidFailUserNotificationCallba
                                      accessory:nil
                                     identifier:nil
                                    silenceable:kiTermWarningTypePersistent
-                                       heading:@"Error Upgrading Script"
+                                       heading:ITLocalizedMenuString(@"Error Upgrading Script")
                                         window:nil];
         });
     }];
@@ -279,7 +281,7 @@ static NSString *const iTermAPIScriptLauncherScriptDidFailUserNotificationCallba
                              accessory:nil
                             identifier:@"NoSyncInstallRosetta"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Install Rosetta?"
+                               heading:ITLocalizedMenuString(@"Install Rosetta?")
                                 window:nil];
     return selection == kiTermWarningSelection0;
 }
@@ -610,7 +612,7 @@ static NSString *const iTermAPIScriptLauncherScriptDidFailUserNotificationCallba
 + (void)didFailToLaunchScript:(NSString *)filename withException:(NSException *)e {
     ELog(@"Exception occurred %@", e);
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Error running script";
+    alert.messageText = ITLocalizedMenuString(@"Error running script");
     alert.informativeText = [NSString stringWithFormat:@"Script at \"%@\" failed.\n\n%@",
                              filename, e.reason];
     [alert runModal];

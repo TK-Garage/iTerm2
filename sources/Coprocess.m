@@ -8,6 +8,8 @@
 
 #import "Coprocess.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "NSArray+iTerm.h"
 #import "NSDictionary+iTerm.h"
 #import "iTermUserDefaults.h"
@@ -123,8 +125,8 @@ static NSString *const iTermCoprocessCommandsToIgnoreErrorOutputPrefsKey = @"NoS
         _exit(-1);
     } else if (pid < (pid_t)0) {
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Failed to launch coprocess.";
-        [alert addButtonWithTitle:@"OK"];
+        alert.messageText = ITLocalizedMenuString(@"Failed to launch coprocess.");
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
         [alert runModal];
         return nil;
     }

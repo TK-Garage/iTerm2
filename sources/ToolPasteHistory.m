@@ -6,6 +6,8 @@
 //
 
 #import "ToolPasteHistory.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "SFSymbolEnum/SFSymbolEnum.h"
 
 #import "iTerm2SharedARC-Swift.h"
@@ -52,7 +54,7 @@ static const CGFloat kMargin = 4;
         if (@available(macOS 10.16, *)) {
             clear_.bezelStyle = NSBezelStyleRegularSquare;
             clear_.bordered = NO;
-            clear_.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolTrash) accessibilityDescription:@"Delete All"];
+            clear_.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolTrash) accessibilityDescription:ITLocalizedMenuString(@"Delete All")];
             clear_.imagePosition = NSImageOnly;
             clear_.frame = NSMakeRect(0, 0, 22, 22);
         } else {
@@ -103,13 +105,13 @@ static const CGFloat kMargin = 4;
         _tableView.menu = [[NSMenu alloc] init];
         _tableView.menu.delegate = self;
         NSMenuItem *item;
-        item = [[NSMenuItem alloc] initWithTitle:@"Copy"
+        item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Copy")
                                           action:@selector(copySelection:)
                                    keyEquivalent:@""];
         item.target = self;
         [_tableView.menu addItem:item];
 
-        item = [[NSMenuItem alloc] initWithTitle:@"Open in Advanced Paste"
+        item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Open in Advanced Paste")
                                           action:@selector(openInAdvancedPaste:)
                                    keyEquivalent:@""];
         item.target = self;
@@ -291,10 +293,10 @@ static const CGFloat kMargin = 4;
 
 - (void)clear:(id)sender {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Erase Paste History";
-    alert.informativeText = @"Paste history will be erased. Continue?";
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    alert.messageText = ITLocalizedMenuString(@"Erase Paste History");
+    alert.informativeText = ITLocalizedMenuString(@"Paste history will be erased. Continue?");
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     if ([alert runModal] == NSAlertFirstButtonReturn) {
         [pasteHistory_ eraseHistory];
         [pasteHistory_ clear];

@@ -665,9 +665,9 @@ class CodeciergeOnboardingView: NSView {
         label.usesSingleLineMode = false
         label.lineBreakMode = .byWordWrapping
         label.alignment = .center
-        startButton = NSButton(title: "Get Started", target: nil, action: nil)
+        startButton = NSButton(title: NSLocalizedString("Get Started", tableName: "iTerm", bundle: .main, comment: ""), target: nil, action: nil)
 
-        revealButton = NSButton(title: "Reveal Setting", target: nil, action: nil)
+        revealButton = NSButton(title: NSLocalizedString("Reveal Setting", tableName: "iTerm", bundle: .main, comment: ""), target: nil, action: nil)
         revealButton.isHidden = true
 
         super.init(frame: .zero)
@@ -704,12 +704,12 @@ class CodeciergeOnboardingView: NSView {
 
     private func updateEnabled() {
         if !iTermAdvancedSettingsModel.generativeAIAllowed() {
-            label.stringValue = "Generative AI has been disabled by the system administrator."
+            label.stringValue = NSLocalizedString("Generative AI has been disabled by the system administrator.", tableName: "iTerm", bundle: .main, comment: "")
             startButton.isEnabled = false
             startButton.isHidden = false
             revealButton.isHidden = true
         } else if !SecureUserDefaults.instance.enableAI.value {
-            label.stringValue = "You must enable AI features to use Codecierge."
+            label.stringValue = NSLocalizedString("You must enable AI features to use Codecierge.", tableName: "iTerm", bundle: .main, comment: "")
             startButton.isEnabled = false
             startButton.isHidden = true
             revealButton.isHidden = false
@@ -777,12 +777,12 @@ class CodeciergeGoalView: NSView, NSTextViewDelegate, NSControlTextEditingDelega
 
     init(startCallback: @escaping (String, Bool) -> ()) {
         self.startCallback = startCallback
-        label = NSTextField(labelWithString: "What are you trying to do? I'll suggest commands and explain their output.")
+        label = NSTextField(labelWithString: NSLocalizedString("What are you trying to do? I'll suggest commands and explain their output.", tableName: "iTerm", bundle: .main, comment: ""))
         label.lineBreakMode = .byWordWrapping
         label.usesSingleLineMode = false
 
         textView = ShiftEnterTextView(frame: NSRect(x: 0, y: 0, width: 1, height: 1))
-        textView.it_placeholderString = "I want to…"
+        textView.it_placeholderString = NSLocalizedString("I want to…", tableName: "iTerm", bundle: .main, comment: "")
         textView.font = NSFont.userFixedPitchFont(ofSize: NSFont.systemFontSize)
         textView.isEditable = true
         textView.isSelectable = true
@@ -801,11 +801,11 @@ class CodeciergeGoalView: NSView, NSTextViewDelegate, NSControlTextEditingDelega
         let hasFunctionCalling = AITermController.provider?.model.features.contains(.functionCalling) ?? false
         autoButton = NSButton()
         autoButton.setButtonType(.switch)
-        autoButton.title = "Run commands automatically"
+        autoButton.title = NSLocalizedString("Run commands automatically", tableName: "iTerm", bundle: .main, comment: "")
         autoButton.state = .off
         autoButton.isEnabled = hasFunctionCalling
         userDefaultsObserver = iTermUserDefaultsObserver()
-        startButton = NSButton(title: "Start", target: nil, action: nil)
+        startButton = NSButton(title: NSLocalizedString("Start", tableName: "iTerm", bundle: .main, comment: ""), target: nil, action: nil)
         startButton.isEnabled = false
 
         super.init(frame: .zero)
@@ -947,7 +947,7 @@ class CodeciergeSuggestionView: NSView, NSTextFieldDelegate {
             goalLabel.stringValue
         }
         set {
-            goalLabel.stringValue = "Goal: " + newValue
+            goalLabel.stringValue = NSLocalizedString("Goal: ", tableName: "iTerm", bundle: .main, comment: "") + newValue
             layoutSubviews()
         }
     }
@@ -991,10 +991,10 @@ class CodeciergeSuggestionView: NSView, NSTextFieldDelegate {
         
         scrollView = NSScrollView()
         scrollView.hasHorizontalScroller = false
-        endButton = NSButton(title: "End Task", target: nil, action: nil)
+        endButton = NSButton(title: NSLocalizedString("End Task", tableName: "iTerm", bundle: .main, comment: ""), target: nil, action: nil)
 
         replyTextField = NSTextField()
-        replyTextField.placeholderString = "Response"
+        replyTextField.placeholderString = NSLocalizedString("Response", tableName: "iTerm", bundle: .main, comment: "")
         replyButton = NSButton()
         replyButton.isEnabled = false
         replyButton.isBordered = false

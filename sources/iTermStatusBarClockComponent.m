@@ -15,6 +15,8 @@
 #import "iTermVariableScope.h"
 #import "iTermVariableScope+Session.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NS_ASSUME_NONNULL_BEGIN
 
 static NSString *const iTermStatusBarClockComponentFormatKey = @"format";
@@ -102,35 +104,35 @@ static NSString *const iTermStatusBarClockComponentSSHSyncTimeZoneKey = @"ssh_tz
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Clock";
+    return ITLocalizedMenuString(@"Clock");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Shows current date and time with a configurable format.";
+    return ITLocalizedMenuString(@"Shows current date and time with a configurable format.");
 }
 
 - (NSArray<iTermStatusBarComponentKnob *> *)statusBarComponentKnobs {
     iTermStatusBarComponentKnob *formatKnob =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Date Format:"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Date Format:")
                                                           type:iTermStatusBarComponentKnobTypeText
                                                    placeholder:@"Date Format (Unicode TR 35)"
                                                   defaultValue:self.class.statusBarComponentDefaultKnobs[iTermStatusBarClockComponentFormatKey]
                                                            key:iTermStatusBarClockComponentFormatKey];
     formatKnob.helpURL = [NSURL URLWithString:@"https://iterm2.com/clock-status-bar-component-help"];
     iTermStatusBarComponentKnob *dateFormatIsTemplate =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Localize Date Format"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Localize Date Format")
                                                           type:iTermStatusBarComponentKnobTypeCheckbox
                                                    placeholder:nil
                                                   defaultValue:@YES
                                                            key:iTermStatusBarClockComponentLocalizeKey];
     iTermStatusBarComponentKnob *syncKnob =
-    [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Show server time in SSH integration?"
+    [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Show server time in SSH integration?")
                                                       type:iTermStatusBarComponentKnobTypeCheckbox
                                                placeholder:nil
                                               defaultValue:@YES
                                                        key:iTermStatusBarClockComponentSSHSyncKey];
     iTermStatusBarComponentKnob *syncTimeZoneKnob =
-    [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Use server time zone in SSH integration?"
+    [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Use server time zone in SSH integration?")
                                                       type:iTermStatusBarComponentKnobTypeCheckbox
                                                placeholder:nil
                                               defaultValue:@YES

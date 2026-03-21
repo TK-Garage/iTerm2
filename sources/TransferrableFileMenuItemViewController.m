@@ -7,6 +7,8 @@
 //
 
 #import "TransferrableFileMenuItemViewController.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "FileTransferManager.h"
 #import "TransferrableFileMenuItemView.h"
 
@@ -222,7 +224,7 @@ static const CGFloat kCollapsedHeight = 51;
                       [self stringForStatus:_transferrableFile.status],
                       extra];
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"File Transfer Summary";
+    alert.messageText = ITLocalizedMenuString(@"File Transfer Summary");
     alert.informativeText = text;
     [alert layout];
     [alert runModal];

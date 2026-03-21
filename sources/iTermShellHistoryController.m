@@ -8,6 +8,8 @@
 
 #import "iTermShellHistoryController.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "NSArray+iTerm.h"
 #import "NSDictionary+iTerm.h"
@@ -363,18 +365,18 @@ static NSString *iTermShellIntegrationRemoteHostKey(id<VT100RemoteHostReading> s
         firstResponder = nil;
     }
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = @"About Shell Integration";
+    alert.messageText = ITLocalizedMenuString(@"About Shell Integration");
     alert.informativeText =
-        @"To use shell integration features such as "
+        ITLocalizedMenuString(@"To use shell integration features such as ")
         @"Command History, "
         @"Recent Directories, "
         @"Select Output of Last Command, "
         @"and Automatic Profile Switching, "
         @"your shell must be properly configured.";
-    [alert addButtonWithTitle:@"Learn More…"];
-    [alert addButtonWithTitle:@"OK"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Learn More…")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
     if (firstResponder) {
-        [alert addButtonWithTitle:@"Install Now"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Install Now")];
     }
     [alert beginSheetModalForWindow:window completionHandler:^(NSModalResponse returnCode) {
         switch (returnCode) {

@@ -7,6 +7,8 @@
 
 #import "iTermRecordingCodec.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "iTerm2SharedARC-Swift.h"
 #import "iTermController.h"
 #import "iTermSavePanel.h"
@@ -40,7 +42,7 @@
                                  accessory:nil
                                 identifier:@"RecordingMalformed"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Could not read the file: its envelope was malformed."
+                                   heading:ITLocalizedMenuString(@"Could not read the file: its envelope was malformed.")
                                     window:nil];
         return;
     }
@@ -76,7 +78,7 @@
                                  accessory:nil
                                 identifier:@"RecordingMalformed"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Can’t Load Recording"
+                                   heading:ITLocalizedMenuString(@"Can’t Load Recording")
                                     window:nil];
         return;
     }
@@ -90,7 +92,7 @@
                                  accessory:nil
                                 identifier:@"RecordingMalformed"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Can’t Load Recording"
+                                   heading:ITLocalizedMenuString(@"Can’t Load Recording")
                                     window:nil];
         return;
     }
@@ -118,7 +120,7 @@
                                      accessory:nil
                                     identifier:@"NoSyncCouldNotLoadRecording"
                                    silenceable:kiTermWarningTypePersistent
-                                       heading:@"Error Loading Recording"
+                                       heading:ITLocalizedMenuString(@"Error Loading Recording")
                                         window:nil];
             makeSessionCompletion(nil);
             return;
@@ -191,7 +193,7 @@
                                                      accessory:nil
                                                     identifier:@"ErrorSavingRecording"
                                                    silenceable:kiTermWarningTypePersistent
-                                                       heading:@"The recording could not be saved."
+                                                       heading:ITLocalizedMenuString(@"The recording could not be saved.")
                                                         window:nil];
                         }
                     });

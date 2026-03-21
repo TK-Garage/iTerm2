@@ -1,5 +1,7 @@
 #import "iTermColorPresets.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "ITAddressBookMgr.h"
 #import "NSArray+iTerm.h"
@@ -34,9 +36,9 @@ NSString *const kRebuildColorPresetsMenuNotification = @"kRebuildColorPresetsMen
     if (!aDict) {
         DLog(@"Failed to parse dictionary");
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = @"Import Failed.";
-        alert.informativeText = @"The selected file could not be read or did not contain a valid color scheme.";
-        [alert addButtonWithTitle:@"OK"];
+        alert.messageText = ITLocalizedMenuString(@"Import Failed.");
+        alert.informativeText = ITLocalizedMenuString(@"The selected file could not be read or did not contain a valid color scheme.");
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
         [alert runModal];
         return NO;
     } else {
@@ -45,10 +47,10 @@ NSString *const kRebuildColorPresetsMenuNotification = @"kRebuildColorPresetsMen
         if (dup) {
             DLog(@"Is a duplicate preset");
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = @"Add duplicate color preset?";
+            alert.messageText = ITLocalizedMenuString(@"Add duplicate color preset?");
             alert.informativeText = [NSString stringWithFormat:@"The color preset “%@” is the same as the preset you're trying to add. Really add it?", dup];
-            [alert addButtonWithTitle:@"Cancel"];
-            [alert addButtonWithTitle:@"Add it anyway"];
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"Add it anyway")];
             if ([alert runModal] == NSAlertFirstButtonReturn) {
                 DLog(@"User declined to install dup");
                 return NO;

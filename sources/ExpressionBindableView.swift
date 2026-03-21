@@ -27,14 +27,14 @@ extension ExpressionBindableView where Self: NSView, Self: NSAlertDelegate {
         let menu = NSMenu()
         let hasExpression = (expression?.isEmpty == false)
         do {
-            let item = NSMenuItem(title: hasExpression ? "Edit Expression Binding" : "Bind to Expression",
+            let item = NSMenuItem(title: hasExpression ? NSLocalizedString("Edit Expression Binding", tableName: "iTerm", bundle: .main, comment: "") : NSLocalizedString("Bind to Expression", tableName: "iTerm", bundle: .main, comment: ""),
                                   action: #selector(editBinding(_:)),
                                   keyEquivalent: "")
             item.target = self
             menu.addItem(item)
         }
         if hasExpression {
-            let item = NSMenuItem(title: "Remove Expression Binding",
+            let item = NSMenuItem(title: NSLocalizedString("Remove Expression Binding", tableName: "iTerm", bundle: .main, comment: ""),
                                   action: #selector(removeBinding(_:)),
                                   keyEquivalent: "")
             item.target = self
@@ -74,15 +74,15 @@ extension ExpressionBindableView where Self: NSView, Self: NSAlertDelegate {
         textField.delegate = textFieldDelegate
 
         let alert = NSAlert()
-        alert.messageText = "Bind Expression to Setting"
-        alert.informativeText = "Enter expression to bind to this setting, or leave empty to clear the binding."
+        alert.messageText = NSLocalizedString("Bind Expression to Setting", tableName: "iTerm", bundle: .main, comment: "")
+        alert.informativeText = NSLocalizedString("Enter expression to bind to this setting, or leave empty to clear the binding.", tableName: "iTerm", bundle: .main, comment: "")
         alert.accessoryView = textField
         alert.layout()
         DispatchQueue.main.async {
             alert.window.makeFirstResponder(textField)
         }
-        alert.addButton(withTitle: "OK")
-        alert.addButton(withTitle: "Cancel")
+        alert.addButton(withTitle: NSLocalizedString("OK", tableName: "iTerm", bundle: .main, comment: ""))
+        alert.addButton(withTitle: NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: ""))
         alert.showsHelp = true
         alert.delegate = self
         alert.beginSheetModal(for: window) { [weak self] response in

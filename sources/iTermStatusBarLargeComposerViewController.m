@@ -7,6 +7,8 @@
 
 #import "iTermStatusBarLargeComposerViewController.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "CommandHistoryPopup.h"
 #import "NSArray+iTerm.h"
 #import "NSDate+iTerm.h"
@@ -302,7 +304,7 @@
                                      accessory:nil
                                     identifier:nil
                                    silenceable:kiTermWarningTypePersistent
-                                       heading:@"AI Error"
+                                       heading:ITLocalizedMenuString(@"AI Error")
                                         window:weakSelf.view.window];
         }];
     }];

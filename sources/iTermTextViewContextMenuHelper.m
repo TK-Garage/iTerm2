@@ -7,6 +7,8 @@
 
 #import "iTermTextViewContextMenuHelper.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "NSDictionary+iTerm.h"
 #import "NSURL+iTerm.h"
@@ -140,7 +142,7 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
     NSMenu *menu = [[NSMenu alloc] initWithTitle:@"Contextual Menu"];
 
     if (baseline != clickedTime) {
-        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"Set Baseline for Relative Timestamps"
+        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Set Baseline for Relative Timestamps")
                                                       action:@selector(setTimestampBaseline:)
                                                keyEquivalent:@""];
         item.target = self;
@@ -148,7 +150,7 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
         [menu addItem:item];
     }
     if (baseline != 0) {
-        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"Disable Relative Timestamps"
+        NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Disable Relative Timestamps")
                                                       action:@selector(setTimestampBaseline:)
                                                keyEquivalent:@""];
         item.target = self;
@@ -212,7 +214,7 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
     if (mark.name) {
         NSMenuItem *nameItem = [[NSMenuItem alloc] initWithTitle:mark.name action:nil keyEquivalent:@""];
 
-        NSMenuItem *removeItem = [[NSMenuItem alloc] initWithTitle:@"Remove Named Mark" action:@selector(removeNamedMark:) keyEquivalent:@""];
+        NSMenuItem *removeItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Remove Named Mark") action:@selector(removeNamedMark:) keyEquivalent:@""];
         removeItem.target = self;
         removeItem.representedObject = mark;
 
@@ -221,7 +223,7 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
         [contextMenu insertItem:[NSMenuItem separatorItem] atIndex:2];
     }
     if (mark && mark.command.length) {
-        NSMenuItem *markItem = [[NSMenuItem alloc] initWithTitle:@"Command Info"
+        NSMenuItem *markItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Command Info")
                                                           action:@selector(revealCommandInfo:)
                                                    keyEquivalent:@""];
         markItem.target = self;
@@ -237,7 +239,7 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
     id<VT100ScreenMarkReading> mark = [self.delegate contextMenuCommandWithOutputAtLine:y];
 
     if (foldMark) {
-        NSMenuItem *markItem = [[NSMenuItem alloc] initWithTitle:@"Unfold"
+        NSMenuItem *markItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Unfold")
                                                           action:@selector(unfoldMark:)
                                                    keyEquivalent:@""];
         markItem.target = self;
@@ -245,7 +247,7 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
         [contextMenu insertItem:markItem atIndex:0];
         [contextMenu insertItem:[NSMenuItem separatorItem] atIndex:1];
     } else if (mark && mark.command.length && [self.delegate contextMenu:self markShouldBeFoldable:mark]) {
-        NSMenuItem *markItem = [[NSMenuItem alloc] initWithTitle:@"Fold"
+        NSMenuItem *markItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Fold")
                                                           action:@selector(foldCommandMark:)
                                                    keyEquivalent:@""];
         markItem.target = self;
@@ -461,17 +463,17 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
 
                 switch (replacement.kind) {
                     case iTermSelectionReplacementKindJson:
-                        item.title = @"Replace with Pretty-Printed JSON";
+                        item.title = ITLocalizedMenuString(@"Replace with Pretty-Printed JSON");
                         item.action = @selector(replaceWithPrettyJSON:);
                         break;
 
                     case iTermSelectionReplacementKindBase64Decode:
-                        item.title = @"Replace with Base64-Decoded Value";
+                        item.title = ITLocalizedMenuString(@"Replace with Base64-Decoded Value");
                         item.action = @selector(replaceWithBase64Decoded:);
                         break;
 
                     case iTermSelectionReplacementKindBase64Encode:
-                        item.title = @"Replace with Base64-Encoded Value";
+                        item.title = ITLocalizedMenuString(@"Replace with Base64-Encoded Value");
                         item.action = @selector(replaceWithBase64Encoded:);
                         break;
                 }
@@ -564,12 +566,12 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
 
     add(@"Move Session to Split Pane", @selector(movePane:));
     if ([self.delegate contextMenuCurrentTabHasMultipleSessions:self]) {
-        NSMenuItem *item = [theMenu addItemWithTitle:@"Move Session to Tab"
+        NSMenuItem *item = [theMenu addItemWithTitle:ITLocalizedMenuString(@"Move Session to Tab")
                                               action:@selector(moveSessionToTab:)
                                        keyEquivalent:@""];
         item.representedObject = [self.delegate contextMenuSessionScope:self].ID;
     }
-    [theMenu addItemWithTitle:@"Move Session to Window"
+    [theMenu addItemWithTitle:ITLocalizedMenuString(@"Move Session to Window")
                      action:@selector(moveSessionToWindow:)
                 keyEquivalent:@""];
     add(@"Swap With Session…", @selector(swapSessions:));
@@ -590,7 +592,7 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
         NSString *urlID;
         NSURL *url = [extractor urlOfHypertextLinkAt:coord urlId:&urlID target:nil];
         if (url) {
-            NSMenuItem *item = [theMenu addItemWithTitle:@"Copy Link Address" action:@selector(copyLinkAddress:) keyEquivalent:@""];
+            NSMenuItem *item = [theMenu addItemWithTitle:ITLocalizedMenuString(@"Copy Link Address") action:@selector(copyLinkAddress:) keyEquivalent:@""];
             item.target = self;
             item.representedObject = url;
         }
@@ -641,7 +643,7 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
 
     // Lock pane
     {
-        NSMenuItem *lockItem = [[NSMenuItem alloc] initWithTitle:@"Lock Pane"
+        NSMenuItem *lockItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Lock Pane")
                                                           action:@selector(toggleLock:)
                                                    keyEquivalent:@""];
         lockItem.target = self;
@@ -659,14 +661,14 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
         if (allLocked) {
             // Primary: Unlock (since all are locked)
             // No alternate needed - Lock All would be a no-op
-            NSMenuItem *unlockItem = [[NSMenuItem alloc] initWithTitle:@"Unlock All Panes in Tab"
+            NSMenuItem *unlockItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Unlock All Panes in Tab")
                                                                 action:@selector(unlockAllInTab:)
                                                          keyEquivalent:@""];
             unlockItem.target = self;
             [theMenu addItem:unlockItem];
         } else {
             // Primary: Lock (since not all are locked)
-            NSMenuItem *lockItem = [[NSMenuItem alloc] initWithTitle:@"Lock All Panes in Tab"
+            NSMenuItem *lockItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Lock All Panes in Tab")
                                                               action:@selector(lockAllInTab:)
                                                        keyEquivalent:@""];
             lockItem.target = self;
@@ -674,7 +676,7 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
 
             // Alternate: Unlock (Option-key) - only if at least one pane is locked
             if (anyLocked) {
-                NSMenuItem *unlockItem = [[NSMenuItem alloc] initWithTitle:@"Unlock All Panes in Tab"
+                NSMenuItem *unlockItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Unlock All Panes in Tab")
                                                                     action:@selector(unlockAllInTab:)
                                                              keyEquivalent:@""];
                 unlockItem.target = self;
@@ -704,8 +706,8 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
 
     // Terminal State
     [theMenu addItem:[NSMenuItem separatorItem]];
-    NSMenuItem *terminalState = [[NSMenuItem alloc] initWithTitle:@"Terminal State" action:nil keyEquivalent:@""];
-    terminalState.submenu = [[NSMenu alloc] initWithTitle:@"Terminal State"];
+    NSMenuItem *terminalState = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Terminal State") action:nil keyEquivalent:@""];
+    terminalState.submenu = [[NSMenu alloc] initWithTitle:ITLocalizedMenuString(@"Terminal State")];
 
     struct {
         NSString *title;
@@ -791,7 +793,7 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
     if (![[iTermApplication sharedApplication] isUIElement]) {
         return;
     }
-    NSMenuItem *mainMenuItem = [[NSMenuItem alloc] initWithTitle:@"Main Menu" action:nil keyEquivalent:@""];
+    NSMenuItem *mainMenuItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Main Menu") action:nil keyEquivalent:@""];
     NSMenu *copyOfMainMenu = [[NSMenu alloc] init];
     for (NSMenuItem *mainMenuItem in NSApp.mainMenu.itemArray) {
         [self addCopyOfItem:mainMenuItem to:copyOfMainMenu];
@@ -927,14 +929,14 @@ const int kMaxSelectedTextLengthForCustomActions = 400;
 
     [theMenu addItem:[NSMenuItem separatorItem]];
 
-    theItem = [[NSMenuItem alloc] initWithTitle:@"Re-run Command"
+    theItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Re-run Command")
                                          action:@selector(reRunCommand:)
                                   keyEquivalent:@""];
     theItem.target = self;
     [theItem setRepresentedObject:mark.command];
     [theMenu addItem:theItem];
 
-    theItem = [[NSMenuItem alloc] initWithTitle:@"Select Command Output"
+    theItem = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Select Command Output")
                                          action:@selector(selectCommandOutput:)
                                   keyEquivalent:@""];
     theItem.target = self;

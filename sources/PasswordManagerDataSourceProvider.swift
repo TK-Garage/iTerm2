@@ -279,9 +279,9 @@ class PasswordManagerDataSourceProvider: NSObject {
         @unknown default:
             reason = error.localizedDescription
         }
-        alert.messageText = "Authentication Failed"
-        alert.informativeText = "Authentication failed because \(reason)"
-        alert.addButton(withTitle: "OK")
+        alert.messageText = NSLocalizedString("Authentication Failed", tableName: "iTerm", bundle: .main, comment: "")
+        alert.informativeText = NSLocalizedString("Authentication failed because \(reason)", tableName: "iTerm", bundle: .main, comment: "")
+        alert.addButton(withTitle: NSLocalizedString("OK", tableName: "iTerm", bundle: .main, comment: ""))
         alert.runModal()
     }
 }

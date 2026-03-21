@@ -8,6 +8,8 @@
 
 #import "ProfilesTerminalPreferencesViewController.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "ITAddressBookMgr.h"
 #import "iTermController.h"
 #import "iTermShellHistoryController.h"
@@ -456,7 +458,7 @@ static NSInteger CompareEncodingByLocalizedName(id a, id b, void *unused) {
                                  accessory:nil
                                 identifier:[@"NoSyncUTF8Mismatch_" stringByAppendingString:guid]
                                silenceable:kiTermWarningTypePermanentlySilenceable
-                                   heading:@"Wrong Encoding Detected"
+                                   heading:ITLocalizedMenuString(@"Wrong Encoding Detected")
                                     window:self.view.window];
         if (selection == kiTermWarningSelection0) {
             [self changeCustomLocale:sender];

@@ -1,0 +1,431 @@
+/* Japanese localization for iTerm2 Main Menu */
+
+/* ============================================================ */
+/* iTerm2 (Apple Menu)                                          */
+/* ============================================================ */
+
+/* NSMenu : <title:MainMenu> */
+"MainMenu" = "メインメニュー";
+
+/* NSMenuItem / NSMenu : <title:iTerm2> */
+"iTerm2" = "iTerm2";
+
+"About iTerm2" = "iTerm2 について";
+"Show Tip of the Day" = "今日のヒントを表示";
+"Check for Updates…" = "アップデートを確認…";
+"Toggle Debug Logging" = "デバッグログの切替";
+"Copy Performance Stats" = "パフォーマンス統計をコピー";
+"Capture GPU Frame" = "GPU フレームをキャプチャ";
+"Preferences..." = "設定…";
+"Services" = "サービス";
+"Hide iTerm2" = "iTerm2 を隠す";
+"Hide Others" = "ほかを隠す";
+"Show All" = "すべてを表示";
+"Secure Keyboard Entry" = "安全なキーボード入力";
+"Make iTerm2 Default Term" = "iTerm2 をデフォルトターミナルにする";
+"Make Terminal Default Term" = "ターミナルをデフォルトにする";
+"Install Shell Integration" = "シェル統合をインストール";
+"Install Python Runtime" = "Python ランタイムをインストール";
+"Install Already-Downloaded Python Runtime" = "ダウンロード済み Python ランタイムをインストール";
+"Manage Dependencies…" = "依存関係を管理…";
+"Quit iTerm2" = "iTerm2 を終了";
+
+/* ============================================================ */
+/* Shell Menu                                                    */
+/* ============================================================ */
+
+"Shell" = "シェル";
+"New Window" = "新規ウィンドウ";
+"New Window with Current Profile" = "現在のプロファイルで新規ウィンドウ";
+"New Tab" = "新規タブ";
+"New Tab with Current Profile" = "現在のプロファイルで新規タブ";
+"New Tab Next to Current Tab" = "現在のタブの隣に新規タブ";
+"Duplicate Tab" = "タブを複製";
+"Duplicate Window" = "ウィンドウを複製";
+"Split Horizontally with Current Profile" = "現在のプロファイルで水平分割";
+"Split Vertically with Current Profile" = "現在のプロファイルで垂直分割";
+"Split Horizontally…" = "水平に分割…";
+"Split Vertically…" = "垂直に分割…";
+"Split Pane" = "ペインを分割";
+"Close" = "閉じる";
+"Close Terminal Window" = "ターミナルウィンドウを閉じる";
+"Close All Panes in Tab" = "タブ内の全ペインを閉じる";
+
+/* tmux */
+"tmux" = "tmux";
+"New Tmux Window" = "新規 tmux ウィンドウ";
+"New Tmux Tab" = "新規 tmux タブ";
+"Dashboard" = "ダッシュボード";
+"Detach" = "デタッチ";
+"Force Detach" = "強制デタッチ";
+"Pause Pane" = "ペインを一時停止";
+
+/* ssh */
+"ssh" = "ssh";
+"Disconnect" = "切断";
+"Download Files…" = "ファイルをダウンロード…";
+
+/* Broadcast Input */
+"Broadcast Input" = "入力をブロードキャスト";
+"Send Input to Current Session Only" = "現在のセッションにのみ入力を送信";
+"Broadcast Input to All Panes in Current Tab" = "現在のタブの全ペインに入力をブロードキャスト";
+"Broadcast Input to All Panes in All Tabs" = "全タブの全ペインに入力をブロードキャスト";
+"Toggle Broadcast Input to Current Session" = "現在のセッションへのブロードキャスト入力を切替";
+"Current Session is Broadcast Source" = "現在のセッションをブロードキャスト元にする";
+
+/* Archives */
+"Archives" = "アーカイブ";
+"Save Archive of Current Session…" = "現在のセッションのアーカイブを保存…";
+"Restore Archive…" = "アーカイブを復元…";
+
+/* Coprocess */
+"Run Coprocess…" = "コプロセスを実行…";
+"Stop Coprocess" = "コプロセスを停止";
+
+/* Page Setup / Print */
+"Page Setup..." = "ページ設定…";
+"Print" = "プリント";
+
+/* ============================================================ */
+/* Edit Menu                                                     */
+/* ============================================================ */
+
+"Edit" = "編集";
+"Undo" = "取り消す";
+"Redo" = "やり直す";
+"Cut" = "カット";
+"Copy" = "コピー";
+"Copy with Styles" = "スタイル付きでコピー";
+"Copy with Control Sequences" = "制御シーケンス付きでコピー";
+"Copy Mode" = "コピーモード";
+"Copy Mode Shortcuts" = "コピーモードのショートカット";
+"Paste" = "ペースト";
+"Paste Selection" = "選択範囲をペースト";
+"Paste Special" = "特殊ペースト";
+"Advanced Paste…" = "高度なペースト…";
+"Paste Faster" = "ペーストを速く";
+"Paste Slower" = "ペーストを遅く";
+"Paste Slowly" = "ゆっくりペースト";
+"Paste Slowly Faster" = "ゆっくりペーストを速く";
+"Paste Slowly Slower" = "ゆっくりペーストを遅く";
+"Paste Bracketing" = "ペーストブラケティング";
+"Warn Before Multi-Line Paste" = "複数行ペースト時に警告";
+"Prompt to Convert Tabs to Spaces when Pasting" = "ペースト時にタブをスペースに変換するか確認";
+"Warn Before Pasting One Line Ending in a Newline at Shell Prompt" = "シェルプロンプトで改行付き1行をペーストする前に警告";
+"Limit Multi-Line Paste Warning to Shell Prompt" = "複数行ペースト警告をシェルプロンプトに限定";
+"Paste File Base64-Encoded" = "Base64 エンコードでファイルをペースト";
+"Open Selection" = "選択範囲を開く";
+"Select All" = "すべてを選択";
+"Select Current Command" = "現在のコマンドを選択";
+"Select Output of Last Command" = "最後のコマンドの出力を選択";
+"Selection Respects Soft Boundaries" = "選択範囲がソフト境界を考慮";
+"Select Matches" = "一致を選択";
+"Replace Selection" = "選択範囲を置換";
+"Replace with Pretty-Printed JSON" = "整形済み JSON で置換";
+"Replace with Base 64-Encoded Value" = "Base64 エンコード値で置換";
+"Replace with Base 64-Decoded Value" = "Base64 デコード値で置換";
+
+/* Find */
+"Find" = "検索";
+"Find…" = "検索…";
+"Find Next" = "次を検索";
+"Find Previous" = "前を検索";
+"Use Selection for Find" = "選択範囲を検索に使用";
+"Jump to Selection" = "選択部分へジャンプ";
+"Find Cursor" = "カーソルを検索";
+"Find URLs" = "URL を検索";
+"Find All Smart Selection Matches" = "スマート選択の全一致を検索";
+"Find Globally..." = "グローバル検索…";
+"Clear Find" = "検索をクリア";
+"Filter" = "フィルタ";
+
+/* AI */
+"Engage Artificial Intelligence" = "AI を使用";
+"Explain Output with AI" = "AI で出力を説明";
+"Open AI Chat…" = "AI チャットを開く…";
+"AI Chats" = "AI チャット";
+
+/* ============================================================ */
+/* View Menu                                                     */
+/* ============================================================ */
+
+"View" = "表示";
+"Show Tabs in Fullscreen" = "フルスクリーンでタブを表示";
+"Toggle Full Screen" = "フルスクリーンの切替";
+"Use Transparency" = "透明度を使用";
+"Disable Transparency for Active Window" = "アクティブウィンドウの透明度を無効化";
+"Zoom In on Selection" = "選択範囲を拡大";
+"Zoom Out" = "縮小";
+"Restore Text and Session Size" = "テキストとセッションサイズを復元";
+
+/* Text Size */
+"Make Text Bigger" = "テキストを大きく";
+"Make Text Smaller" = "テキストを小さく";
+"Make Text Normal Size" = "テキストを標準サイズに";
+
+/* Toolbelt */
+"Show Toolbelt" = "ツールベルトを表示";
+"Toolbelt" = "ツールベルト";
+"Show Composer" = "コンポーザーを表示";
+
+/* Marks and Annotations */
+"Marks and Annotations" = "マークとアノテーション";
+"Set Mark" = "マークを設定";
+"Set Named Mark" = "名前付きマークを設定";
+"Jump to Mark" = "マークへジャンプ";
+"Named Marks" = "名前付きマーク";
+"Next Mark" = "次のマーク";
+"Previous Mark" = "前のマーク";
+"Next Annotation" = "次のアノテーション";
+"Previous Annotation" = "前のアノテーション";
+"Add Annotation at Cursor" = "カーソル位置にアノテーションを追加";
+"Show Annotations" = "アノテーションを表示";
+"Alerts" = "通知";
+"Alert on Next Mark" = "次のマークで通知";
+"Alert on Marks in Offscreen Sessions" = "画面外セッションのマークで通知";
+"Always Show Alerts with Remembered Selections" = "記憶済み選択のアラートを常に表示";
+"Show Modal Alert Box" = "モーダルアラートを表示";
+"Post Notification" = "通知を送信";
+"Play a Sound" = "サウンドを再生";
+
+/* Show/Hide UI */
+"Show Timestamps" = "タイムスタンプを表示";
+"Show Cursor Guide" = "カーソルガイドを表示";
+"Show Background Pattern Indicator" = "背景パターンインジケーターを表示";
+
+/* Buffer */
+"Clear Buffer" = "バッファをクリア";
+"Clear Scrollback Buffer" = "スクロールバックバッファをクリア";
+"Clear to Last Mark" = "最後のマークまでクリア";
+"Clear to Start of Selection" = "選択範囲の先頭までクリア";
+
+/* Instant Replay */
+"Start Instant Replay" = "インスタントリプレイを開始";
+"Clear Instant Replay" = "インスタントリプレイをクリア";
+"Export Recording" = "録画をエクスポート";
+"Import Recording" = "録画をインポート";
+
+/* Auto */
+"Open Autocomplete…" = "オートコンプリートを開く…";
+"Auto Command Completion" = "コマンド自動補完";
+"Auto Composer" = "オートコンポーザー";
+"Open Quickly" = "クイックオープン";
+
+/* Fold */
+"Fold All" = "すべて折りたたむ";
+"Fold Selected Lines" = "選択行を折りたたむ";
+
+/* Render */
+"Render Selection Natively" = "選択範囲をネイティブにレンダリング";
+
+/* ============================================================ */
+/* Session Menu                                                  */
+/* ============================================================ */
+
+"Session" = "セッション";
+"Edit Session…" = "セッションを編集…";
+"Edit Tab Title" = "タブタイトルを編集";
+"Edit Window Title" = "ウィンドウタイトルを編集";
+"Edit Triggers" = "トリガーを編集";
+"Add Trigger…" = "トリガーを追加…";
+"Restart Session" = "セッションを再起動";
+"Duplicate Session" = "セッションを複製";
+"Open Command History…" = "コマンド履歴を開く…";
+"Open Recent Directories…" = "最近のディレクトリを開く…";
+"Open Paste History…" = "ペースト履歴を開く…";
+"History" = "履歴";
+"Reset" = "リセット";
+"Reset Character Set" = "文字セットをリセット";
+"Log" = "ログ";
+"Log to File" = "ファイルにログ";
+"Save Contents…" = "内容を保存…";
+"Save Selected Text…" = "選択テキストを保存…";
+"Export…" = "エクスポート…";
+"Import…" = "インポート…";
+"Bury Session" = "セッションを格納";
+"Buried Sessions" = "格納済みセッション";
+
+/* Terminal State */
+"Terminal State" = "ターミナルの状態";
+"Alternate Screen" = "代替スクリーン";
+"Focus Reporting" = "フォーカスレポート";
+"Mouse Reporting" = "マウスレポート";
+"Paste Bracketing" = "ペーストブラケティング";
+"Application Cursor" = "アプリケーションカーソル";
+"Application Keypad" = "アプリケーションキーパッド";
+"Literal Controls" = "リテラル制御";
+
+/* Emulation Level */
+"Emulation Level" = "エミュレーションレベル";
+"VT100" = "VT100";
+"VT200" = "VT200";
+"VT300" = "VT300";
+"VT400" = "VT400";
+"VT500" = "VT500";
+
+/* Key Reporting */
+"Standard Key Reporting Mode" = "標準キーレポートモード";
+"modifyOtherKeys Mode 1" = "modifyOtherKeys モード 1";
+"modifyOtherKeys Mode 2" = "modifyOtherKeys モード 2";
+"CSI u Mode" = "CSI u モード";
+"Raw Key Reporting Mode" = "Raw キーレポートモード";
+"Disambiguate Escape" = "エスケープの曖昧さを解消";
+"Report All Keys as Escape Codes" = "すべてのキーをエスケープコードとして報告";
+"Report Alternate Keys" = "代替キーを報告";
+"Report All Event Types" = "すべてのイベントタイプを報告";
+"Report Associated Text" = "関連テキストを報告";
+
+/* Triggers */
+"Triggers" = "トリガー";
+"Enable Triggers in Interactive Apps" = "対話アプリでトリガーを有効化";
+"Enable All" = "すべて有効";
+"Disable All" = "すべて無効";
+
+/* Size Changes */
+"Size Changes Update Profile" = "サイズ変更をプロファイルに反映";
+
+/* Toggle Buffer Input */
+"Toggle Buffer Input" = "バッファ入力の切替";
+
+/* Password Manager */
+"Password Manager" = "パスワードマネージャー";
+"Snippets" = "スニペット";
+"Actions" = "アクション";
+"Open Location…" = "場所を開く…";
+
+/* ============================================================ */
+/* Profiles Menu                                                 */
+/* ============================================================ */
+
+"Profiles" = "プロファイル";
+"Open Profiles…" = "プロファイルを開く…";
+"Press Option for New Window" = "Option キーを押して新規ウィンドウ";
+
+/* ============================================================ */
+/* Scripts Menu                                                  */
+/* ============================================================ */
+
+"Scripts" = "スクリプト";
+"New Python Script" = "新規 Python スクリプト";
+"Open Python REPL" = "Python REPL を開く";
+"Manage" = "管理";
+"Reveal Scripts in Finder" = "Finder でスクリプトを表示";
+"Console" = "コンソール";
+
+/* ============================================================ */
+/* Window Menu                                                   */
+/* ============================================================ */
+
+"Window" = "ウィンドウ";
+"Minimize" = "しまう";
+"Zoom" = "拡大/縮小";
+"Arrange Windows" = "ウィンドウを整列";
+"Arrange Windows Horizontally" = "ウィンドウを横に整列";
+"Arrangements" = "配置";
+"Save Window Arrangement" = "ウィンドウ配置を保存";
+"Save Current Window as Arrangement" = "現在のウィンドウを配置として保存";
+"Restore Window Arrangement" = "ウィンドウ配置を復元";
+"Restore Window Arrangement as Tabs" = "ウィンドウ配置をタブとして復元";
+"Load Arrangement from File…" = "ファイルからウィンドウ配置を読み込み…";
+"Merge All Windows" = "すべてのウィンドウを結合";
+
+/* Window Style */
+"Window Style" = "ウィンドウスタイル";
+"Normal" = "通常";
+"Full Screen" = "フルスクリーン";
+"Maximized" = "最大化";
+"No Title Bar" = "タイトルバーなし";
+"Centered" = "中央";
+"Top of Screen" = "画面上部";
+"Bottom of Screen" = "画面下部";
+"Left of Screen" = "画面左側";
+"Right of Screen" = "画面右側";
+"Full-Height Left of Screen" = "画面左側（フルハイト）";
+"Full-Height Right of Screen" = "画面右側（フルハイト）";
+"Full-Width Top of Screen" = "画面上部（フルワイド）";
+"Full-Width Bottom of Screen" = "画面下部（フルワイド）";
+
+/* Select Tab */
+"Select Tab" = "タブを選択";
+"Select Next Tab" = "次のタブを選択";
+"Select Previous Tab" = "前のタブを選択";
+
+/* Split Pane */
+"Select Split Pane" = "分割ペインを選択";
+"Select Pane Above" = "上のペインを選択";
+"Select Pane Below" = "下のペインを選択";
+"Select Pane Left" = "左のペインを選択";
+"Select Pane Right" = "右のペインを選択";
+"Next Pane" = "次のペイン";
+"Previous Pane" = "前のペイン";
+"Arrange Split Panes Evenly" = "分割ペインを均等に配置";
+"Maximize Active Pane" = "アクティブペインを最大化";
+
+/* Resize */
+"Resize Split Pane" = "分割ペインのサイズ変更";
+"Resize Window" = "ウィンドウのサイズ変更";
+"Move Divider Up" = "仕切りを上へ";
+"Move Divider Down" = "仕切りを下へ";
+"Move Divider Left" = "仕切りを左へ";
+"Move Divider Right" = "仕切りを右へ";
+"Increase Height" = "高さを増やす";
+"Decrease Height" = "高さを減らす";
+"Increase Width" = "幅を増やす";
+"Decrease Width" = "幅を減らす";
+"Lock Size" = "サイズをロック";
+"Lock Split Pane Width" = "分割ペインの幅をロック";
+"Set Default Width" = "デフォルト幅を設定";
+
+/* Move Tab/Session */
+"Move Tab" = "タブを移動";
+"Move Tab Left" = "タブを左に移動";
+"Move Tab Right" = "タブを右に移動";
+"Move Tab to New Window" = "タブを新規ウィンドウに移動";
+"Move Session" = "セッションを移動";
+"Move Session to Window" = "セッションをウィンドウに移動";
+"Move Session to Tab" = "セッションをタブに移動";
+"Move Session to Split Pane" = "セッションを分割ペインに移動";
+
+/* Undo Close */
+"Undo Close" = "閉じたセッションを元に戻す";
+
+/* Pin */
+"Pin Hotkey Window" = "ホットキーウィンドウを固定";
+
+/* Dock Menu */
+"Remove Recent Profiles from Dock Menu" = "Dock メニューから最近のプロファイルを削除";
+
+/* ============================================================ */
+/* Help Menu                                                     */
+/* ============================================================ */
+
+"Help" = "ヘルプ";
+"iTerm2 Help" = "iTerm2 ヘルプ";
+"Open Source Licenses" = "オープンソースライセンス";
+"GPU Renderer Availability" = "GPU レンダラーの利用状況";
+"Make Screenshot…" = "スクリーンショットを作成…";
+
+/* ============================================================ */
+/* Other / Misc                                                  */
+/* ============================================================ */
+
+/* Web navigation (used in web views) */
+"Web" = "Web";
+"Back" = "戻る";
+"Forward" = "進む";
+"Reload Page" = "ページを再読み込み";
+"Open In New Window" = "新規ウィンドウで開く";
+
+/* Tab / Item placeholders */
+"Tab" = "タブ";
+"Item" = "項目";
+"Item 1" = "項目 1";
+"Item 2" = "項目 2";
+"Item 3" = "項目 3";
+"Selection" = "選択";
+"Screen" = "スクリーン";
+"Buffer" = "バッファ";
+"Pick Result to Open" = "開く結果を選択";
+
+/* Profile-related menu */
+"Change Profile in Arrangement…" = "配置内のプロファイルを変更…";

@@ -1493,8 +1493,8 @@ extension Conductor {
             // Only "View" should be remembered. Remembering "Download" could cause
             // repeated download prompts if the download fails or isn't handled.
             let warning = iTermWarning()
-            warning.title = "Download \(path.path.lastPathComponent) or view in browser?"
-            warning.actionLabels = ["Download", "View", "Cancel"]
+            warning.title = String(format: NSLocalizedString("Download %@ or view in browser?", tableName: "iTerm", bundle: .main, comment: ""), path.path.lastPathComponent)
+            warning.actionLabels = [NSLocalizedString("Download", tableName: "iTerm", bundle: .main, comment: ""), NSLocalizedString("View", tableName: "iTerm", bundle: .main, comment: ""), NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: "")]
             warning.identifier = "DownloadOrViewInBrowser_" + mimeType + " " + path.usernameHostnameString
             warning.warningType = .kiTermWarningTypePermanentlySilenceable
             warning.heading = "Download or View File?"

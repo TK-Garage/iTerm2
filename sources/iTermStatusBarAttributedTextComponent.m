@@ -18,6 +18,8 @@
 #import "NSView+iTerm.h"
 #import "PTYWindow.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol iTermTextFieldish<NSObject>
@@ -147,14 +149,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSArray<iTermStatusBarComponentKnob *> *)statusBarComponentKnobs {
     iTermStatusBarComponentKnob *backgroundColorKnob =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Background Color:"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Background Color:")
                                                           type:iTermStatusBarComponentKnobTypeColor
                                                    placeholder:nil
                                                   defaultValue:nil
                                                            key:iTermStatusBarSharedBackgroundColorKey];
 
     iTermStatusBarComponentKnob *textColorKnob =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Text Color:"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Text Color:")
                                                           type:iTermStatusBarComponentKnobTypeColor
                                                    placeholder:nil
                                                   defaultValue:nil

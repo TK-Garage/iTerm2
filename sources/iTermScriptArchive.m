@@ -7,6 +7,8 @@
 
 #import "iTermScriptArchive.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTermPythonRuntimeDownloader.h"
 #import "iTermSetupCfgParser.h"
@@ -144,7 +146,7 @@ NSString *const iTermScriptMetadataName = @"metadata.json";
                                                                      accessory:nil
                                                                     identifier:nil
                                                                    silenceable:kiTermWarningTypePersistent
-                                                                       heading:@"Allow Auto-Launch?"
+                                                                       heading:ITLocalizedMenuString(@"Allow Auto-Launch?")
                                                                         window:nil];
     return (selection == kiTermWarningSelection0);
 }
@@ -156,7 +158,7 @@ NSString *const iTermScriptMetadataName = @"metadata.json";
                                                                      accessory:nil
                                                                     identifier:nil
                                                                    silenceable:kiTermWarningTypePersistent
-                                                                       heading:@"Allow Auto-Launch?"
+                                                                       heading:ITLocalizedMenuString(@"Allow Auto-Launch?")
                                                                         window:nil];
     return (selection == kiTermWarningSelection0);
 }

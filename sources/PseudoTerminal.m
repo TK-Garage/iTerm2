@@ -1,5 +1,7 @@
 #import "PseudoTerminal+Private.h"
 #import "PseudoTerminal+TouchBar.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "PseudoTerminal+WindowStyle.h"
 #import "PseudoTerminal.h"
 
@@ -1904,10 +1906,10 @@ ITERM_WEAKLY_REFERENCEABLE
     [[self retain] autorelease];
 
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = [NSString stringWithFormat:@"Close %@?", genericName];
+    alert.messageText = [NSString stringWithFormat:ITLocalizedMenuString(@"Close %@?"), genericName];
     alert.informativeText = message;
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     return [alert runSheetModalForWindow:self.window] == NSAlertFirstButtonReturn;
 }
 
@@ -2375,7 +2377,7 @@ ITERM_WEAKLY_REFERENCEABLE
                                                  }];
         iTermWarning *warning = [[[iTermWarning alloc] init] autorelease];
         warning.heading = @"Restart session?";
-        warning.title = @"Running jobs will be killed.";
+        warning.title = ITLocalizedMenuString(@"Running jobs will be killed.");
         warning.warningActions = @[ ok, cancel ];
         warning.identifier = @"NoSyncSuppressRestartSessionConfirmationAlert";
         warning.warningType = kiTermWarningTypePermanentlySilenceable;
@@ -3289,8 +3291,8 @@ ITERM_WEAKLY_REFERENCEABLE
 
 - (IBAction)editWindowTitle:(id)sender {
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = @"Set Window Title";
-    alert.informativeText = @"If this is empty, the window takes the active session’s title. Variables and function calls enclosed in \\(…) will be replaced with their evaluation. This interpolated string is evaluated in the window’s context.";
+    alert.messageText = ITLocalizedMenuString(@"Set Window Title");
+    alert.informativeText = ITLocalizedMenuString(@"If this is empty, the window takes the active session’s title. Variables and function calls enclosed in \\(…) will be replaced with their evaluation. This interpolated string is evaluated in the window’s context.");
     NSTextField *titleTextField = [[[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 400, 24 * 3)] autorelease];
     iTermFunctionCallTextFieldDelegate *delegate;
     delegate = [[[iTermFunctionCallTextFieldDelegate alloc] initWithPathSource:[iTermVariableHistory pathSourceForContext:iTermVariablesSuggestionContextWindow]
@@ -3303,8 +3305,8 @@ ITERM_WEAKLY_REFERENCEABLE
     titleTextField.selectable = YES;
     titleTextField.stringValue = [self.scope valueForVariableName:iTermVariableKeyWindowTitleOverrideFormat] ?: @"";
     alert.accessoryView = titleTextField;
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     BOOL isDark;
     if ((iTermPreferencesTabStyle)[iTermPreferences intForKey:kPreferenceKeyTabStyle] == TAB_STYLE_MINIMAL) {
         isDark = self.minimalTabStyleBackgroundColor.isDark;
@@ -7336,7 +7338,7 @@ hidingToolbeltShouldResizeWindow:(BOOL)hidingToolbeltShouldResizeWindow
             [tabMenu addItem:item];
         }
 
-        [rootMenu addItemWithTitle:@"Select"
+        [rootMenu addItemWithTitle:ITLocalizedMenuString(@"Select")
                             action:nil
                      keyEquivalent:@""];
         [rootMenu setSubmenu:tabMenu forItem:[rootMenu itemAtIndex:0]];
@@ -7344,19 +7346,19 @@ hidingToolbeltShouldResizeWindow:(BOOL)hidingToolbeltShouldResizeWindow
    }
 
     // add tasks
-    item = [[[NSMenuItem alloc] initWithTitle:@"New Tab to the Right"
+    item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"New Tab to the Right")
                                        action:@selector(newTabToTheRight:)
                                 keyEquivalent:@""] autorelease];
     [item setRepresentedObject:tabViewItem];
     [rootMenu addItem:item];
 
-    item = [[[NSMenuItem alloc] initWithTitle:@"Edit Session…"
+    item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Edit Session…")
                                        action:@selector(editSession:)
                                 keyEquivalent:@""] autorelease];
     [item setRepresentedObject:tabViewItem];
     [rootMenu addItem:item];
 
-    item = [[[NSMenuItem alloc] initWithTitle:@"Close Tab"
+    item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Close Tab")
                                        action:@selector(closeTabContextualMenuAction:)
                                 keyEquivalent:@""] autorelease];
     [item setRepresentedObject:tabViewItem];
@@ -7364,21 +7366,21 @@ hidingToolbeltShouldResizeWindow:(BOOL)hidingToolbeltShouldResizeWindow
 
     PTYTab *theTab = [tabViewItem identifier];
     if (![theTab isTmuxTab]) {
-        item = [[[NSMenuItem alloc] initWithTitle:@"Duplicate Tab"
+        item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Duplicate Tab")
                                            action:@selector(duplicateTab:)
                                     keyEquivalent:@""] autorelease];
         [item setRepresentedObject:tabViewItem];
         [rootMenu addItem:item];
     }
 
-    item = [[[NSMenuItem alloc] initWithTitle:@"Save Tab as Window Arrangement"
+    item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Save Tab as Window Arrangement")
                                        action:@selector(saveTabAsWindowArrangement:)
                                 keyEquivalent:@""] autorelease];
     [item setRepresentedObject:tabViewItem];
     [rootMenu addItem:item];
 
     if ([_contentView.tabView numberOfTabViewItems] > 1 && !theTab.isPinned) {
-        item = [[[NSMenuItem alloc] initWithTitle:@"Move to New Window"
+        item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Move to New Window")
                                            action:@selector(moveTabToNewWindowContextualMenuAction:)
                                     keyEquivalent:@""] autorelease];
         [item setRepresentedObject:tabViewItem];
@@ -7404,7 +7406,7 @@ hidingToolbeltShouldResizeWindow:(BOOL)hidingToolbeltShouldResizeWindow
         }
 
         if (hasUnpinnedOther) {
-            item = [[[NSMenuItem alloc] initWithTitle:@"Close Other Tabs"
+            item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Close Other Tabs")
                                                action:@selector(closeOtherTabs:)
                                         keyEquivalent:@""] autorelease];
             [item setRepresentedObject:tabViewItem];
@@ -7414,9 +7416,9 @@ hidingToolbeltShouldResizeWindow:(BOOL)hidingToolbeltShouldResizeWindow
         if (hasUnpinnedToRight) {
             NSString *title;
             if ([iTermPreferences intForKey:kPreferenceKeyTabPosition] == PSMTab_LeftTab) {
-                title = @"Close Tabs Below";
+                title = ITLocalizedMenuString(@"Close Tabs Below");
             } else {
-                title = @"Close Tabs to the Right";
+                title = ITLocalizedMenuString(@"Close Tabs to the Right");
             }
             item = [[[NSMenuItem alloc] initWithTitle:title
                                                action:@selector(closeTabsToTheRight:)
@@ -7429,7 +7431,7 @@ hidingToolbeltShouldResizeWindow:(BOOL)hidingToolbeltShouldResizeWindow
     // pin/unpin tab (not available for tmux tabs)
     if (![theTab isTmuxTab]) {
         [rootMenu addItem:[NSMenuItem separatorItem]];
-        NSString *pinTitle = theTab.isPinned ? @"Unpin Tab" : @"Pin Tab";
+        NSString *pinTitle = theTab.isPinned ? ITLocalizedMenuString(@"Unpin Tab") : ITLocalizedMenuString(@"Pin Tab");
         item = [[[NSMenuItem alloc] initWithTitle:pinTitle
                                            action:@selector(togglePinTab:)
                                     keyEquivalent:@""] autorelease];
@@ -7445,7 +7447,7 @@ hidingToolbeltShouldResizeWindow:(BOOL)hidingToolbeltShouldResizeWindow
     PTYTab *tab = [tabViewItem identifier];
     labelTrackView.currentColor = tab.activeSession.tabColor;
     labelTrackView.delegate = self;
-    item = [[[NSMenuItem alloc] initWithTitle:@"Tab Color"
+    item = [[[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Tab Color")
                                        action:@selector(changeTabColorToMenuAction:)
                                 keyEquivalent:@""] autorelease];
     [item setView:labelTrackView];
@@ -7680,8 +7682,8 @@ hidingToolbeltShouldResizeWindow:(BOOL)hidingToolbeltShouldResizeWindow
 
 - (void)openEditTabTitleWindow {
     NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-    alert.messageText = @"Set Tab Title";
-    alert.informativeText = @"If this is empty, the tab takes the active session’s title. Variables and function calls enclosed in \\(…) will be replaced with their evaluation. This interpolated string is evaluated in the tab’s context.";
+    alert.messageText = ITLocalizedMenuString(@"Set Tab Title");
+    alert.informativeText = ITLocalizedMenuString(@"If this is empty, the tab takes the active session’s title. Variables and function calls enclosed in \\(…) will be replaced with their evaluation. This interpolated string is evaluated in the tab’s context.");
     NSTextField *titleTextField = [[[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 400, 24 * 3)] autorelease];
     _currentTabTitleTextFieldDelegate = [[iTermFunctionCallTextFieldDelegate alloc] initWithPathSource:[iTermVariableHistory pathSourceForContext:iTermVariablesSuggestionContextTab]
                                                                                            passthrough:nil
@@ -7693,8 +7695,8 @@ hidingToolbeltShouldResizeWindow:(BOOL)hidingToolbeltShouldResizeWindow
     titleTextField.selectable = YES;
     titleTextField.stringValue = self.currentTab.variablesScope.tabTitleOverrideFormat ?: @"";
     alert.accessoryView = titleTextField;
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     BOOL isDark;
     if ((iTermPreferencesTabStyle)[iTermPreferences intForKey:kPreferenceKeyTabStyle] == TAB_STYLE_MINIMAL) {
         isDark = self.minimalTabStyleBackgroundColor.isDark;
@@ -11623,9 +11625,9 @@ typedef NS_ENUM(NSUInteger, iTermBroadcastCommand) {
     } else if (item.action == @selector(captureNextMetalFrame:)) {
         const BOOL enabled = self.currentSession.canProduceMetalFramecap;
         if (!self.isMetalCaptureEnabled) {
-            item.title = @"Enable GPU Frame Capture";
+            item.title = ITLocalizedMenuString(@"Enable GPU Frame Capture");
         } else {
-            item.title = @"Capture GPU Frame";
+            item.title = ITLocalizedMenuString(@"Capture GPU Frame");
         }
         return enabled;
     } else if (item.action == @selector(exportRecording:)) {
@@ -12814,7 +12816,7 @@ typedef NS_ENUM(NSUInteger, iTermBroadcastCommand) {
                                                                     accessory:nil
                                                                    identifier:nil
                                                                   silenceable:kiTermWarningTypePersistent
-                                                                      heading:@"Not all sessions at password prompt"
+                                                                      heading:ITLocalizedMenuString(@"Not all sessions at password prompt")
                                                                        window:self.window];
          switch (selection) {
              case kiTermWarningSelection0:

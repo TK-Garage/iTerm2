@@ -7,6 +7,8 @@
 
 #import "iTermPrintGuard.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "NSDate+iTerm.h"
 #import "ITAddressBookMgr.h"
 #import "iTermProfilePreferences.h"
@@ -41,7 +43,7 @@
                                  accessory:nil
                                 identifier:@"NoSyncAllowPrinting"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Allow Printing?"
+                                   heading:ITLocalizedMenuString(@"Allow Printing?")
                                     window:window];
         switch (selection) {
             case kiTermWarningSelection0:

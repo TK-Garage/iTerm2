@@ -324,7 +324,7 @@ class MultipartMessageCellView: MessageCellView {
         titleLabel.textColor = effectiveAppearance.it_isDark ? NSColor.white : NSColor.black
 
         let copyButton = NSButton()
-        copyButton.title = "Copy"
+        copyButton.title = NSLocalizedString("Copy", tableName: "iTerm", bundle: .main, comment: "")
         if #available(macOS 15, *) {
             copyButton.image = NSImage.it_image(forSymbolName: SFSymbol.documentOnDocument.rawValue,
                                                 accessibilityDescription: "Copy",

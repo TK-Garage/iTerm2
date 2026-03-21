@@ -1,0 +1,104 @@
+/* Japanese localization — AddressBook.strings */
+/* Profile/Bookmark editor UI strings */
+
+/* Whitespace / placeholder values — keep as-is */
+" " = " ";
+"%" = "%";
+"0" = "0";
+"1" = "1";
+"2" = "2";
+"3" = "3";
+"4" = "4";
+"5" = "5";
+"6" = "6";
+"7" = "7";
+"8" = "8";
+"9" = "9";
+
+/* Hex keys — keep as-is */
+"A" = "A";
+"B" = "B";
+"C" = "C";
+"D" = "D";
+"E" = "E";
+"F" = "F";
+"G" = "G";
+"H" = "H";
+"I" = "I";
+"J" = "J";
+"K" = "K";
+"L" = "L";
+"M" = "M";
+"N" = "N";
+"O" = "O";
+"P" = "P";
+"Q" = "Q";
+"R" = "R";
+"S" = "S";
+"T" = "T";
+"U" = "U";
+"V" = "V";
+"W" = "W";
+"X" = "X";
+"Y" = "Y";
+"Z" = "Z";
+
+/* Idle sends */
+" When idle, sends" = " アイドル時に送信";
+
+/* Labels */
+"ANSI Colors:" = "ANSI カラー:";
+"ASCII code:" = "ASCII コード:";
+"Add" = "追加";
+"Background\n" = "背景\n";
+"Bold" = "太字";
+"Bookmarks" = "ブックマーク";
+"Box" = "Box";
+"Cancel" = "キャンセル";
+"Close the session when it ends" = "終了時にセッションを閉じる";
+"Col" = "列";
+"Color" = "カラー";
+"Color scheme:" = "カラースキーム:";
+"Command" = "コマンド";
+"Custom" = "カスタム";
+"Delete key sends backspace" = "Delete キーで Backspace を送信";
+"Display" = "表示";
+"Duplicate" = "複製";
+"Edit" = "編集";
+"Encoding\n" = "エンコーディング\n";
+"Font" = "フォント";
+"Font Name\n" = "フォント名\n";
+"Foreground\n" = "前景\n";
+"Highlight" = "ハイライト";
+"Item1" = "Item1";
+"Item2" = "Item2";
+"Item3" = "Item3";
+"Name" = "名前";
+"Name:" = "名前:";
+"New Tab" = "新規タブ";
+"New Window" = "新規ウィンドウ";
+"Non ASCII Font" = "非 ASCII フォント";
+"Normal" = "標準";
+"OK" = "OK";
+"OtherViews" = "OtherViews";
+"Remove" = "削除";
+"Row" = "行";
+"Selection" = "選択";
+"Session" = "セッション";
+"Session Settings" = "セッション設定";
+"Shell" = "シェル";
+"Shortcut" = "ショートカット";
+"Shortcut key:                          ^⌥" = "ショートカットキー:                          ^⌥";
+"Terminal" = "ターミナル";
+"Answerback String" = "応答文字列";
+"Transparency\n" = "透明度\n";
+"Treat Non-ASCII characters as double width" = "非 ASCII 文字を全角として扱う";
+"Working Dir" = "作業ディレクトリ";
+
+/* Terminal types — keep as-is */
+"ansi" = "ansi";
+"iTerm" = "iTerm";
+"rxvt" = "rxvt";
+"vt100" = "vt100";
+"xterm" = "xterm";
+"xterm-color" = "xterm-color";

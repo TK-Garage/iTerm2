@@ -6,6 +6,8 @@
 //
 
 #import "Trigger.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "DebugLogging.h"
 #import "iTermSwiftyString.h"
 #import "iTermVariableScope.h"
@@ -430,7 +432,7 @@ NSString * const kTriggerEventParamsKey = @"eventParams";
                              accessory:nil
                             identifier:@"NoSyncErrorInTriggerParameter"
                            silenceable:kiTermWarningTypeTemporarilySilenceable
-                               heading:@"Error in Trigger Parameter"
+                               heading:ITLocalizedMenuString(@"Error in Trigger Parameter")
                                 window:nil];
 }
 

@@ -7,6 +7,8 @@
 
 #import "iTermStatusBarContainerView.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTermAdvancedSettingsModel.h"
 #import "iTermStatusBarBaseComponent.h"
@@ -308,10 +310,10 @@ const CGFloat iTermGetStatusBarHeight(void) {
                         action:@selector(hideComponent:)
                  keyEquivalent:@""];
     }
-    [menu addItemWithTitle:@"Configure Status Bar"
+    [menu addItemWithTitle:ITLocalizedMenuString(@"Configure Status Bar")
                     action:@selector(configureStatusBar:)
              keyEquivalent:@""];
-    [menu addItemWithTitle:@"Disable Status Bar"
+    [menu addItemWithTitle:ITLocalizedMenuString(@"Disable Status Bar")
                     action:@selector(disableStatusBar:)
              keyEquivalent:@""];
     NSDictionary<NSString *, id> *values = [self.component statusBarComponentKnobValues];

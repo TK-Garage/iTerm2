@@ -7,6 +7,8 @@
 //
 
 #import "ToolDirectoriesView.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "SFSymbolEnum/SFSymbolEnum.h"
 
 #import "iTerm2SharedARC-Swift.h"
@@ -79,7 +81,7 @@ static const CGFloat kHelpMargin = 5;
         if (@available(macOS 10.16, *)) {
             clear_.bezelStyle = NSBezelStyleRegularSquare;
             clear_.bordered = NO;
-            clear_.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolTrash) accessibilityDescription:@"Clear"];
+            clear_.image = [NSImage it_imageForSymbolName:SFSymbolGetString(SFSymbolTrash) accessibilityDescription:ITLocalizedMenuString(@"Clear")];
             clear_.imagePosition = NSImageOnly;
             clear_.frame = NSMakeRect(0, 0, 22, 22);
         } else {
@@ -106,7 +108,7 @@ static const CGFloat kHelpMargin = 5;
         _tableView.menu = [[NSMenu alloc] init];
         _tableView.menu.delegate = self;
         NSMenuItem *item;
-        item = [[NSMenuItem alloc] initWithTitle:@"Toggle Star"
+        item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Toggle Star")
                                           action:@selector(toggleStar:)
                                    keyEquivalent:@""];
         [_tableView.menu addItem:item];
@@ -317,9 +319,9 @@ static const CGFloat kHelpMargin = 5;
 
 - (void)clear:(id)sender {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Erase Saved Directories?";
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    alert.messageText = ITLocalizedMenuString(@"Erase Saved Directories?");
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     if ([alert runModal] == NSAlertFirstButtonReturn) {
         [[iTermShellHistoryController sharedInstance] eraseCommandHistory:NO directories:YES];
     }

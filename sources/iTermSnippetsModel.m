@@ -7,6 +7,8 @@
 
 #import "iTermSnippetsModel.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "NSArray+iTerm.h"
 #import "NSData+iTerm.h"
 #import "NSFileManager+iTerm.h"
@@ -263,7 +265,7 @@ NSString *iTermSnippetHelpMarkdown = @"Terms in the search query are used to pre
                                  accessory:nil
                                 identifier:@"NoSyncWriteSnippetsFailed"
                                silenceable:kiTermWarningTypePersistent
-                                   heading:@"Problem Saving Snippets"
+                                   heading:ITLocalizedMenuString(@"Problem Saving Snippets")
                                     window:nil];
     } else {
         [[iTermUserDefaults userDefaults] removeObjectForKey:kPreferenceKeySnippets];

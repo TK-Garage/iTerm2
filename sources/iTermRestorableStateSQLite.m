@@ -7,6 +7,8 @@
 
 #import "iTermRestorableStateSQLite.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTermGraphDatabase.h"
 #import "iTermThreadSafety.h"
@@ -144,10 +146,10 @@
         __block BOOL result = NO;
         dispatch_sync(dispatch_get_main_queue(), ^{
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = @"Continue restoring state?";
-            alert.informativeText = @"It’s taking a long time to check the validity of the state restoration database. Keep trying to open it? Select Ok to keep waiting or Delete to lose saved windows.";
-            [alert addButtonWithTitle:@"OK"];
-            [alert addButtonWithTitle:@"Delete"];
+            alert.messageText = ITLocalizedMenuString(@"Continue restoring state?");
+            alert.informativeText = ITLocalizedMenuString(@"It’s taking a long time to check the validity of the state restoration database. Keep trying to open it? Select Ok to keep waiting or Delete to lose saved windows.");
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"Delete")];
             result = ([alert runModal] == NSAlertSecondButtonReturn);
         });
         return result;

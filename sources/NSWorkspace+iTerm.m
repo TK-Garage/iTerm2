@@ -8,6 +8,8 @@
 
 #import "NSWorkspace+iTerm.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTerm2SharedARC-Swift.h"
 #import "iTermAdvancedSettingsModel.h"
@@ -420,7 +422,7 @@ withApplicationAtURL:appURL
                                                     accessory:nil
                                                    identifier:identifier
                                                   silenceable:kiTermWarningTypePermanentlySilenceable
-                                                      heading:@"Open in iTerm2?"
+                                                      heading:ITLocalizedMenuString(@"Open in iTerm2?")
                                                        window:window] == kiTermWarningSelection1);
             } else {
                 consent = ([iTermWarning showWarningWithTitle:@"iTerm2 can display web pages! Would you like to open this link in iTerm2?"
@@ -428,7 +430,7 @@ withApplicationAtURL:appURL
                                                     accessory:nil
                                                    identifier:identifier
                                                   silenceable:kiTermWarningTypePermanentlySilenceable
-                                                      heading:@"Open in iTerm2?"
+                                                      heading:ITLocalizedMenuString(@"Open in iTerm2?")
                                                        window:window] == kiTermWarningSelection1);
             }
             break;

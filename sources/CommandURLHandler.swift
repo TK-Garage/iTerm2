@@ -187,7 +187,7 @@ fileprivate class CommandOptionsView: NSView {
             usernameStackView.spacing = 10
             usernameStackView.translatesAutoresizingMaskIntoConstraints = false
 
-            usernameTextField.placeholderString = "Username"
+            usernameTextField.placeholderString = NSLocalizedString("Username", tableName: "iTerm", bundle: .main, comment: "")
             usernameTextField.font = NSFont.systemFont(ofSize: NSFont.systemFontSize, weight: .regular)
             usernameTextField.translatesAutoresizingMaskIntoConstraints = false
             usernameStackView.addArrangedSubview(createHorizontalStackView(label: "Username:",
@@ -197,7 +197,7 @@ fileprivate class CommandOptionsView: NSView {
         }
 
         directoryTextField = NSTextField()
-        directoryTextField.placeholderString = "Directory"
+        directoryTextField.placeholderString = NSLocalizedString("Directory", tableName: "iTerm", bundle: .main, comment: "")
         directoryTextField.font = NSFont.systemFont(ofSize: NSFont.systemFontSize, weight: .regular)
         directoryTextField.translatesAutoresizingMaskIntoConstraints = false
         addHorizontalStackView(createHorizontalStackView(label: "Directory:",
@@ -208,23 +208,23 @@ fileprivate class CommandOptionsView: NSView {
         buttonsStackView.spacing = 10
         buttonsStackView.translatesAutoresizingMaskIntoConstraints = false
 
-        cancelButton = NSButton(title: "Cancel", target: self, action: #selector(cancelButtonClicked))
+        cancelButton = NSButton(title: NSLocalizedString("Cancel", tableName: "iTerm", bundle: .main, comment: ""), target: self, action: #selector(cancelButtonClicked))
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
         cancelButton.keyEquivalent = "\01b"
         buttonsStackView.addArrangedSubview(cancelButton)
 
-        newWindowButton = NSButton(title: "Run in New Window", target: self, action: #selector(newWindowButtonClicked))
+        newWindowButton = NSButton(title: NSLocalizedString("Run in New Window", tableName: "iTerm", bundle: .main, comment: ""), target: self, action: #selector(newWindowButtonClicked))
         newWindowButton.translatesAutoresizingMaskIntoConstraints = false
         buttonsStackView.addArrangedSubview(newWindowButton)
 
         if offerTab {
-            newTabButton = NSButton(title: "Run in New Tab", target: self, action: #selector(newTabButtonClicked))
+            newTabButton = NSButton(title: NSLocalizedString("Run in New Tab", tableName: "iTerm", bundle: .main, comment: ""), target: self, action: #selector(newTabButtonClicked))
             newTabButton.translatesAutoresizingMaskIntoConstraints = false
             buttonsStackView.addArrangedSubview(newTabButton)
         }
 
         if offerCurrent {
-            newTabButton = NSButton(title: "Run in Current Session", target: self, action: #selector(currentSessionButtonClicked))
+            newTabButton = NSButton(title: NSLocalizedString("Run in Current Session", tableName: "iTerm", bundle: .main, comment: ""), target: self, action: #selector(currentSessionButtonClicked))
             newTabButton.translatesAutoresizingMaskIntoConstraints = false
             buttonsStackView.addArrangedSubview(newTabButton)
         }
@@ -451,7 +451,7 @@ class CommandURLHandler: NSObject {
             defer: false
         )
         window.contentView = contentView
-        window.title = "Run Command from URL"
+        window.title = NSLocalizedString("Run Command from URL", tableName: "iTerm", bundle: .main, comment: "")
         window.setContentSize(contentView.fittingSize)
 
         window.center()

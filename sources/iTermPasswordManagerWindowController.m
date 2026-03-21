@@ -8,6 +8,8 @@
 
 #import "iTermPasswordManagerWindowController.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "iTerm2SharedARC-Swift.h"
 #import "iTermAdvancedSettingsModel.h"
@@ -505,7 +507,7 @@ static NSArray<NSString *> *gTerminalCachedCombinedAccountNames;
                                                                      accessory:nil
                                                                     identifier:nil
                                                                    silenceable:kiTermWarningTypePersistent
-                                                                       heading:@"Are you sure?"
+                                                                       heading:ITLocalizedMenuString(@"Are you sure?")
                                                                         window:self.window];
     if (selection == kiTermWarningSelection0) {
         [self.currentDataSource resetConfiguration];
@@ -659,9 +661,9 @@ static NSArray<NSString *> *gTerminalCachedCombinedAccountNames;
 
 - (BOOL)shouldRemoveSelection {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = @"Are you sure you want to delete this password?";
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Cancel"];
+    alert.messageText = ITLocalizedMenuString(@"Are you sure you want to delete this password?");
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
     return [alert runSheetModalForWindow:self.window] == NSAlertFirstButtonReturn;
 }
 
@@ -675,10 +677,10 @@ static NSArray<NSString *> *gTerminalCachedCombinedAccountNames;
 
         @autoreleasepool {
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = [NSString stringWithFormat:@"Enter password for %@:", accountName];
-            [alert addButtonWithTitle:@"OK"];
-            [alert addButtonWithTitle:@"Generate"];
-            [alert addButtonWithTitle:@"Cancel"];
+            alert.messageText = [NSString stringWithFormat:ITLocalizedMenuString(@"Enter password for %@:"), accountName];
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"Generate")];
+            [alert addButtonWithTitle:ITLocalizedMenuString(@"Cancel")];
 
             NSSecureTextField *newPassword = [[NSSecureTextField alloc] initWithFrame:NSMakeRect(0, 0, 200, 24)];
             newPassword.editable = YES;
@@ -902,10 +904,10 @@ static NSArray<NSString *> *gTerminalCachedCombinedAccountNames;
         return;
     }
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = [NSString stringWithFormat:@"Password for %@", accountName];
+    alert.messageText = [NSString stringWithFormat:ITLocalizedMenuString(@"Password for %@"), accountName];
     alert.informativeText = password;
-    [alert addButtonWithTitle:@"OK"];
-    [alert addButtonWithTitle:@"Copy"];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
+    [alert addButtonWithTitle:ITLocalizedMenuString(@"Copy")];
 
     __weak __typeof(self) weakSelf = self;
     [self runModal:alert completion:^(NSModalResponse response) {
@@ -1135,9 +1137,9 @@ static NSArray<NSString *> *gTerminalCachedCombinedAccountNames;
                 DLog(@"passwordForRow: return nil, keychain gave error %@", error);
 
                 NSAlert *alert = [[NSAlert alloc] init];
-                alert.messageText = [NSString stringWithFormat:@"Could not get password. Keychain query failed: %@",
+                alert.messageText = [NSString stringWithFormat:ITLocalizedMenuString(@"Could not get password. Keychain query failed: %@"),
                                      error.localizedDescription];
-                [alert addButtonWithTitle:@"OK"];
+                [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
                 [self runModal:alert completion:^(NSModalResponse response) { }];
                 completion(nil, nil);
             } else {

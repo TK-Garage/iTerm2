@@ -18,6 +18,8 @@
 
 #import <WebKit/WebKit.h>
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NS_ASSUME_NONNULL_BEGIN
 
 static NSString *const iTermStatusBarCompressionResistanceKey = @"base: compression resistance";
@@ -188,13 +190,13 @@ const double iTermStatusBarBaseComponentDefaultPriority = 5;
 
 - (NSArray<iTermStatusBarComponentKnob *> *)minMaxWidthKnobs {
     iTermStatusBarComponentKnob *maxWidthKnob =
-    [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Maximum Width:"
+    [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Maximum Width:")
                                                       type:iTermStatusBarComponentKnobTypeDouble
                                                placeholder:@""
                                               defaultValue:@(INFINITY)
                                                        key:iTermStatusBarMaximumWidthKey];
     iTermStatusBarComponentKnob *minWidthKnob =
-    [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Minimum Width:"
+    [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Minimum Width:")
                                                       type:iTermStatusBarComponentKnobTypeDouble
                                                placeholder:@""
                                               defaultValue:[@(self.defaultMinimumWidth) stringValue]
@@ -229,7 +231,7 @@ const double iTermStatusBarBaseComponentDefaultPriority = 5;
 }
 
 - (iTermStatusBarComponentKnob *)newPriorityKnob {
-    return [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Priority:"
+    return [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Priority:")
                                                              type:iTermStatusBarComponentKnobTypeDouble
                                                       placeholder:@""
                                                      defaultValue:self.class.statusBarComponentDefaultKnobs[iTermStatusBarPriorityKey]
@@ -242,10 +244,10 @@ const double iTermStatusBarBaseComponentDefaultPriority = 5;
         NSString *title;
         switch (self.advancedConfiguration.layoutAlgorithm) {
             case iTermStatusBarLayoutAlgorithmSettingTightlyPacked:
-                title = @"Compression Resistance:";
+                title = ITLocalizedMenuString(@"Compression Resistance:");
                 break;
             case iTermStatusBarLayoutAlgorithmSettingStable:
-                title = @"Size Multiple:";
+                title = ITLocalizedMenuString(@"Size Multiple:");
                 break;
         }
         compressionResistanceKnob =

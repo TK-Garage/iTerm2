@@ -14,6 +14,8 @@
 #import "NSImage+iTerm.h"
 #import "RegexKitLite.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 static NSString *const iTermStatusBarActionKey = @"action";
 
 @implementation iTermStatusBarActionComponent {
@@ -46,7 +48,7 @@ static NSString *const iTermStatusBarActionKey = @"action";
 
 - (NSArray<iTermStatusBarComponentKnob *> *)statusBarComponentKnobs {
     iTermStatusBarComponentKnob *actionKnob =
-    [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Action"
+    [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Action")
                                                       type:iTermStatusBarComponentKnobTypeAction
                                                placeholder:nil
                                               defaultValue:nil
@@ -84,7 +86,7 @@ static NSString *const iTermStatusBarActionKey = @"action";
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Custom Action";
+    return ITLocalizedMenuString(@"Custom Action");
 }
 
 - (BOOL)statusBarComponentCanStretch {
@@ -92,7 +94,7 @@ static NSString *const iTermStatusBarActionKey = @"action";
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Adds a button that performs a user-configurable action, similar to a key binding.";
+    return ITLocalizedMenuString(@"Adds a button that performs a user-configurable action, similar to a key binding.");
 }
 
 - (id)statusBarComponentExemplarWithBackgroundColor:(NSColor *)backgroundColor
@@ -137,11 +139,11 @@ static NSString *const iTermStatusBarActionKey = @"action";
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Actions Menu";
+    return ITLocalizedMenuString(@"Actions Menu");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"When clicked, opens a menu of actions. Actions are like custom key bindings, but without a keystroke attached.";
+    return ITLocalizedMenuString(@"When clicked, opens a menu of actions. Actions are like custom key bindings, but without a keystroke attached.");
 }
 
 - (id)statusBarComponentExemplarWithBackgroundColor:(NSColor *)backgroundColor
@@ -154,7 +156,7 @@ static NSString *const iTermStatusBarActionKey = @"action";
 }
 
 - (nullable NSString *)stringValue {
-    return @"Perform Action…";
+    return ITLocalizedMenuString(@"Perform Action…");
 }
 
 - (nullable NSString *)stringValueForCurrentWidth {
@@ -198,7 +200,7 @@ static NSString *const iTermStatusBarActionKey = @"action";
 
     [menu addItem:[NSMenuItem separatorItem]];
 
-    NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"Edit Actions…" action:@selector(editActions:) keyEquivalent:@""];
+    NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Edit Actions…") action:@selector(editActions:) keyEquivalent:@""];
     item.target = self;
     [menu addItem:item];
 

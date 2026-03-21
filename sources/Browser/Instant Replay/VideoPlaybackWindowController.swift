@@ -39,7 +39,7 @@ class VideoPlaybackWindowController: NSWindowController, NSMenuItemValidation {
             backing: .buffered,
             defer: false
         )
-        window.title = "Instant Replay"
+        window.title = NSLocalizedString("Instant Replay", tableName: "iTerm", bundle: .main, comment: "")
         window.center()
         
         super.init(window: window)

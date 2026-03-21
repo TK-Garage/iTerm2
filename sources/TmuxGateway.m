@@ -7,6 +7,8 @@
 
 #import "TmuxGateway.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "iTerm2SharedARC-Swift.h"
 #import "iTermApplicationDelegate.h"
 #import "iTermAdvancedSettingsModel.h"
@@ -131,7 +133,7 @@ static NSString *kCommandTimestamp = @"timestamp";
         NSAlert *alert = [[NSAlert alloc] init];
         alert.messageText = title;
         alert.informativeText = message;
-        [alert addButtonWithTitle:@"OK"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"OK")];
         [alert runModal];
     });
     [self detach];

@@ -13,6 +13,8 @@
 #import "NSDictionary+iTerm.h"
 #import "NSObject+iTerm.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 NS_ASSUME_NONNULL_BEGIN
 
 static NSString *const iTermStatusBarFunctionInvocationKey = @"function invocation";
@@ -26,31 +28,31 @@ static NSString *const iTermStatusBarTimeoutKey = @"timeout";
 
 - (NSArray<iTermStatusBarComponentKnob *> *)statusBarComponentKnobs {
     iTermStatusBarComponentKnob *labelKnob =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Label:"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Label:")
                                                           type:iTermStatusBarComponentKnobTypeText
                                                    placeholder:@"Button Label"
                                                   defaultValue:nil
                                                            key:iTermStatusBarLabelKey];
     iTermStatusBarComponentKnob *invocationKnob =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Function call:"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Function call:")
                                                           type:iTermStatusBarComponentKnobTypeInvocation
                                                    placeholder:@"foo(bar: \"baz\")"
                                                   defaultValue:nil
                                                            key:iTermStatusBarFunctionInvocationKey];
     iTermStatusBarComponentKnob *timeoutKnob =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Timeout (seconds):"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Timeout (seconds):")
                                                           type:iTermStatusBarComponentKnobTypeDouble
                                                    placeholder:nil
                                                   defaultValue:self.class.statusBarComponentDefaultKnobs[iTermStatusBarTimeoutKey]
                                                            key:iTermStatusBarTimeoutKey];
     iTermStatusBarComponentKnob *backgroundColorKnob =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Background Color:"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Background Color:")
                                                           type:iTermStatusBarComponentKnobTypeColor
                                                    placeholder:nil
                                                   defaultValue:nil
                                                            key:iTermStatusBarSharedBackgroundColorKey];
     iTermStatusBarComponentKnob *textColorKnob =
-        [[iTermStatusBarComponentKnob alloc] initWithLabelText:@"Text Color:"
+        [[iTermStatusBarComponentKnob alloc] initWithLabelText:ITLocalizedMenuString(@"Text Color:")
                                                           type:iTermStatusBarComponentKnobTypeColor
                                                    placeholder:nil
                                                   defaultValue:nil
@@ -142,7 +144,7 @@ static NSString *const iTermStatusBarTimeoutKey = @"timeout";
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Call Script Function";
+    return ITLocalizedMenuString(@"Call Script Function");
 }
 
 - (BOOL)statusBarComponentCanStretch {
@@ -150,7 +152,7 @@ static NSString *const iTermStatusBarTimeoutKey = @"timeout";
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"Adds a button that invokes a script function with a user-provided invocation.";
+    return ITLocalizedMenuString(@"Adds a button that invokes a script function with a user-provided invocation.");
 }
 
 - (id)statusBarComponentExemplarWithBackgroundColor:(NSColor *)backgroundColor

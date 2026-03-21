@@ -7,6 +7,8 @@
 //
 
 #import "iTermKeyMappingViewController.h"
+
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
 #import "DebugLogging.h"
 #import "iTerm2SharedARC-Swift.h"
 #import "iTermKeyMappings.h"
@@ -127,12 +129,12 @@ static NSString *const INTERCHANGE_TOUCH_BAR_ITEMS = @"Touch Bar Items";
         [_presetsPopup.menu addItem:[NSMenuItem separatorItem]];
     }
     NSMenuItem *item;
-    item = [[NSMenuItem alloc] initWithTitle:@"Import…"
+    item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Import…")
                                       action:@selector(importMenuItem:)
                                keyEquivalent:@""];
     item.target = self;
     [_presetsPopup.menu addItem:item];
-    item = [[NSMenuItem alloc] initWithTitle:@"Export…"
+    item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Export…")
                                       action:@selector(exportMenuItem:)
                                keyEquivalent:@""];
     item.target = self;
@@ -534,7 +536,7 @@ static NSString *const INTERCHANGE_TOUCH_BAR_ITEMS = @"Touch Bar Items";
                              accessory:nil
                             identifier:@"RemoveExistingGlobalKeyMappingsBeforeLoading"
                            silenceable:kiTermWarningTypePersistent
-                               heading:@"Load Preset"
+                               heading:ITLocalizedMenuString(@"Load Preset")
                                 window:self.view.window];
     switch (selection) {
         case kiTermWarningSelection0:

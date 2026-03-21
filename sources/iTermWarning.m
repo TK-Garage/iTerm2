@@ -1,5 +1,7 @@
 #import "iTermWarning.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 #import "DebugLogging.h"
 #import "NSAlert+iTerm.h"
 #import "NSArray+iTerm.h"
@@ -317,12 +319,12 @@ BOOL gShowRememberedAlerts = NO;
 
 - (NSAlert *)makeAlert {
     NSAlert *alert = [[NSAlert alloc] init];
-    alert.messageText = _heading ?: @"Warning";
+    alert.messageText = _heading ?: ITLocalizedMenuString(@"Warning");
 
     // If this warning is being shown due to "Always Show Alerts with Remembered Selections" mode,
     // prepend explanatory text.
     if (_shownDueToRememberedAlertsMode && _savedSelectionLabel) {
-        alert.informativeText = [NSString stringWithFormat:@"%@\n\nThis alert had a saved selection of “%@”. It is being shown because “Always Show Alerts with Remembered Selections” is enabled.", _title, _savedSelectionLabel];
+        alert.informativeText = [NSString stringWithFormat:ITLocalizedMenuString(@"%@\n\nThis alert had a saved selection of “%@”. It is being shown because “Always Show Alerts with Remembered Selections” is enabled."), _title, _savedSelectionLabel];
     } else {
         alert.informativeText = _title;
     }
@@ -359,7 +361,7 @@ BOOL gShowRememberedAlerts = NO;
 
     // Add "Permanently Forget Saved Selection" button when in remembered alerts mode.
     if (_shownDueToRememberedAlertsMode && _identifier) {
-        [alert addButtonWithTitle:@"Permanently Forget Saved Selection"];
+        [alert addButtonWithTitle:ITLocalizedMenuString(@"Permanently Forget Saved Selection")];
     }
 
     int numNonCancelActions = [_warningActions count];
@@ -373,25 +375,25 @@ BOOL gShowRememberedAlerts = NO;
     if (_warningType == kiTermWarningTypeTemporarilySilenceable) {
         assert(_identifier);
         if (numNonCancelActions == 1) {
-            alert.suppressionButton.title = @"Suppress this message for ten minutes";
+            alert.suppressionButton.title = ITLocalizedMenuString(@"Suppress this message for ten minutes");
         } else if (numNonCancelActions > 1) {
-            alert.suppressionButton.title = @"Remember my choice for ten minutes";
+            alert.suppressionButton.title = ITLocalizedMenuString(@"Remember my choice for ten minutes");
         }
         alert.showsSuppressionButton = YES;
     } else if (_warningType == kiTermWarningTypeSilenceableForOneMonth) {
         assert(_identifier);
         if (numNonCancelActions == 1) {
-            alert.suppressionButton.title = @"Suppress this message for 30 days";
+            alert.suppressionButton.title = ITLocalizedMenuString(@"Suppress this message for 30 days");
         } else if (numNonCancelActions > 1) {
-            alert.suppressionButton.title = @"Remember my choice for 30 days";
+            alert.suppressionButton.title = ITLocalizedMenuString(@"Remember my choice for 30 days");
         }
         alert.showsSuppressionButton = YES;
     } else if (_warningType == kiTermWarningTypePermanentlySilenceable) {
         assert(_identifier);
         if (numNonCancelActions == 1) {
-            alert.suppressionButton.title = @"Suppress this message permanently";
+            alert.suppressionButton.title = ITLocalizedMenuString(@"Suppress this message permanently");
         } else if (numNonCancelActions > 1) {
-            alert.suppressionButton.title = @"Remember my choice";
+            alert.suppressionButton.title = ITLocalizedMenuString(@"Remember my choice");
         }
         alert.showsSuppressionButton = YES;
     }

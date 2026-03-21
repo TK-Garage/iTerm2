@@ -15,6 +15,8 @@
 #import "NSImage+iTerm.h"
 #import "RegexKitLite.h"
 
+#define ITLocalizedMenuString(key) NSLocalizedStringFromTableInBundle(key, @"iTerm", [NSBundle bundleForClass:[self class]], nil)
+
 @implementation iTermStatusBarSnippetMenuComponent
 
 - (nullable NSImage *)statusBarComponentIcon {
@@ -22,11 +24,11 @@
 }
 
 - (NSString *)statusBarComponentShortDescription {
-    return @"Snippets Menu";
+    return ITLocalizedMenuString(@"Snippets Menu");
 }
 
 - (NSString *)statusBarComponentDetailedDescription {
-    return @"When clicked, opens a menu of snippets. Snippets are saved text strings that can be pasted quickly.";
+    return ITLocalizedMenuString(@"When clicked, opens a menu of snippets. Snippets are saved text strings that can be pasted quickly.");
 }
 
 - (id)statusBarComponentExemplarWithBackgroundColor:(NSColor *)backgroundColor
@@ -39,7 +41,7 @@
 }
 
 - (nullable NSString *)stringValue {
-    return @"Send Snippet…";
+    return ITLocalizedMenuString(@"Send Snippet…");
 }
 
 - (nullable NSString *)stringValueForCurrentWidth {
@@ -79,7 +81,7 @@
 
     [menu addItem:[NSMenuItem separatorItem]];
 
-    NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:@"Edit Snippets…" action:@selector(editSnippets:) keyEquivalent:@""];
+    NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:ITLocalizedMenuString(@"Edit Snippets…") action:@selector(editSnippets:) keyEquivalent:@""];
     item.target = self;
     [menu addItem:item];
 
